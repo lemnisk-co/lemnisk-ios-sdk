@@ -1,0 +1,158 @@
+{
+  "is_native": true,
+  "webview_data" : "<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content=\"width=device-width, initial-scale=1\"><title>Template_Fadein_Fadeout</title><script type=text/javascript charset=utf-8>window.data={config:\"{}\",defaultVizuryCk:null,products:[{ctaButtons:[{ctaType:\"b\",backgroundColor:\"\",borderColor:\"\",ctaText:'<div style=\"font-size: 2.13vh;\">Apply Now</div>',lp:\"https://banking.lemnisk.co\"}],title:'<div style=\"font-weight: 400;\">One stop solution for all of your needs</div>',terms_and_conditions:\"\",images:{\"1280x800\":\"//cdn25.lemnisk.co/ssp/Banking_Demo_DMP/76624375-0599-4b30-80a5-0655a759c61e.jpg\"},label:\"Personal Loan\",message:\"<div>Personal loan with zero documentation!</div>\",productCk:\"https://us-ax.lemnisk.co/bpck?cid=4658&engid=-1&sid=39&rid=46585cb6cede015ff73a6eb6fe3BNP&idn=viz_5cd44ce6780ba&pid=p1&slotDefaultsId=373&label=Personal Loan&ie=-&mr=0\"},{ctaButtons:[{ctaType:\"b\",backgroundColor:\"\",borderColor:\"\",ctaText:'<div style=\"font-size: 2.13vh;\">Apply Now</div>',lp:\"https://banking.lemnisk.co\"}],title:'<div style=\"font-weight: 400;\">Drive home happiness!</div>',terms_and_conditions:\"\",images:{\"1280x800\":\"//cdn25.lemnisk.co/ssp/Banking_Demo_DMP/82402bd2-f1c9-41db-bd44-4985980c7371.jpg\"},message:\"<div>Get&nbsp;Auto&nbsp;Loan&nbsp;today&nbsp;to drive home your dream vehicle</div>\",label:\"Auto Loan\",productCk:\"https://us-ax.lemnisk.co/bpck?cid=4658&engid=-1&sid=39&rid=46585cb6cede015ff73a6eb6fe3BNP&idn=viz_5cd44ce6780ba&pid=p2&slotDefaultsId=373&label=Auto Loan&ie=-&mr=0\"},{ctaButtons:[{ctaType:\"b\",backgroundColor:\"\",borderColor:\"\",ctaText:'<div style=\"font-size: 2.13vh;\">Know More</div>',lp:\"https://banking.lemnisk.co\"}],title:'<div style=\"font-weight: 400;\">Can\\'t wait to move into your new home?</div>',terms_and_conditions:\"\",images:{\"1280x800\":\"//cdn25.lemnisk.co/ssp/Banking_Demo_DMP/159a9604-3307-40d9-9bc9-f59ed956b511.jpg\"},message:\"<div>Get Instant Home Loan Sanction</div>\",label:\"Home Loan\",productCk:\"https://us-ax.lemnisk.co/bpck?cid=4658&engid=-1&sid=39&rid=46585cb6cede015ff73a6eb6fe3BNP&idn=viz_5cd44ce6780ba&pid=p3&slotDefaultsId=373&label=Home Loan&ie=-&mr=0\"},{ctaButtons:[{ctaType:\"b\",backgroundColor:\"\",borderColor:\"\",ctaText:'<div style=\"font-size: 2.13vh;\">Apply Now</div>',lp:\"https://banking.lemnisk.co/credit_cards.html\"}],title:'<div style=\"font-weight: 400;\">Exclusive Online limited period offer!</div>',terms_and_conditions:\"\",images:{\"1280x800\":\"//cdn25.lemnisk.co/ssp/Banking_Demo_DMP/d9a9db58-82f9-4ff4-b659-f5135b812a8b.jpg\"},message:'<div><span style=\"line-height: 5vh;\">Apply online today and get Rs. 100 cash back on your Credit card</span></div>',label:\"Credit Cards\",productCk:\"https://us-ax.lemnisk.co/bpck?cid=4658&engid=-1&sid=39&rid=46585cb6cede015ff73a6eb6fe3BNP&idn=viz_5cd44ce6780ba&pid=p4&slotDefaultsId=373&label=Credit Cards&ie=-&mr=0\"}]};</script><link rel=stylesheet type=text/css href=https://cdn8.lemnisk.co/ssp/static/css/banking-demo-BP.min.css></head><body><script src=https://cdn8.lemnisk.co/ssp/static/js/banking-demo-BP.min.js></script></body></html>",
+  "native_data": {
+    "data": [
+      {
+        "align": "left",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "android-app://com.awok.store/https/www.awok.com/link/pname/dp-1310444/?utm_source=lemnisk&utm_medium=push&utm_campaign=Product+drop-off%3A+1hr-iOS&utm_term=Product+Page+Segment&utm_content=android&"
+          },
+          {
+            "text": "Know More",
+            "color": "#20cccc",
+            "font": 12,
+            "text_color": "#555555",
+            "deeplink": "https://www.hdfcbank.com/personal/products/cards/credit_cards"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Personal Loan",
+        "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#f3818a",
+        "message_font_size": 12,
+        "title": "Personal Loan at 10% i",
+        "title_color": "#966c48",
+        "title_font_size": 16
+      },
+      {
+        "align": "right",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits"
+          },
+          {
+            "text": "Know More",
+            "color": "#20cccc",
+            "font": 12,
+            "text_color": "#555555",
+            "deeplink": "https://www.hdfcbank.com/personal/products/cards/credit_cards"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Home Loan",
+        "deeplink": "https://application.axisbank.co.in/webforms/onlineform/home-loan/web/homeloan.aspx?cta=site-notification-home-loan-vizury",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#a3818f",
+        "message_font_size": 12,
+        "title": "Home Loans 8% i",
+        "title_color": "#966e48",
+        "title_font_size": 16
+      },
+      {
+        "align": "center",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits"
+          },
+          {
+            "text": "Know More",
+            "color": "#20cccc",
+            "font": 12,
+            "text_color": "#555555",
+            "deeplink": "https://www.hdfcbank.com/personal/products/cards/credit_cards"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Car Loan",
+        "deeplink": "https://application.axisbank.co.in/webforms/onlineform/car-loan/web/carloan.aspx?cta=site-notification-car-loan-vizury",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#f3818a",
+        "message_font_size": 12,
+        "title": "Car Loans with Zero Down payment",
+        "title_color": "#966c48",
+        "title_font_size": 16
+      },
+      {
+        "align": "left",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Business Loan",
+        "deeplink": "https://www.axisbank.com/retail/loans/business-loan",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#f3818a",
+        "message_font_size": 12,
+        "title": "Business Loan",
+        "title_color": "#966c48",
+        "title_font_size": 16
+      },
+      {
+        "align": "right",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Education Loan",
+        "deeplink": "https://www.axisbank.com/retail/loans/education-loan/features-benefits",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#f3818a",
+        "message_font_size": 12,
+        "title": "Education Loan",
+        "title_color": "#966c48",
+        "title_font_size": 16
+      },
+      {
+        "align": "center",
+        "button": [
+          {
+            "text": "Apply Now",
+            "color": "#20ffff",
+            "font": 12,
+            "text_color": "#f5f5f5",
+            "deeplink": "https://www.axisbank.com/retail/loans/personal-loan/features-benefits"
+          }
+        ],
+        "image": "https://images.template.net/wp-content/uploads/2015/11/25190558/Plain-Dark-Blue-Background-Images-Download.jpg",
+        "label": "Bike Loan",
+        "deeplink": "https://www.axisbank.com/retail/loans/two-wheeler-loan",
+        "message": "Apply now to get additonal cashback of Rs. 10000.",
+        "message_color": "#f3818a",
+        "message_font_size": 12,
+        "title": "Bike Loan",
+        "title_color": "#966c48",
+        "title_font_size": 16
+      }
+    ],
+    "indicator_position": "Center_Top",
+    "slide_duration": 7000,
+    "slide_transformer": "DepthPage"
+  }
+}
