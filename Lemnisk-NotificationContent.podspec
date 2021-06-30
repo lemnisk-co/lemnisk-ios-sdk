@@ -13,6 +13,6 @@ s.source       = {
 	:git => "https://github.com/vizury/lemnisk-ios-sdk.git", 
 	:tag => 'nce-' + s.version.to_s 
 }
-s.ios.vendored_frameworks = 'Frameworks/LemniskRichNotification.xcframework'
-s.preserve_paths =  'Frameworks/LemniskRichNotification.xcframework'
+s.ios.vendored_frameworks = 'Frameworks/LemniskNotificationContent.xcframework'
+s.preserve_paths =  'Frameworks/LemniskNotificationContent.xcframework'
 end
