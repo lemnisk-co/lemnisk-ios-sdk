@@ -10,7 +10,7 @@ s.license      = { :type => 'Custom', :text => 'Enterprise license' }
 s.author       = { 'Somanath Reddy' => 'somanath.reddy@lemnisk.co' }
 s.platform     = :ios, "10.0"
 s.source       = { 
-	:git => "https://github.com/vizury/lemnisk-ios-sdk.git", 
+	:git => "https://github.com/Immensitas/lemnisk-ios-sdk.git", 
 	:tag => 'nce-' + s.version.to_s 
 }
 s.ios.vendored_frameworks = 'Frameworks/LemniskNotificationContent.xcframework'
