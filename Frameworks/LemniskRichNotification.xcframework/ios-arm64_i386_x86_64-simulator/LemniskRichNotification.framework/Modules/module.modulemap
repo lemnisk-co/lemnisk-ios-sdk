@@ -1,0 +1,11 @@
+framework module LemniskRichNotification {
+  umbrella header "LemniskRichNotification.h"
+
+  export *
+  module * { export * }
+}
+
+module LemniskRichNotification.Swift {
+    header "LemniskRichNotification-Swift.h"
+    requires objc
+}

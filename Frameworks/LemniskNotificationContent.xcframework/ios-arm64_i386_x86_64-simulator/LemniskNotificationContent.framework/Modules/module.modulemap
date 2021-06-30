@@ -1,0 +1,4 @@
+framework module LemniskNotificationContent {
+  header "LemniskNotificationContent-Swift.h"
+  requires objc
+}

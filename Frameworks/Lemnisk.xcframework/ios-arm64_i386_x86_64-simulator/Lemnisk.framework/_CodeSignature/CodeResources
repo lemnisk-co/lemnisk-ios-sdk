@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+c8NeIs3+5p/LAQtQ9gI8mNsvqw=
+		dn1jAEBAn5g+OmyMUHb9zNWd8Fo=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MslztvUXL/QuLYYM8VRbPqn+QQ0=
+		RMs++jwu+TwS+iHWIuDXqK76xv0=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftmodule</key>
 		<data>
-		MslztvUXL/QuLYYM8VRbPqn+QQ0=
+		RMs++jwu+TwS+iHWIuDXqK76xv0=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -419,11 +419,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MslztvUXL/QuLYYM8VRbPqn+QQ0=
+			RMs++jwu+TwS+iHWIuDXqK76xv0=
 			</data>
 			<key>hash2</key>
 			<data>
-			9lqwqw1T7j4v0SXBtTC8Okh+yqWeWhOyy4SoG393jEk=
+			9Wo00Fmk440+InGg0uvX2gfx0IFtN/ny+NfCSTUZ9tI=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftdoc</key>
@@ -452,11 +452,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MslztvUXL/QuLYYM8VRbPqn+QQ0=
+			RMs++jwu+TwS+iHWIuDXqK76xv0=
 			</data>
 			<key>hash2</key>
 			<data>
-			9lqwqw1T7j4v0SXBtTC8Okh+yqWeWhOyy4SoG393jEk=
+			9Wo00Fmk440+InGg0uvX2gfx0IFtN/ny+NfCSTUZ9tI=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
