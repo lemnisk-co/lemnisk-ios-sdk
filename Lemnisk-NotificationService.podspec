@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "Lemnisk-NotificationService"
-s.version      = "3.4"
+s.version      = "3.5"
 s.summary      = "Lemnisk Notification Service extension for iOS SDK"
 s.description  = <<-DESC
                    Lemnisk Notification Service extension for iOS SDK to support Rich Push Notifications (Rich Media like image, gif, audio and video). This feature is available from iOS version 10.0 and above.
