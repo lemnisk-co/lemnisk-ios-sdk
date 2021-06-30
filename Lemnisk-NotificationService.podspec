@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name         = "LemNotificationService"
+s.name         = "Lemnisk-NotificationService"
 s.version      = "3.4"
 s.summary      = "Lemnisk Notification Service extension for iOS SDK"
 s.description  = <<-DESC
