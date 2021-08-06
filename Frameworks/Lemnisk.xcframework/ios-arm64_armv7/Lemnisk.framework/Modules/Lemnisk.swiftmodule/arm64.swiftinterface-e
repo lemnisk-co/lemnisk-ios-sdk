@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
 import AdSupport
 import AppTrackingTransparency
@@ -81,8 +81,8 @@ extension Request : Swift.CustomDebugStringConvertible {
     public static let createIntermediateDirectories: Lemnisk.DownloadRequest.DownloadOptions
     public static let removePreviousFile: Lemnisk.DownloadRequest.DownloadOptions
     public init(rawValue: Swift.UInt)
-    public typealias Element = Lemnisk.DownloadRequest.DownloadOptions
     public typealias ArrayLiteralElement = Lemnisk.DownloadRequest.DownloadOptions
+    public typealias Element = Lemnisk.DownloadRequest.DownloadOptions
     public typealias RawValue = Swift.UInt
   }
   public typealias DownloadFileDestination = (Foundation.URL, Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: Lemnisk.DownloadRequest.DownloadOptions)
@@ -112,7 +112,7 @@ extension Request : Swift.CustomDebugStringConvertible {
   open func uploadProgress(queue: Dispatch.DispatchQueue = DispatchQueue.main, closure: @escaping Lemnisk.UploadRequest.ProgressHandler) -> Self
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
 open class StreamRequest : Lemnisk.Request {
   @objc deinit
 }
@@ -154,8 +154,8 @@ public enum HTTPMethod : Swift.String {
   case delete
   case trace
   case connect
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -168,26 +168,26 @@ public struct URLEncoding : Lemnisk.ParameterEncoding {
   public enum Destination {
     case methodDependent, queryString, httpBody
     public static func == (a: Lemnisk.URLEncoding.Destination, b: Lemnisk.URLEncoding.Destination) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum ArrayEncoding {
     case brackets, noBrackets
     public static func == (a: Lemnisk.URLEncoding.ArrayEncoding, b: Lemnisk.URLEncoding.ArrayEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum BoolEncoding {
     case numeric, literal
     public static func == (a: Lemnisk.URLEncoding.BoolEncoding, b: Lemnisk.URLEncoding.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static var `default`: Lemnisk.URLEncoding {
     get
@@ -335,10 +335,10 @@ extension UIColor {
     case ethernetOrWiFi
     case wwan
     public static func == (a: Lemnisk.NetworkReachabilityManager.ConnectionType, b: Lemnisk.NetworkReachabilityManager.ConnectionType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public typealias Listener = (Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
   open var isReachable: Swift.Bool {
@@ -376,8 +376,8 @@ public func == (lhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatu
   @objc public func logEvent(traits: [Swift.String : Any]?)
   @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
   @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers open class TaskDelegate : ObjectiveC.NSObject {
   final public let queue: Foundation.OperationQueue
@@ -404,8 +404,8 @@ public func == (lhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatu
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 open class SessionManager {
   public enum MultipartFormDataEncodingResult {
@@ -451,10 +451,10 @@ open class SessionManager {
   open func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
   open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
   open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   @discardableResult
   open func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   @discardableResult
   open func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
 }
@@ -508,10 +508,10 @@ public func upload(_ stream: Foundation.InputStream, to url: Lemnisk.URLConverti
 public func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
 public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
 public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-@available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
 @discardableResult
 public func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
-@available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
 @discardableResult
 public func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
 extension Double {
@@ -818,22 +818,22 @@ extension DownloadRequest {
   open var downloadTaskDidFinishDownloadingToURL: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Foundation.URL) -> Swift.Void)?
   open var downloadTaskDidWriteData: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
   open var downloadTaskDidResumeAtOffset: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64) -> Swift.Void)?
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   open var streamTaskReadClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
     get
     set
   }
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   open var streamTaskWriteClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
     get
     set
   }
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   open var streamTaskBetterRouteDiscovered: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
     get
     set
   }
-  @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   open var streamTaskDidBecomeInputAndOutputStreams: ((Foundation.URLSession, Foundation.URLSessionStreamTask, Foundation.InputStream, Foundation.OutputStream) -> Swift.Void)? {
     get
     set
@@ -856,7 +856,7 @@ extension SessionDelegate : Foundation.URLSessionTaskDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, needNewBodyStream completionHandler: @escaping (Foundation.InputStream?) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
-  @available(iOS 10.0, OSX 10.12, tvOS 10.0, *)
+  @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
   @objc(URLSession:task:didFinishCollectingMetrics:) dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
 }
@@ -871,7 +871,7 @@ extension SessionDelegate : Foundation.URLSessionDownloadDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
 }
-@available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
 extension SessionDelegate : Foundation.URLSessionStreamDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, readClosedFor streamTask: Foundation.URLSessionStreamTask)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, writeClosedFor streamTask: Foundation.URLSessionStreamTask)
@@ -954,25 +954,25 @@ extension DownloadResponse {
   public func mapError<E>(_ transform: (Swift.Error) -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
   public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
 }
-@available(iOS 10.0, OSX 10.12, tvOS 10.0, *)
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DefaultDataResponse {
   public var metrics: Foundation.URLSessionTaskMetrics? {
     get
   }
 }
-@available(iOS 10.0, OSX 10.12, tvOS 10.0, *)
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DataResponse {
   public var metrics: Foundation.URLSessionTaskMetrics? {
     get
   }
 }
-@available(iOS 10.0, OSX 10.12, tvOS 10.0, *)
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DefaultDownloadResponse {
   public var metrics: Foundation.URLSessionTaskMetrics? {
     get
   }
 }
-@available(iOS 10.0, OSX 10.12, tvOS 10.0, *)
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DownloadResponse {
   public var metrics: Foundation.URLSessionTaskMetrics? {
     get

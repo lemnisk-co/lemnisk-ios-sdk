@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 s.name         = "Lemnisk-NotificationContent"
-s.version      = "3.5"
+s.version      = "3.6"
 s.summary      = "Lemnisk Notification Content extension for iOS SDK"
 s.description  = <<-DESC
                    Lemnisk Notification Content extension for iOS SDK to display custom content interfaces like carousel for iOS 10 push notifications.
                    DESC
-s.homepage     = "https://lemnisk.co"
+s.homepage     = "https://github.com/Immensitas/lemnisk-ios-sdk"
 s.license      = { :type => 'Custom', :text => 'Enterprise license' }
 s.author       = { 'Somanath Reddy' => 'somanath.reddy@lemnisk.co' }
 s.platform     = :ios, "10.0"
