@@ -221,8 +221,12 @@ SWIFT_CLASS("_TtC7Lemnisk7Lemnisk")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _Nonnull shared;)
 + (Lemnisk * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
-- (NSString * _Nullable)showTrackingOptin SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)setMaskedCidWithMaskedCid:(NSString * _Nullable)maskedCid;
+- (NSString * _Nullable)showTrackingDialog SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getAPNSToken SWIFT_WARN_UNUSED_RESULT;
+- (void)setCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid transConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
+- (void)getCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid completion:(void (^ _Nonnull)(BOOL, BOOL))completion;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
@@ -780,8 +784,12 @@ SWIFT_CLASS("_TtC7Lemnisk7Lemnisk")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _Nonnull shared;)
 + (Lemnisk * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
-- (NSString * _Nullable)showTrackingOptin SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)setMaskedCidWithMaskedCid:(NSString * _Nullable)maskedCid;
+- (NSString * _Nullable)showTrackingDialog SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getAPNSToken SWIFT_WARN_UNUSED_RESULT;
+- (void)setCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid transConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
+- (void)getCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid completion:(void (^ _Nonnull)(BOOL, BOOL))completion;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
@@ -1339,8 +1347,12 @@ SWIFT_CLASS("_TtC7Lemnisk7Lemnisk")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _Nonnull shared;)
 + (Lemnisk * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
-- (NSString * _Nullable)showTrackingOptin SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)setMaskedCidWithMaskedCid:(NSString * _Nullable)maskedCid;
+- (NSString * _Nullable)showTrackingDialog SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getAPNSToken SWIFT_WARN_UNUSED_RESULT;
+- (void)setCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid transConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
+- (void)getCustomConsentWithMaskedCid:(NSString * _Nonnull)maskedCid completion:(void (^ _Nonnull)(BOOL, BOOL))completion;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;

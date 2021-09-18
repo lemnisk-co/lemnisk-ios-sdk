@@ -398,8 +398,12 @@ public func == (lhs: NetworkReachabilityManager.NetworkReachabilityStatus, rhs: 
 @objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
   @objc public static let shared: Lemnisk
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
-  @objc public func showTrackingOptin() -> Swift.String?
+  @objc public func getTrackingStatus() -> Swift.String?
+  @objc public func setMaskedCid(maskedCid: Swift.String?)
+  @objc public func showTrackingDialog() -> Swift.String?
   @objc public func getAPNSToken() -> Swift.String
+  @objc public func setCustomConsent(maskedCid: Swift.String, transConsent: Swift.Bool, promoConsent: Swift.Bool)
+  @objc public func getCustomConsent(maskedCid: Swift.String, completion: @escaping (Swift.Bool, Swift.Bool) -> ())
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
