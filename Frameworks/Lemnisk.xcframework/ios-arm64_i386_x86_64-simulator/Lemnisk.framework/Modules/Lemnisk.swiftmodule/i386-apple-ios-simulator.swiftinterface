@@ -398,16 +398,22 @@ public func == (lhs: NetworkReachabilityManager.NetworkReachabilityStatus, rhs: 
 @objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
   @objc public static let shared: Lemnisk
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
+  @objc public func registerForPushNotifications()
   @objc public func getTrackingStatus() -> Swift.String?
-  @objc public func setMaskedCid(maskedCid: Swift.String?)
   @objc public func showTrackingDialog() -> Swift.String?
   @objc public func getAPNSToken() -> Swift.String
-  @objc public func setCustomConsent(maskedCid: Swift.String, transConsent: Swift.Bool, promoConsent: Swift.Bool)
-  @objc public func getCustomConsent(maskedCid: Swift.String, completion: @escaping (Swift.Bool, Swift.Bool) -> ())
+  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func logEvent()
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
   @objc override dynamic public init()
   @objc deinit
 }
