@@ -9,7 +9,7 @@ s.homepage     = "https://github.com/Immensitas/lemnisk-ios-sdk"
 s.license      = { :type => 'Custom', :text => 'Enterprise license' }
 s.author       = { 'Somanath Reddy' => 'somanath.reddy@lemnisk.co' }
 s.platform     = :ios, "10.0"
-s.swift_version = '4.0'
+
 s.source       = { 
 	:git => "https://github.com/Immensitas/lemnisk-ios-sdk.git", 
 	:tag => 'nse-' + s.version.to_s 

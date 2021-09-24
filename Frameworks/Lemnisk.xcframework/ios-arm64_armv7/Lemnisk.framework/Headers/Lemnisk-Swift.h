@@ -299,8 +299,8 @@ SWIFT_CLASS("_TtC7Lemnisk11LemniskPush")
 
 
 /// Responsible for handling all delegate callbacks for the underlying session.
-SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
-@interface SessionDelegate : NSObject
+SWIFT_CLASS_NAMED("SessionDelegate")
+@interface AFSessionDelegate : NSObject
 /// Initializes the <code>SessionDelegate</code> instance.
 ///
 /// returns:
@@ -320,7 +320,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSURLSessionDownloadTask;
 @class NSURL;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDownloadDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDownloadDelegate>
 /// Tells the delegate that a download task has finished downloading.
 /// \param session The session containing the download task that finished.
 ///
@@ -365,7 +365,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSURLAuthenticationChallenge;
 @class NSURLCredential;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDelegate>
 /// Tells the delegate that the session has been invalidated.
 /// \param session The session object that was invalidated.
 ///
@@ -393,7 +393,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSOutputStream;
 
 SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionStreamDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionStreamDelegate>
 /// Tells the delegate that the read side of the connection has been closed.
 /// \param session The session.
 ///
@@ -428,7 +428,7 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 @class NSURLResponse;
 @class NSCachedURLResponse;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDataDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDataDelegate>
 /// Tells the delegate that the data task received the initial reply (headers) from the server.
 /// \param session The session containing the data task that received an initial reply.
 ///
@@ -479,7 +479,7 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 @class NSURLRequest;
 @class NSURLSessionTaskMetrics;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionTaskDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionTaskDelegate>
 /// Tells the delegate that the remote server requested an HTTP redirect.
 /// \param session The session containing the task whose request resulted in a redirect.
 ///
@@ -870,8 +870,8 @@ SWIFT_CLASS("_TtC7Lemnisk11LemniskPush")
 
 
 /// Responsible for handling all delegate callbacks for the underlying session.
-SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
-@interface SessionDelegate : NSObject
+SWIFT_CLASS_NAMED("SessionDelegate")
+@interface AFSessionDelegate : NSObject
 /// Initializes the <code>SessionDelegate</code> instance.
 ///
 /// returns:
@@ -891,7 +891,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSURLSessionDownloadTask;
 @class NSURL;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDownloadDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDownloadDelegate>
 /// Tells the delegate that a download task has finished downloading.
 /// \param session The session containing the download task that finished.
 ///
@@ -936,7 +936,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSURLAuthenticationChallenge;
 @class NSURLCredential;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDelegate>
 /// Tells the delegate that the session has been invalidated.
 /// \param session The session object that was invalidated.
 ///
@@ -964,7 +964,7 @@ SWIFT_CLASS("_TtC7Lemnisk15SessionDelegate")
 @class NSOutputStream;
 
 SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionStreamDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionStreamDelegate>
 /// Tells the delegate that the read side of the connection has been closed.
 /// \param session The session.
 ///
@@ -999,7 +999,7 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 @class NSURLResponse;
 @class NSCachedURLResponse;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDataDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionDataDelegate>
 /// Tells the delegate that the data task received the initial reply (headers) from the server.
 /// \param session The session containing the data task that received an initial reply.
 ///
@@ -1050,7 +1050,7 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 @class NSURLRequest;
 @class NSURLSessionTaskMetrics;
 
-@interface SessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionTaskDelegate>
+@interface AFSessionDelegate (SWIFT_EXTENSION(Lemnisk)) <NSURLSessionTaskDelegate>
 /// Tells the delegate that the remote server requested an HTTP redirect.
 /// \param session The session containing the task whose request resulted in a redirect.
 ///

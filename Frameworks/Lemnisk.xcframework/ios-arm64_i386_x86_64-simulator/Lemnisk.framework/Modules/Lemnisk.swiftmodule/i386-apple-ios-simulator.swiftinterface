@@ -846,7 +846,7 @@ extension DownloadRequest {
   @discardableResult
   public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (DownloadResponse<Any>) -> Swift.Void) -> Self
 }
-@objc @_inheritsConvenienceInitializers open class SessionDelegate : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(AFSessionDelegate) open class SessionDelegate : ObjectiveC.NSObject {
   open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
   open var sessionDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
   open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
