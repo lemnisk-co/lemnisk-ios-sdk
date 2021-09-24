@@ -1,11 +1,22 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LemniskRichNotification
+import CommonCrypto
+import CryptoSwift
 import Foundation
 @_exported import LemniskRichNotification
 import Swift
 import UserNotifications
+import _Concurrency
+@objc @objcMembers public class NSEEncryptionUtils : ObjectiveC.NSObject {
+  @objc public init(lemId: Swift.String)
+  @objc deinit
+}
+public struct AES256Crypter {
+  public init(key: Foundation.Data, iv: Foundation.Data) throws
+}
 @objc @_inheritsConvenienceInitializers open class LemniskNotificationService : UserNotifications.UNNotificationServiceExtension {
+  open func setAppGroupID(groupId: Swift.String)
   @objc override dynamic open func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
   @objc override dynamic open func serviceExtensionTimeWillExpire()
   @objc override dynamic public init()
