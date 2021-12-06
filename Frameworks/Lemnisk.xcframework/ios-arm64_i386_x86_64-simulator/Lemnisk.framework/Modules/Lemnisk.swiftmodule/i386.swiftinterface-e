@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
 import AdSupport
 import AppTrackingTransparency
@@ -10,7 +10,6 @@ import Foundation
 @_exported import Lemnisk
 import MessageUI
 import MobileCoreServices
-import Security
 import Swift
 import SystemConfiguration
 import UIKit
@@ -318,11 +317,6 @@ extension Lemnisk.Result {
   @discardableResult
   public func ifFailure(_ closure: () -> Swift.Void) -> Lemnisk.Result<Value>
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class EncryptionUtils : ObjectiveC.NSObject {
-  @objc public func getApplicationKeyTag(type: Swift.String) -> Swift.String
-  @objc override dynamic public init()
-  @objc deinit
-}
 extension UIKit.UIWindow {
   @_Concurrency.MainActor(unsafe) public var visibleViewController: UIKit.UIViewController? {
     get
@@ -402,18 +396,29 @@ public func == (lhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatu
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
   @objc public static let shared: Lemnisk.Lemnisk
+  @objc public func setLogLevel(_ logLevel: Swift.String)
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
+  @objc public func registerForPushNotifications()
   @objc public func getTrackingStatus() -> Swift.String?
-  @objc public func setMaskedCid(maskedCid: Swift.String?)
   @objc public func showTrackingDialog() -> Swift.String?
   @objc public func getAPNSToken() -> Swift.String
   @objc public func setAppGroupID(groupId: Swift.String)
-  @objc public func setCustomConsent(maskedCid: Swift.String, transConsent: Swift.Bool, promoConsent: Swift.Bool)
-  @objc public func getCustomConsent(maskedCid: Swift.String, completion: @escaping (Swift.Bool, Swift.Bool) -> ())
+  @objc public func setUniqueUserId(_ uniqueUserId: Swift.String)
+  @objc public func getUniqueUserId() -> Swift.String?
+  @objc public func resetUser()
+  @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
+  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func logEvent()
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -426,7 +431,7 @@ open class SessionManager {
   public static let defaultHTTPHeaders: Lemnisk.HTTPHeaders
   public static let multipartFormDataEncodingMemoryThreshold: Swift.UInt64
   final public let session: Foundation.URLSession
-  final public let delegate: Lemnisk.SessionDelegate
+  final public let delegate: Lemnisk.AFSessionDelegate
   open var startRequestsImmediately: Swift.Bool
   open var adapter: Lemnisk.RequestAdapter?
   open var retrier: Lemnisk.RequestRetrier? {
@@ -434,8 +439,8 @@ open class SessionManager {
     set
   }
   open var backgroundCompletionHandler: (() -> Swift.Void)?
-  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default, delegate: Lemnisk.SessionDelegate = SessionDelegate(), serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
-  public init?(session: Foundation.URLSession, delegate: Lemnisk.SessionDelegate, serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
+  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default, delegate: Lemnisk.AFSessionDelegate = AFSessionDelegate(), serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
+  public init?(session: Foundation.URLSession, delegate: Lemnisk.AFSessionDelegate, serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
   @objc deinit
   @discardableResult
   open func request(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.DataRequest
@@ -467,46 +472,6 @@ open class SessionManager {
   @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   @discardableResult
   open func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
-}
-@_hasMissingDesignatedInitializers public class RSAUtils {
-  @objc @_hasMissingDesignatedInitializers @available(iOS 1.2.0, *)
-  public class RSAUtilsError : Foundation.NSError {
-    @available(*, unavailable)
-    @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-    @objc deinit
-  }
-  @available(iOS 1.2.0, *)
-  public static func deleteRSAKeyFromKeychain(_ tagName: Swift.String)
-  @available(iOS 1.2.0, *)
-  public static func getRSAKeyFromKeychain(_ tagName: Swift.String) -> Security.SecKey?
-  @available(iOS 1.2.0, *)
-  @discardableResult
-  public static func addRSAPrivateKey(_ privkeyBase64: Swift.String, tagName: Swift.String) throws -> Security.SecKey?
-  @available(iOS 1.2.0, *)
-  public static func addRSAPublicKey(_ pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Security.SecKey?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAKey(_ data: Foundation.Data, rsaKeyRef: Security.SecKey, padding: Security.SecPadding) -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func decryptWithRSAKey(_ encryptedData: Foundation.Data, rsaKeyRef: Security.SecKey, padding: Security.SecPadding) -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAKey(data: Foundation.Data, tagName: Swift.String) -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAKey(str: Swift.String, tagName: Swift.String) -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func decryptWithRSAKey(encryptedData: Foundation.Data, tagName: Swift.String) -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAPublicKey(data: Foundation.Data, pubkeyBase64: Swift.String) throws -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAPublicKey(str: Swift.String, pubkeyBase64: Swift.String) throws -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAPublicKey(data: Foundation.Data, pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func encryptWithRSAPublicKey(str: Swift.String, pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func decryptWithRSAPrivateKey(encryptedData: Foundation.Data, privkeyBase64: Swift.String) throws -> Foundation.Data?
-  @available(iOS 1.2.0, *)
-  public static func decryptWithRSAPrivateKey(encryptedData: Foundation.Data, privkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
-  @objc deinit
 }
 public protocol URLConvertible {
   func asURL() throws -> Foundation.URL
@@ -610,6 +575,15 @@ extension Foundation.UserDefaults {
 public protocol LemniskPushDelegate : AnyObject {
   func didRegisterForRemoteNotifications(_ token: Swift.String?)
 }
+@objc public enum LemniskLogLevel : Swift.Int, Swift.RawRepresentable {
+  case debug
+  case off
+  public typealias RawValue = Swift.String
+  public var rawValue: Lemnisk.LemniskLogLevel.RawValue {
+    get
+  }
+  public init?(rawValue: Lemnisk.LemniskLogLevel.RawValue)
+}
 public struct Timeline {
   public let requestStartTime: CoreFoundation.CFAbsoluteTime
   public let initialResponseTime: CoreFoundation.CFAbsoluteTime
@@ -673,7 +647,6 @@ open class MultipartFormData {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LemniskLog {
-  public static var debug: Swift.Bool
   @objc deinit
 }
 public enum AFError : Swift.Error {
@@ -846,7 +819,7 @@ extension Lemnisk.DownloadRequest {
   @discardableResult
   public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (Lemnisk.DownloadResponse<Any>) -> Swift.Void) -> Self
 }
-@_inheritsConvenienceInitializers @objc(AFSessionDelegate) open class SessionDelegate : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers open class AFSessionDelegate : ObjectiveC.NSObject {
   open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
   open var sessionDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
   open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
@@ -896,12 +869,12 @@ extension Lemnisk.DownloadRequest {
   @objc override dynamic open func responds(to selector: ObjectiveC.Selector) -> Swift.Bool
   @objc deinit
 }
-extension Lemnisk.SessionDelegate : Foundation.URLSessionDelegate {
+extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: Swift.Error?)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @objc dynamic open func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
 }
-extension Lemnisk.SessionDelegate : Foundation.URLSessionTaskDelegate {
+extension Lemnisk.AFSessionDelegate : Foundation.URLSessionTaskDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, needNewBodyStream completionHandler: @escaping (Foundation.InputStream?) -> Swift.Void)
@@ -910,19 +883,19 @@ extension Lemnisk.SessionDelegate : Foundation.URLSessionTaskDelegate {
   @objc(URLSession:task:didFinishCollectingMetrics:) dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
 }
-extension Lemnisk.SessionDelegate : Foundation.URLSessionDataDelegate {
+extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDataDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didBecome downloadTask: Foundation.URLSessionDownloadTask)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse, completionHandler: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
 }
-extension Lemnisk.SessionDelegate : Foundation.URLSessionDownloadDelegate {
+extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDownloadDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
 }
 @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-extension Lemnisk.SessionDelegate : Foundation.URLSessionStreamDelegate {
+extension Lemnisk.AFSessionDelegate : Foundation.URLSessionStreamDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, readClosedFor streamTask: Foundation.URLSessionStreamTask)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, writeClosedFor streamTask: Foundation.URLSessionStreamTask)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, betterRouteDiscoveredFor streamTask: Foundation.URLSessionStreamTask)
@@ -1053,3 +1026,5 @@ extension Lemnisk.URLEncoding.BoolEncoding : Swift.Equatable {}
 extension Lemnisk.URLEncoding.BoolEncoding : Swift.Hashable {}
 extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Equatable {}
 extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Hashable {}
+extension Lemnisk.LemniskLogLevel : Swift.Equatable {}
+extension Lemnisk.LemniskLogLevel : Swift.Hashable {}
