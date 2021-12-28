@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
 import AdSupport
 import AppTrackingTransparency
@@ -10,17 +10,45 @@ import Foundation
 @_exported import Lemnisk
 import MessageUI
 import MobileCoreServices
+import Security
 import Swift
 import SystemConfiguration
 import UIKit
 import UserNotifications
 import UserNotificationsUI
 import WebKit
-import _Concurrency
+extension String {
+  public func localized(_ comment: Swift.String = "") -> Swift.String
+}
+open class MultipartFormData {
+  open var contentType: Swift.String {
+    get
+    set
+  }
+  public var contentLength: Swift.UInt64 {
+    get
+  }
+  final public let boundary: Swift.String
+  public init()
+  public func append(_ data: Foundation.Data, withName name: Swift.String)
+  public func append(_ data: Foundation.Data, withName name: Swift.String, mimeType: Swift.String)
+  public func append(_ data: Foundation.Data, withName name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
+  public func append(_ fileURL: Foundation.URL, withName name: Swift.String)
+  public func append(_ fileURL: Foundation.URL, withName name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
+  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
+  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, headers: Lemnisk.HTTPHeaders)
+  public func encode() throws -> Foundation.Data
+  public func writeEncodedData(to fileURL: Foundation.URL) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 14, *)
+public class Tracking {
+  @objc deinit
+}
 public protocol RequestAdapter {
   func adapt(_ urlRequest: Foundation.URLRequest) throws -> Foundation.URLRequest
 }
-public typealias RequestRetryCompletion = (_ shouldRetry: Swift.Bool, _ timeDelay: Foundation.TimeInterval) -> Swift.Void
+public typealias RequestRetryCompletion = (Swift.Bool, Foundation.TimeInterval) -> Swift.Void
 public protocol RequestRetrier {
   func should(_ manager: Lemnisk.SessionManager, retry request: Lemnisk.Request, with error: Swift.Error, completion: @escaping Lemnisk.RequestRetryCompletion)
 }
@@ -53,12 +81,12 @@ public typealias HTTPHeaders = [Swift.String : Swift.String]
   open func cancel()
   @objc deinit
 }
-extension Lemnisk.Request : Swift.CustomStringConvertible {
+extension Request : Swift.CustomStringConvertible {
   open var description: Swift.String {
     get
   }
 }
-extension Lemnisk.Request : Swift.CustomDebugStringConvertible {
+extension Request : Swift.CustomDebugStringConvertible {
   open var debugDescription: Swift.String {
     get
   }
@@ -86,7 +114,7 @@ extension Lemnisk.Request : Swift.CustomDebugStringConvertible {
     public typealias Element = Lemnisk.DownloadRequest.DownloadOptions
     public typealias RawValue = Swift.UInt
   }
-  public typealias DownloadFileDestination = (_ temporaryURL: Foundation.URL, _ response: Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: Lemnisk.DownloadRequest.DownloadOptions)
+  public typealias DownloadFileDestination = (Foundation.URL, Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: Lemnisk.DownloadRequest.DownloadOptions)
   override open var request: Foundation.URLRequest? {
     get
   }
@@ -117,13 +145,296 @@ extension Lemnisk.Request : Swift.CustomDebugStringConvertible {
 open class StreamRequest : Lemnisk.Request {
   @objc deinit
 }
-extension Lemnisk.Request {
+extension UIDevice {
+  public var isIphone6Plus: Swift.Bool {
+    get
+  }
+  public var isIphone6: Swift.Bool {
+    get
+  }
+  public var isIphone5Below: Swift.Bool {
+    get
+  }
+  public var isIphone6sPlus: Swift.Bool {
+    get
+  }
+  public var isIphone6s: Swift.Bool {
+    get
+  }
+  public var isIphone4p7Inch: Swift.Bool {
+    get
+  }
+  public var isIphone5p5Inch: Swift.Bool {
+    get
+  }
+  public var isIphone6Below: Swift.Bool {
+    get
+  }
+  public var isIphoneX: Swift.Bool {
+    get
+  }
+  public var isIphoneXOrAbove: Swift.Bool {
+    get
+  }
+  public var isSimulator: Swift.Bool {
+    get
+  }
+  public var isJailBroken: Swift.Bool {
+    get
+  }
+}
+@objc @objcMembers public class LemniskAnalytics : ObjectiveC.NSObject {
+  @objc public static let shared: Lemnisk.LemniskAnalytics
+  @objc public init(cahceEnabled: Swift.Bool)
+  @objc public func logEvent(name: Swift.String, traits: [Swift.String : Any]?)
+  @objc public func logEvent(traits: [Swift.String : Any]?)
+  @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
+  @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol DataResponseSerializerProtocol {
+  associatedtype SerializedObject
+  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Self.SerializedObject> { get }
+}
+public struct DataResponseSerializer<Value> : Lemnisk.DataResponseSerializerProtocol {
+  public typealias SerializedObject = Value
+  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Value>
+  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Value>)
+}
+public protocol DownloadResponseSerializerProtocol {
+  associatedtype SerializedObject
+  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Self.SerializedObject> { get }
+}
+public struct DownloadResponseSerializer<Value> : Lemnisk.DownloadResponseSerializerProtocol {
+  public typealias SerializedObject = Value
+  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Value>
+  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Value>)
+}
+extension DataRequest {
+  @discardableResult
+  public func response(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DefaultDataResponse) -> Swift.Void) -> Self
+  @discardableResult
+  public func response<T>(queue: Dispatch.DispatchQueue? = nil, responseSerializer: T, completionHandler: @escaping (Lemnisk.DataResponse<T.SerializedObject>) -> Swift.Void) -> Self where T : Lemnisk.DataResponseSerializerProtocol
+}
+extension DownloadRequest {
+  @discardableResult
+  public func response(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DefaultDownloadResponse) -> Swift.Void) -> Self
+  @discardableResult
+  public func response<T>(queue: Dispatch.DispatchQueue? = nil, responseSerializer: T, completionHandler: @escaping (Lemnisk.DownloadResponse<T.SerializedObject>) -> Swift.Void) -> Self where T : Lemnisk.DownloadResponseSerializerProtocol
+}
+extension Request {
+  public static func serializeResponseData(response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Foundation.Data>
+}
+extension DataRequest {
+  public static func dataResponseSerializer() -> Lemnisk.DataResponseSerializer<Foundation.Data>
+  @discardableResult
+  public func responseData(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DataResponse<Foundation.Data>) -> Swift.Void) -> Self
+}
+extension DownloadRequest {
+  public static func dataResponseSerializer() -> Lemnisk.DownloadResponseSerializer<Foundation.Data>
+  @discardableResult
+  public func responseData(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DownloadResponse<Foundation.Data>) -> Swift.Void) -> Self
+}
+extension Request {
+  public static func serializeResponseString(encoding: Swift.String.Encoding?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Swift.String>
+}
+extension DataRequest {
+  public static func stringResponseSerializer(encoding: Swift.String.Encoding? = nil) -> Lemnisk.DataResponseSerializer<Swift.String>
+  @discardableResult
+  public func responseString(queue: Dispatch.DispatchQueue? = nil, encoding: Swift.String.Encoding? = nil, completionHandler: @escaping (Lemnisk.DataResponse<Swift.String>) -> Swift.Void) -> Self
+}
+extension DownloadRequest {
+  public static func stringResponseSerializer(encoding: Swift.String.Encoding? = nil) -> Lemnisk.DownloadResponseSerializer<Swift.String>
+  @discardableResult
+  public func responseString(queue: Dispatch.DispatchQueue? = nil, encoding: Swift.String.Encoding? = nil, completionHandler: @escaping (Lemnisk.DownloadResponse<Swift.String>) -> Swift.Void) -> Self
+}
+extension Request {
+  public static func serializeResponseJSON(options: Foundation.JSONSerialization.ReadingOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Any>
+}
+extension DataRequest {
+  public static func jsonResponseSerializer(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> Lemnisk.DataResponseSerializer<Any>
+  @discardableResult
+  public func responseJSON(queue: Dispatch.DispatchQueue? = nil, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (Lemnisk.DataResponse<Any>) -> Swift.Void) -> Self
+}
+extension DownloadRequest {
+  public static func jsonResponseSerializer(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> Lemnisk.DownloadResponseSerializer<Any>
+  @discardableResult
+  public func responseJSON(queue: Dispatch.DispatchQueue? = nil, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (Lemnisk.DownloadResponse<Any>) -> Swift.Void) -> Self
+}
+extension Request {
+  public static func serializeResponsePropertyList(options: Foundation.PropertyListSerialization.ReadOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Any>
+}
+extension DataRequest {
+  public static func propertyListResponseSerializer(options: Foundation.PropertyListSerialization.ReadOptions = []) -> Lemnisk.DataResponseSerializer<Any>
+  @discardableResult
+  public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (Lemnisk.DataResponse<Any>) -> Swift.Void) -> Self
+}
+extension DownloadRequest {
+  public static func propertyListResponseSerializer(options: Foundation.PropertyListSerialization.ReadOptions = []) -> Lemnisk.DownloadResponseSerializer<Any>
+  @discardableResult
+  public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (Lemnisk.DownloadResponse<Any>) -> Swift.Void) -> Self
+}
+extension JSONDecoder {
+  public func decode<T>(from data: Foundation.Data?) -> T? where T : Swift.Decodable
+  public func decodeInBackground<T>(from data: Foundation.Data?, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+}
+extension JSONEncoder {
+  public func encode<T>(from value: T?) -> Foundation.Data? where T : Swift.Encodable
+  public func encodeInBackground<T>(from encodableObject: T?, onEncode: @escaping (Foundation.Data?) -> Swift.Void) where T : Swift.Encodable
+}
+extension UserDefaults {
+  public func set<T>(object type: T, for key: Swift.String, onEncode: @escaping (Swift.Bool) -> Swift.Void) throws where T : Swift.Encodable
+  public func get<T>(object type: T.Type, for key: Swift.String, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
+  @objc public static let shared: Lemnisk.Lemnisk
+  @objc public func setLogLevel(_ logLevel: Swift.String)
+  @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
+  @objc public func registerForPushNotifications()
+  @objc public func getTrackingStatus() -> Swift.String?
+  @objc public func showTrackingDialog() -> Swift.String?
+  @objc public func getAPNSToken() -> Swift.String
+  @objc public func setAppGroupID(groupId: Swift.String)
+  @objc public func setUniqueUserId(_ uniqueUserId: Swift.String)
+  @objc public func getUniqueUserId() -> Swift.String?
+  @objc public func resetUser()
+  @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
+  @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
+  public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
+  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers open class TaskDelegate : ObjectiveC.NSObject {
+  final public let queue: Foundation.OperationQueue
+  public var data: Foundation.Data? {
+    get
+  }
+  public var error: Swift.Error?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct DefaultDataResponse {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let data: Foundation.Data?
+  public let error: Swift.Error?
+  public let timeline: Lemnisk.Timeline
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?, timeline: Lemnisk.Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
+}
+public struct DataResponse<Value> {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let data: Foundation.Data?
+  public let result: Lemnisk.Result<Value>
+  public let timeline: Lemnisk.Timeline
+  public var value: Value? {
+    get
+  }
+  public var error: Swift.Error? {
+    get
+  }
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, result: Lemnisk.Result<Value>, timeline: Lemnisk.Timeline = Timeline())
+}
+extension DataResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension DataResponse {
+  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.DataResponse<T>
+  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.DataResponse<T>
+  public func mapError<E>(_ transform: (Swift.Error) -> E) -> Lemnisk.DataResponse<Value> where E : Swift.Error
+  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> Lemnisk.DataResponse<Value> where E : Swift.Error
+}
+public struct DefaultDownloadResponse {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let temporaryURL: Foundation.URL?
+  public let destinationURL: Foundation.URL?
+  public let resumeData: Foundation.Data?
+  public let error: Swift.Error?
+  public let timeline: Lemnisk.Timeline
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, error: Swift.Error?, timeline: Lemnisk.Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
+}
+public struct DownloadResponse<Value> {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let temporaryURL: Foundation.URL?
+  public let destinationURL: Foundation.URL?
+  public let resumeData: Foundation.Data?
+  public let result: Lemnisk.Result<Value>
+  public let timeline: Lemnisk.Timeline
+  public var value: Value? {
+    get
+  }
+  public var error: Swift.Error? {
+    get
+  }
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, result: Lemnisk.Result<Value>, timeline: Lemnisk.Timeline = Timeline())
+}
+extension DownloadResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension DownloadResponse {
+  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.DownloadResponse<T>
+  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.DownloadResponse<T>
+  public func mapError<E>(_ transform: (Swift.Error) -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
+  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
+}
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+extension DefaultDataResponse {
+  public var metrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+}
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+extension DataResponse {
+  public var metrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+}
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+extension DefaultDownloadResponse {
+  public var metrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+}
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+extension DownloadResponse {
+  public var metrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+}
+extension PropertyListDecoder {
+  public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
+}
+extension Request {
   public enum ValidationResult {
     case success
     case failure(Swift.Error)
   }
 }
-extension Lemnisk.DataRequest {
+extension DataRequest {
   public typealias Validation = (Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.Data?) -> Lemnisk.Request.ValidationResult
   @discardableResult
   public func validate(_ validation: @escaping Lemnisk.DataRequest.Validation) -> Self
@@ -134,8 +445,8 @@ extension Lemnisk.DataRequest {
   @discardableResult
   public func validate() -> Self
 }
-extension Lemnisk.DownloadRequest {
-  public typealias Validation = (_ request: Foundation.URLRequest?, _ response: Foundation.HTTPURLResponse, _ temporaryURL: Foundation.URL?, _ destinationURL: Foundation.URL?) -> Lemnisk.Request.ValidationResult
+extension DownloadRequest {
+  public typealias Validation = (Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.URL?, Foundation.URL?) -> Lemnisk.Request.ValidationResult
   @discardableResult
   public func validate(_ validation: @escaping Lemnisk.DownloadRequest.Validation) -> Self
   @discardableResult
@@ -144,6 +455,513 @@ extension Lemnisk.DownloadRequest {
   public func validate<S>(contentType acceptableContentTypes: S) -> Self where S : Swift.Sequence, S.Element == Swift.String
   @discardableResult
   public func validate() -> Self
+}
+extension UIWindow {
+  public var visibleViewController: UIKit.UIViewController? {
+    get
+  }
+  public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
+}
+extension UIColor {
+  public static func colorWith(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat = 1.0) -> UIKit.UIColor
+}
+open class SessionManager {
+  public enum MultipartFormDataEncodingResult {
+    case success(request: Lemnisk.UploadRequest, streamingFromDisk: Swift.Bool, streamFileURL: Foundation.URL?)
+    case failure(Swift.Error)
+  }
+  public static let `default`: Lemnisk.SessionManager
+  public static let defaultHTTPHeaders: Lemnisk.HTTPHeaders
+  public static let multipartFormDataEncodingMemoryThreshold: Swift.UInt64
+  final public let session: Foundation.URLSession
+  final public let delegate: Lemnisk.AFSessionDelegate
+  open var startRequestsImmediately: Swift.Bool
+  open var adapter: Lemnisk.RequestAdapter?
+  open var retrier: Lemnisk.RequestRetrier? {
+    get
+    set
+  }
+  open var backgroundCompletionHandler: (() -> Swift.Void)?
+  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default, delegate: Lemnisk.AFSessionDelegate = AFSessionDelegate(), serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
+  public init?(session: Foundation.URLSession, delegate: Lemnisk.AFSessionDelegate, serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
+  @objc deinit
+  @discardableResult
+  open func request(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.DataRequest
+  @discardableResult
+  open func request(_ urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.DataRequest
+  @discardableResult
+  open func download(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+  @discardableResult
+  open func download(_ urlRequest: Lemnisk.URLRequestConvertible, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+  @discardableResult
+  open func download(resumingWith resumeData: Foundation.Data, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+  @discardableResult
+  open func upload(_ fileURL: Foundation.URL, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+  @discardableResult
+  open func upload(_ fileURL: Foundation.URL, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+  @discardableResult
+  open func upload(_ data: Foundation.Data, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+  @discardableResult
+  open func upload(_ data: Foundation.Data, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+  @discardableResult
+  open func upload(_ stream: Foundation.InputStream, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+  @discardableResult
+  open func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+  open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+  open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  @discardableResult
+  open func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  @discardableResult
+  open func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class EncryptionUtils : ObjectiveC.NSObject {
+  @objc public func getApplicationKeyTag(type: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LemniskAppDelegate : ObjectiveC.NSObject {
+  @objc public static let shared: Lemnisk.LemniskAppDelegate
+  @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
+  @objc public func handleNotificationAction(center: UserNotifications.UNUserNotificationCenter, response: UserNotifications.UNNotificationResponse)
+  @objc public func willPresentRemoteNotification(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Foundation.Data)
+  @objc public func didFailToRegisterForRemoteNotificationsWithError(error: Swift.Error)
+  @objc public func handleDeepLink(deepLink: Swift.String?)
+  @objc deinit
+}
+extension NSNotification.Name {
+  public struct Task {
+    public static let DidResume: Foundation.Notification.Name
+    public static let DidSuspend: Foundation.Notification.Name
+    public static let DidCancel: Foundation.Notification.Name
+    public static let DidComplete: Foundation.Notification.Name
+  }
+}
+extension Notification {
+  public struct Key {
+    public static let Task: Swift.String
+    public static let ResponseData: Swift.String
+  }
+}
+@_inheritsConvenienceInitializers @objc(AFAFSessionDelegate) open class AFSessionDelegate : ObjectiveC.NSObject {
+  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
+  open var sessionDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
+  open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
+  open var sessionDidFinishEventsForBackgroundURLSession: ((Foundation.URLSession) -> Swift.Void)?
+  open var taskWillPerformHTTPRedirection: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.HTTPURLResponse, Foundation.URLRequest) -> Foundation.URLRequest?)?
+  open var taskWillPerformHTTPRedirectionWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)?
+  open var taskDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
+  open var taskDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
+  open var taskNeedNewBodyStream: ((Foundation.URLSession, Foundation.URLSessionTask) -> Foundation.InputStream?)?
+  open var taskNeedNewBodyStreamWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, @escaping (Foundation.InputStream?) -> Swift.Void) -> Swift.Void)?
+  open var taskDidSendBodyData: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var taskDidComplete: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Error?) -> Swift.Void)?
+  open var dataTaskDidReceiveResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse) -> Foundation.URLSession.ResponseDisposition)?
+  open var dataTaskDidReceiveResponseWithCompletion: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse, @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void) -> Swift.Void)?
+  open var dataTaskDidBecomeDownloadTask: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLSessionDownloadTask) -> Swift.Void)?
+  open var dataTaskDidReceiveData: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.Data) -> Swift.Void)?
+  open var dataTaskWillCacheResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)?
+  open var dataTaskWillCacheResponseWithCompletion: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.CachedURLResponse, @escaping (Foundation.CachedURLResponse?) -> Swift.Void) -> Swift.Void)?
+  open var downloadTaskDidFinishDownloadingToURL: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Foundation.URL) -> Swift.Void)?
+  open var downloadTaskDidWriteData: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var downloadTaskDidResumeAtOffset: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  open var streamTaskReadClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
+    get
+    set
+  }
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  open var streamTaskWriteClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
+    get
+    set
+  }
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  open var streamTaskBetterRouteDiscovered: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
+    get
+    set
+  }
+  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+  open var streamTaskDidBecomeInputAndOutputStreams: ((Foundation.URLSession, Foundation.URLSessionStreamTask, Foundation.InputStream, Foundation.OutputStream) -> Swift.Void)? {
+    get
+    set
+  }
+  open subscript(task: Foundation.URLSessionTask) -> Lemnisk.Request? {
+    get
+    set
+  }
+  @objc override dynamic public init()
+  @objc override dynamic open func responds(to selector: ObjectiveC.Selector) -> Swift.Bool
+  @objc deinit
+}
+extension AFSessionDelegate : Foundation.URLSessionDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: Swift.Error?)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic open func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
+}
+extension AFSessionDelegate : Foundation.URLSessionTaskDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, needNewBodyStream completionHandler: @escaping (Foundation.InputStream?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+  @objc(URLSession:task:didFinishCollectingMetrics:) dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
+}
+extension AFSessionDelegate : Foundation.URLSessionDataDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didBecome downloadTask: Foundation.URLSessionDownloadTask)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse, completionHandler: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
+}
+extension AFSessionDelegate : Foundation.URLSessionDownloadDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+}
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+extension AFSessionDelegate : Foundation.URLSessionStreamDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, readClosedFor streamTask: Foundation.URLSessionStreamTask)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, writeClosedFor streamTask: Foundation.URLSessionStreamTask)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, betterRouteDiscoveredFor streamTask: Foundation.URLSessionStreamTask)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, streamTask: Foundation.URLSessionStreamTask, didBecome inputStream: Foundation.InputStream, outputStream: Foundation.OutputStream)
+}
+open class ServerTrustPolicyManager {
+  final public let policies: [Swift.String : Lemnisk.ServerTrustPolicy]
+  public init(policies: [Swift.String : Lemnisk.ServerTrustPolicy])
+  open func serverTrustPolicy(forHost host: Swift.String) -> Lemnisk.ServerTrustPolicy?
+  @objc deinit
+}
+public enum ServerTrustPolicy {
+  case performDefaultEvaluation(validateHost: Swift.Bool)
+  case performRevokedEvaluation(validateHost: Swift.Bool, revocationFlags: CoreFoundation.CFOptionFlags)
+  case pinCertificates(certificates: [Security.SecCertificate], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
+  case pinPublicKeys(publicKeys: [Security.SecKey], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
+  case disableEvaluation
+  case customEvaluation((Security.SecTrust, Swift.String) -> Swift.Bool)
+  public static func certificates(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecCertificate]
+  public static func publicKeys(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecKey]
+  public func evaluate(_ serverTrust: Security.SecTrust, forHost host: Swift.String) -> Swift.Bool
+}
+extension Double {
+  public func stringRemovingTrailingZeros() -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class RSAUtils {
+  @objc @_hasMissingDesignatedInitializers @available(iOS 1.2.0, *)
+  public class RSAUtilsError : Foundation.NSError {
+    @available(*, unavailable)
+    @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+    @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+    @objc deinit
+  }
+  @available(iOS 1.2.0, *)
+  public static func deleteRSAKeyFromKeychain(_ tagName: Swift.String)
+  @available(iOS 1.2.0, *)
+  public static func getRSAKeyFromKeychain(_ tagName: Swift.String) -> Security.SecKey?
+  @available(iOS 1.2.0, *)
+  @discardableResult
+  public static func addRSAPrivateKey(_ privkeyBase64: Swift.String, tagName: Swift.String) throws -> Security.SecKey?
+  @available(iOS 1.2.0, *)
+  public static func addRSAPublicKey(_ pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Security.SecKey?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAKey(_ data: Foundation.Data, rsaKeyRef: Security.SecKey, padding: Security.SecPadding) -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func decryptWithRSAKey(_ encryptedData: Foundation.Data, rsaKeyRef: Security.SecKey, padding: Security.SecPadding) -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAKey(data: Foundation.Data, tagName: Swift.String) -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAKey(str: Swift.String, tagName: Swift.String) -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func decryptWithRSAKey(encryptedData: Foundation.Data, tagName: Swift.String) -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAPublicKey(data: Foundation.Data, pubkeyBase64: Swift.String) throws -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAPublicKey(str: Swift.String, pubkeyBase64: Swift.String) throws -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAPublicKey(data: Foundation.Data, pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func encryptWithRSAPublicKey(str: Swift.String, pubkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func decryptWithRSAPrivateKey(encryptedData: Foundation.Data, privkeyBase64: Swift.String) throws -> Foundation.Data?
+  @available(iOS 1.2.0, *)
+  public static func decryptWithRSAPrivateKey(encryptedData: Foundation.Data, privkeyBase64: Swift.String, tagName: Swift.String) throws -> Foundation.Data?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class NetworkReachabilityManager {
+  public enum NetworkReachabilityStatus {
+    case unknown
+    case notReachable
+    case reachable(Lemnisk.NetworkReachabilityManager.ConnectionType)
+  }
+  public enum ConnectionType {
+    case ethernetOrWiFi
+    case wwan
+    public static func == (a: Lemnisk.NetworkReachabilityManager.ConnectionType, b: Lemnisk.NetworkReachabilityManager.ConnectionType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public typealias Listener = (Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
+  open var isReachable: Swift.Bool {
+    get
+  }
+  open var isReachableOnWWAN: Swift.Bool {
+    get
+  }
+  open var isReachableOnEthernetOrWiFi: Swift.Bool {
+    get
+  }
+  open var networkReachabilityStatus: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus {
+    get
+  }
+  open var listenerQueue: Dispatch.DispatchQueue
+  open var listener: Lemnisk.NetworkReachabilityManager.Listener?
+  open var flags: SystemConfiguration.SCNetworkReachabilityFlags? {
+    get
+  }
+  open var previousFlags: SystemConfiguration.SCNetworkReachabilityFlags
+  convenience public init?(host: Swift.String)
+  convenience public init?()
+  @objc deinit
+  @discardableResult
+  open func startListening() -> Swift.Bool
+  open func stopListening()
+}
+extension NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
+}
+public func == (lhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus, rhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
+@objc @_inheritsConvenienceInitializers @objcMembers public class LemniskPush : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc final public let destructiveCategories: [Swift.String]
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum LemniskLogLevel : Swift.Int, Swift.RawRepresentable {
+  case debug
+  case off
+  public typealias RawValue = Swift.String
+  public var rawValue: Lemnisk.LemniskLogLevel.RawValue {
+    get
+  }
+  public init?(rawValue: Lemnisk.LemniskLogLevel.RawValue)
+}
+public struct Timeline {
+  public let requestStartTime: CoreFoundation.CFAbsoluteTime
+  public let initialResponseTime: CoreFoundation.CFAbsoluteTime
+  public let requestCompletedTime: CoreFoundation.CFAbsoluteTime
+  public let serializationCompletedTime: CoreFoundation.CFAbsoluteTime
+  public let latency: Foundation.TimeInterval
+  public let requestDuration: Foundation.TimeInterval
+  public let serializationDuration: Foundation.TimeInterval
+  public let totalDuration: Foundation.TimeInterval
+  public init(requestStartTime: CoreFoundation.CFAbsoluteTime = 0.0, initialResponseTime: CoreFoundation.CFAbsoluteTime = 0.0, requestCompletedTime: CoreFoundation.CFAbsoluteTime = 0.0, serializationCompletedTime: CoreFoundation.CFAbsoluteTime = 0.0)
+}
+extension Timeline : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Timeline : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public enum Result<Value> {
+  case success(Value)
+  case failure(Swift.Error)
+  public var isSuccess: Swift.Bool {
+    get
+  }
+  public var isFailure: Swift.Bool {
+    get
+  }
+  public var value: Value? {
+    get
+  }
+  public var error: Swift.Error? {
+    get
+  }
+}
+extension Result : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Result : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension Result {
+  public init(value: () throws -> Value)
+  public func unwrap() throws -> Value
+  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.Result<T>
+  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.Result<T>
+  public func mapError<T>(_ transform: (Swift.Error) -> T) -> Lemnisk.Result<Value> where T : Swift.Error
+  public func flatMapError<T>(_ transform: (Swift.Error) throws -> T) -> Lemnisk.Result<Value> where T : Swift.Error
+  @discardableResult
+  public func withValue(_ closure: (Value) -> Swift.Void) -> Lemnisk.Result<Value>
+  @discardableResult
+  public func withError(_ closure: (Swift.Error) -> Swift.Void) -> Lemnisk.Result<Value>
+  @discardableResult
+  public func ifSuccess(_ closure: () -> Swift.Void) -> Lemnisk.Result<Value>
+  @discardableResult
+  public func ifFailure(_ closure: () -> Swift.Void) -> Lemnisk.Result<Value>
+}
+public protocol URLConvertible {
+  func asURL() throws -> Foundation.URL
+}
+extension String : Lemnisk.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+extension URL : Lemnisk.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+extension URLComponents : Lemnisk.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+public protocol URLRequestConvertible {
+  func asURLRequest() throws -> Foundation.URLRequest
+}
+extension URLRequestConvertible {
+  public var urlRequest: Foundation.URLRequest? {
+    get
+  }
+}
+extension URLRequest : Lemnisk.URLRequestConvertible {
+  public func asURLRequest() throws -> Foundation.URLRequest
+}
+extension URLRequest {
+  public init(url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod, headers: Lemnisk.HTTPHeaders? = nil) throws
+}
+@discardableResult
+public func request(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.DataRequest
+@discardableResult
+public func request(_ urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.DataRequest
+@discardableResult
+public func download(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+@discardableResult
+public func download(_ urlRequest: Lemnisk.URLRequestConvertible, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+@discardableResult
+public func download(resumingWith resumeData: Foundation.Data, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
+@discardableResult
+public func upload(_ fileURL: Foundation.URL, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+@discardableResult
+public func upload(_ fileURL: Foundation.URL, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+@discardableResult
+public func upload(_ data: Foundation.Data, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+@discardableResult
+public func upload(_ data: Foundation.Data, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+@discardableResult
+public func upload(_ stream: Foundation.InputStream, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
+@discardableResult
+public func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
+public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+@discardableResult
+public func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+@discardableResult
+public func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskBanner : ObjectiveC.NSObject {
+  public static let shared: Lemnisk.LemniskBanner
+  public var fitToTheScreen: Swift.Bool
+  public func getTheBannerView(slotid: Swift.String) -> UIKit.UIView?
+  public func getTheBannerView() -> UIKit.UIView?
+  @objc deinit
+}
+public enum AFError : Swift.Error {
+  public enum ParameterEncodingFailureReason {
+    case missingURL
+    case jsonEncodingFailed(error: Swift.Error)
+    case propertyListEncodingFailed(error: Swift.Error)
+  }
+  public enum MultipartEncodingFailureReason {
+    case bodyPartURLInvalid(url: Foundation.URL)
+    case bodyPartFilenameInvalid(in: Foundation.URL)
+    case bodyPartFileNotReachable(at: Foundation.URL)
+    case bodyPartFileNotReachableWithError(atURL: Foundation.URL, error: Swift.Error)
+    case bodyPartFileIsDirectory(at: Foundation.URL)
+    case bodyPartFileSizeNotAvailable(at: Foundation.URL)
+    case bodyPartFileSizeQueryFailedWithError(forURL: Foundation.URL, error: Swift.Error)
+    case bodyPartInputStreamCreationFailed(for: Foundation.URL)
+    case outputStreamCreationFailed(for: Foundation.URL)
+    case outputStreamFileAlreadyExists(at: Foundation.URL)
+    case outputStreamURLInvalid(url: Foundation.URL)
+    case outputStreamWriteFailed(error: Swift.Error)
+    case inputStreamReadFailed(error: Swift.Error)
+  }
+  public enum ResponseValidationFailureReason {
+    case dataFileNil
+    case dataFileReadFailed(at: Foundation.URL)
+    case missingContentType(acceptableContentTypes: [Swift.String])
+    case unacceptableContentType(acceptableContentTypes: [Swift.String], responseContentType: Swift.String)
+    case unacceptableStatusCode(code: Swift.Int)
+  }
+  public enum ResponseSerializationFailureReason {
+    case inputDataNil
+    case inputDataNilOrZeroLength
+    case inputFileNil
+    case inputFileReadFailed(at: Foundation.URL)
+    case stringSerializationFailed(encoding: Swift.String.Encoding)
+    case jsonSerializationFailed(error: Swift.Error)
+    case propertyListSerializationFailed(error: Swift.Error)
+  }
+  case invalidURL(url: Lemnisk.URLConvertible)
+  case parameterEncodingFailed(reason: Lemnisk.AFError.ParameterEncodingFailureReason)
+  case multipartEncodingFailed(reason: Lemnisk.AFError.MultipartEncodingFailureReason)
+  case responseValidationFailed(reason: Lemnisk.AFError.ResponseValidationFailureReason)
+  case responseSerializationFailed(reason: Lemnisk.AFError.ResponseSerializationFailureReason)
+}
+extension AFError {
+  public var isInvalidURLError: Swift.Bool {
+    get
+  }
+  public var isParameterEncodingError: Swift.Bool {
+    get
+  }
+  public var isMultipartEncodingError: Swift.Bool {
+    get
+  }
+  public var isResponseValidationError: Swift.Bool {
+    get
+  }
+  public var isResponseSerializationError: Swift.Bool {
+    get
+  }
+}
+extension AFError {
+  public var urlConvertible: Lemnisk.URLConvertible? {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+  public var underlyingError: Swift.Error? {
+    get
+  }
+  public var acceptableContentTypes: [Swift.String]? {
+    get
+  }
+  public var responseContentType: Swift.String? {
+    get
+  }
+  public var responseCode: Swift.Int? {
+    get
+  }
+  public var failedStringEncoding: Swift.String.Encoding? {
+    get
+  }
+}
+extension AFError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public enum HTTPMethod : Swift.String {
   case options
@@ -237,784 +1055,10 @@ public struct PropertyListEncoding : Lemnisk.ParameterEncoding {
   public init(format: Foundation.PropertyListSerialization.PropertyListFormat = .xml, options: Foundation.PropertyListSerialization.WriteOptions = 0)
   public func encode(_ urlRequest: Lemnisk.URLRequestConvertible, with parameters: Lemnisk.Parameters?) throws -> Foundation.URLRequest
 }
-extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public var isIphone6Plus: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone6: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone5Below: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone6sPlus: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone6s: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone4p7Inch: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone5p5Inch: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphone6Below: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphoneX: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isIphoneXOrAbove: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isSimulator: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var isJailBroken: Swift.Bool {
-    get
-  }
-}
-public enum Result<Value> {
-  case success(Value)
-  case failure(Swift.Error)
-  public var isSuccess: Swift.Bool {
-    get
-  }
-  public var isFailure: Swift.Bool {
-    get
-  }
-  public var value: Value? {
-    get
-  }
-  public var error: Swift.Error? {
-    get
-  }
-}
-extension Lemnisk.Result : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
-extension Lemnisk.Result : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-extension Lemnisk.Result {
-  public init(value: () throws -> Value)
-  public func unwrap() throws -> Value
-  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.Result<T>
-  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.Result<T>
-  public func mapError<T>(_ transform: (Swift.Error) -> T) -> Lemnisk.Result<Value> where T : Swift.Error
-  public func flatMapError<T>(_ transform: (Swift.Error) throws -> T) -> Lemnisk.Result<Value> where T : Swift.Error
-  @discardableResult
-  public func withValue(_ closure: (Value) -> Swift.Void) -> Lemnisk.Result<Value>
-  @discardableResult
-  public func withError(_ closure: (Swift.Error) -> Swift.Void) -> Lemnisk.Result<Value>
-  @discardableResult
-  public func ifSuccess(_ closure: () -> Swift.Void) -> Lemnisk.Result<Value>
-  @discardableResult
-  public func ifFailure(_ closure: () -> Swift.Void) -> Lemnisk.Result<Value>
-}
-extension UIKit.UIWindow {
-  @_Concurrency.MainActor(unsafe) public var visibleViewController: UIKit.UIViewController? {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
-}
-extension UIKit.UIColor {
-  public static func colorWith(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat = 1.0) -> UIKit.UIColor
-}
-@_hasMissingDesignatedInitializers open class NetworkReachabilityManager {
-  public enum NetworkReachabilityStatus {
-    case unknown
-    case notReachable
-    case reachable(Lemnisk.NetworkReachabilityManager.ConnectionType)
-  }
-  public enum ConnectionType {
-    case ethernetOrWiFi
-    case wwan
-    public static func == (a: Lemnisk.NetworkReachabilityManager.ConnectionType, b: Lemnisk.NetworkReachabilityManager.ConnectionType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public typealias Listener = (Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
-  open var isReachable: Swift.Bool {
-    get
-  }
-  open var isReachableOnWWAN: Swift.Bool {
-    get
-  }
-  open var isReachableOnEthernetOrWiFi: Swift.Bool {
-    get
-  }
-  open var networkReachabilityStatus: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus {
-    get
-  }
-  open var listenerQueue: Dispatch.DispatchQueue
-  open var listener: Lemnisk.NetworkReachabilityManager.Listener?
-  open var flags: SystemConfiguration.SCNetworkReachabilityFlags? {
-    get
-  }
-  open var previousFlags: SystemConfiguration.SCNetworkReachabilityFlags
-  convenience public init?(host: Swift.String)
-  convenience public init?()
-  @objc deinit
-  @discardableResult
-  open func startListening() -> Swift.Bool
-  open func stopListening()
-}
-extension Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
-}
-public func == (lhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus, rhs: Lemnisk.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
-@objc @objcMembers public class LemniskAnalytics : ObjectiveC.NSObject {
-  @objc public static let shared: Lemnisk.LemniskAnalytics
-  @objc public init(cahceEnabled: Swift.Bool)
-  @objc public func logEvent(name: Swift.String, traits: [Swift.String : Any]?)
-  @objc public func logEvent(traits: [Swift.String : Any]?)
-  @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
-  @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
-  @objc deinit
-}
-@objc @_hasMissingDesignatedInitializers open class TaskDelegate : ObjectiveC.NSObject {
-  final public let queue: Foundation.OperationQueue
-  public var data: Foundation.Data? {
-    get
-  }
-  public var error: Swift.Error?
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskBanner : ObjectiveC.NSObject {
-  public static let shared: Lemnisk.LemniskBanner
-  public var fitToTheScreen: Swift.Bool
-  public func getTheBannerView(slotid: Swift.String) -> UIKit.UIView?
-  public func getTheBannerView() -> UIKit.UIView?
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
-  @objc public static let shared: Lemnisk.Lemnisk
-  @objc public func setLogLevel(_ logLevel: Swift.String)
-  @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
-  @objc public func registerForPushNotifications()
-  @objc public func getTrackingStatus() -> Swift.String?
-  @objc public func showTrackingDialog() -> Swift.String?
-  @objc public func getAPNSToken() -> Swift.String
-  @objc public func setAppGroupID(groupId: Swift.String)
-  @objc public func setUniqueUserId(_ uniqueUserId: Swift.String)
-  @objc public func getUniqueUserId() -> Swift.String?
-  @objc public func resetUser()
-  @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
-  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
-  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
-  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
-  @objc public func logEvent()
-  public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
-  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
-  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
-  public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc override dynamic public init()
-  @objc deinit
-}
-open class SessionManager {
-  public enum MultipartFormDataEncodingResult {
-    case success(request: Lemnisk.UploadRequest, streamingFromDisk: Swift.Bool, streamFileURL: Foundation.URL?)
-    case failure(Swift.Error)
-  }
-  public static let `default`: Lemnisk.SessionManager
-  public static let defaultHTTPHeaders: Lemnisk.HTTPHeaders
-  public static let multipartFormDataEncodingMemoryThreshold: Swift.UInt64
-  final public let session: Foundation.URLSession
-  final public let delegate: Lemnisk.AFSessionDelegate
-  open var startRequestsImmediately: Swift.Bool
-  open var adapter: Lemnisk.RequestAdapter?
-  open var retrier: Lemnisk.RequestRetrier? {
-    get
-    set
-  }
-  open var backgroundCompletionHandler: (() -> Swift.Void)?
-  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default, delegate: Lemnisk.AFSessionDelegate = AFSessionDelegate(), serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
-  public init?(session: Foundation.URLSession, delegate: Lemnisk.AFSessionDelegate, serverTrustPolicyManager: Lemnisk.ServerTrustPolicyManager? = nil)
-  @objc deinit
-  @discardableResult
-  open func request(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.DataRequest
-  @discardableResult
-  open func request(_ urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.DataRequest
-  @discardableResult
-  open func download(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-  @discardableResult
-  open func download(_ urlRequest: Lemnisk.URLRequestConvertible, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-  @discardableResult
-  open func download(resumingWith resumeData: Foundation.Data, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-  @discardableResult
-  open func upload(_ fileURL: Foundation.URL, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-  @discardableResult
-  open func upload(_ fileURL: Foundation.URL, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-  @discardableResult
-  open func upload(_ data: Foundation.Data, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-  @discardableResult
-  open func upload(_ data: Foundation.Data, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-  @discardableResult
-  open func upload(_ stream: Foundation.InputStream, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-  @discardableResult
-  open func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-  open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-  open func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  @discardableResult
-  open func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  @discardableResult
-  open func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
-}
-public protocol URLConvertible {
-  func asURL() throws -> Foundation.URL
-}
-extension Swift.String : Lemnisk.URLConvertible {
-  public func asURL() throws -> Foundation.URL
-}
-extension Foundation.URL : Lemnisk.URLConvertible {
-  public func asURL() throws -> Foundation.URL
-}
-extension Foundation.URLComponents : Lemnisk.URLConvertible {
-  public func asURL() throws -> Foundation.URL
-}
-public protocol URLRequestConvertible {
-  func asURLRequest() throws -> Foundation.URLRequest
-}
-extension Lemnisk.URLRequestConvertible {
-  public var urlRequest: Foundation.URLRequest? {
-    get
-  }
-}
-extension Foundation.URLRequest : Lemnisk.URLRequestConvertible {
-  public func asURLRequest() throws -> Foundation.URLRequest
-}
-extension Foundation.URLRequest {
-  public init(url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod, headers: Lemnisk.HTTPHeaders? = nil) throws
-}
-@discardableResult
-public func request(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.DataRequest
-@discardableResult
-public func request(_ urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.DataRequest
-@discardableResult
-public func download(_ url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .get, parameters: Lemnisk.Parameters? = nil, encoding: Lemnisk.ParameterEncoding = URLEncoding.default, headers: Lemnisk.HTTPHeaders? = nil, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-@discardableResult
-public func download(_ urlRequest: Lemnisk.URLRequestConvertible, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-@discardableResult
-public func download(resumingWith resumeData: Foundation.Data, to destination: Lemnisk.DownloadRequest.DownloadFileDestination? = nil) -> Lemnisk.DownloadRequest
-@discardableResult
-public func upload(_ fileURL: Foundation.URL, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-@discardableResult
-public func upload(_ fileURL: Foundation.URL, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-@discardableResult
-public func upload(_ data: Foundation.Data, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-@discardableResult
-public func upload(_ data: Foundation.Data, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-@discardableResult
-public func upload(_ stream: Foundation.InputStream, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil) -> Lemnisk.UploadRequest
-@discardableResult
-public func upload(_ stream: Foundation.InputStream, with urlRequest: Lemnisk.URLRequestConvertible) -> Lemnisk.UploadRequest
-public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: Lemnisk.URLConvertible, method: Lemnisk.HTTPMethod = .post, headers: Lemnisk.HTTPHeaders? = nil, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-public func upload(multipartFormData: @escaping (Lemnisk.MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: Lemnisk.URLRequestConvertible, encodingCompletion: ((Lemnisk.SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-@discardableResult
-public func stream(withHostName hostName: Swift.String, port: Swift.Int) -> Lemnisk.StreamRequest
-@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-@discardableResult
-public func stream(with netService: Foundation.NetService) -> Lemnisk.StreamRequest
-extension Swift.Double {
-  public func stringRemovingTrailingZeros() -> Swift.String
-}
-extension Foundation.PropertyListDecoder {
-  public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
-}
-@_hasMissingDesignatedInitializers @available(iOS 14, *)
-public class Tracking {
-  @objc deinit
-}
-extension Foundation.JSONDecoder {
-  public func decode<T>(from data: Foundation.Data?) -> T? where T : Swift.Decodable
-  public func decodeInBackground<T>(from data: Foundation.Data?, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
-}
-extension Foundation.JSONEncoder {
-  public func encode<T>(from value: T?) -> Foundation.Data? where T : Swift.Encodable
-  public func encodeInBackground<T>(from encodableObject: T?, onEncode: @escaping (Foundation.Data?) -> Swift.Void) where T : Swift.Encodable
-}
-extension Foundation.UserDefaults {
-  public func set<T>(object type: T, for key: Swift.String, onEncode: @escaping (Swift.Bool) -> Swift.Void) throws where T : Swift.Encodable
-  public func get<T>(object type: T.Type, for key: Swift.String, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class LemniskPush : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
-  @objc final public let destructiveCategories: [Swift.String]
-  @objc public func getNotifPermissionStatus(getNotifPermissionStatus isEnable: ((Swift.String) -> ())? = nil)
-  @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>?)
-  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
-  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
-  @objc public func getUserAgent() -> Swift.String
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LemniskAppDelegate : ObjectiveC.NSObject {
-  @objc public static let shared: Lemnisk.LemniskAppDelegate
-  @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
-  @objc public func handleNotificationAction(center: UserNotifications.UNUserNotificationCenter, response: UserNotifications.UNNotificationResponse)
-  @objc public func willPresentRemoteNotification(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
-  @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
-  @objc public func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Foundation.Data)
-  @objc public func didFailToRegisterForRemoteNotificationsWithError(error: Swift.Error)
-  @objc public func handleDeepLink(deepLink: Swift.String?)
-  @objc deinit
-}
-public protocol LemniskPushDelegate : AnyObject {
-  func didRegisterForRemoteNotifications(_ token: Swift.String?)
-}
-@objc public enum LemniskLogLevel : Swift.Int, Swift.RawRepresentable {
-  case debug
-  case off
-  public typealias RawValue = Swift.String
-  public var rawValue: Lemnisk.LemniskLogLevel.RawValue {
-    get
-  }
-  public init?(rawValue: Lemnisk.LemniskLogLevel.RawValue)
-}
-public struct Timeline {
-  public let requestStartTime: CoreFoundation.CFAbsoluteTime
-  public let initialResponseTime: CoreFoundation.CFAbsoluteTime
-  public let requestCompletedTime: CoreFoundation.CFAbsoluteTime
-  public let serializationCompletedTime: CoreFoundation.CFAbsoluteTime
-  public let latency: Foundation.TimeInterval
-  public let requestDuration: Foundation.TimeInterval
-  public let serializationDuration: Foundation.TimeInterval
-  public let totalDuration: Foundation.TimeInterval
-  public init(requestStartTime: CoreFoundation.CFAbsoluteTime = 0.0, initialResponseTime: CoreFoundation.CFAbsoluteTime = 0.0, requestCompletedTime: CoreFoundation.CFAbsoluteTime = 0.0, serializationCompletedTime: CoreFoundation.CFAbsoluteTime = 0.0)
-}
-extension Lemnisk.Timeline : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
-extension Lemnisk.Timeline : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-open class ServerTrustPolicyManager {
-  final public let policies: [Swift.String : Lemnisk.ServerTrustPolicy]
-  public init(policies: [Swift.String : Lemnisk.ServerTrustPolicy])
-  open func serverTrustPolicy(forHost host: Swift.String) -> Lemnisk.ServerTrustPolicy?
-  @objc deinit
-}
-public enum ServerTrustPolicy {
-  case performDefaultEvaluation(validateHost: Swift.Bool)
-  case performRevokedEvaluation(validateHost: Swift.Bool, revocationFlags: CoreFoundation.CFOptionFlags)
-  case pinCertificates(certificates: [Security.SecCertificate], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
-  case pinPublicKeys(publicKeys: [Security.SecKey], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
-  case disableEvaluation
-  case customEvaluation((_ serverTrust: Security.SecTrust, _ host: Swift.String) -> Swift.Bool)
-  public static func certificates(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecCertificate]
-  public static func publicKeys(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecKey]
-  public func evaluate(_ serverTrust: Security.SecTrust, forHost host: Swift.String) -> Swift.Bool
-}
-extension Swift.String {
-  public func localized(_ comment: Swift.String = "") -> Swift.String
-}
-open class MultipartFormData {
-  open var contentType: Swift.String {
-    get
-    set
-  }
-  public var contentLength: Swift.UInt64 {
-    get
-  }
-  final public let boundary: Swift.String
-  public init()
-  public func append(_ data: Foundation.Data, withName name: Swift.String)
-  public func append(_ data: Foundation.Data, withName name: Swift.String, mimeType: Swift.String)
-  public func append(_ data: Foundation.Data, withName name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
-  public func append(_ fileURL: Foundation.URL, withName name: Swift.String)
-  public func append(_ fileURL: Foundation.URL, withName name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
-  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
-  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, headers: Lemnisk.HTTPHeaders)
-  public func encode() throws -> Foundation.Data
-  public func writeEncodedData(to fileURL: Foundation.URL) throws
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class LemniskLog {
-  @objc deinit
-}
-public enum AFError : Swift.Error {
-  public enum ParameterEncodingFailureReason {
-    case missingURL
-    case jsonEncodingFailed(error: Swift.Error)
-    case propertyListEncodingFailed(error: Swift.Error)
-  }
-  public enum MultipartEncodingFailureReason {
-    case bodyPartURLInvalid(url: Foundation.URL)
-    case bodyPartFilenameInvalid(in: Foundation.URL)
-    case bodyPartFileNotReachable(at: Foundation.URL)
-    case bodyPartFileNotReachableWithError(atURL: Foundation.URL, error: Swift.Error)
-    case bodyPartFileIsDirectory(at: Foundation.URL)
-    case bodyPartFileSizeNotAvailable(at: Foundation.URL)
-    case bodyPartFileSizeQueryFailedWithError(forURL: Foundation.URL, error: Swift.Error)
-    case bodyPartInputStreamCreationFailed(for: Foundation.URL)
-    case outputStreamCreationFailed(for: Foundation.URL)
-    case outputStreamFileAlreadyExists(at: Foundation.URL)
-    case outputStreamURLInvalid(url: Foundation.URL)
-    case outputStreamWriteFailed(error: Swift.Error)
-    case inputStreamReadFailed(error: Swift.Error)
-  }
-  public enum ResponseValidationFailureReason {
-    case dataFileNil
-    case dataFileReadFailed(at: Foundation.URL)
-    case missingContentType(acceptableContentTypes: [Swift.String])
-    case unacceptableContentType(acceptableContentTypes: [Swift.String], responseContentType: Swift.String)
-    case unacceptableStatusCode(code: Swift.Int)
-  }
-  public enum ResponseSerializationFailureReason {
-    case inputDataNil
-    case inputDataNilOrZeroLength
-    case inputFileNil
-    case inputFileReadFailed(at: Foundation.URL)
-    case stringSerializationFailed(encoding: Swift.String.Encoding)
-    case jsonSerializationFailed(error: Swift.Error)
-    case propertyListSerializationFailed(error: Swift.Error)
-  }
-  case invalidURL(url: Lemnisk.URLConvertible)
-  case parameterEncodingFailed(reason: Lemnisk.AFError.ParameterEncodingFailureReason)
-  case multipartEncodingFailed(reason: Lemnisk.AFError.MultipartEncodingFailureReason)
-  case responseValidationFailed(reason: Lemnisk.AFError.ResponseValidationFailureReason)
-  case responseSerializationFailed(reason: Lemnisk.AFError.ResponseSerializationFailureReason)
-}
-extension Lemnisk.AFError {
-  public var isInvalidURLError: Swift.Bool {
-    get
-  }
-  public var isParameterEncodingError: Swift.Bool {
-    get
-  }
-  public var isMultipartEncodingError: Swift.Bool {
-    get
-  }
-  public var isResponseValidationError: Swift.Bool {
-    get
-  }
-  public var isResponseSerializationError: Swift.Bool {
-    get
-  }
-}
-extension Lemnisk.AFError {
-  public var urlConvertible: Lemnisk.URLConvertible? {
-    get
-  }
-  public var url: Foundation.URL? {
-    get
-  }
-  public var underlyingError: Swift.Error? {
-    get
-  }
-  public var acceptableContentTypes: [Swift.String]? {
-    get
-  }
-  public var responseContentType: Swift.String? {
-    get
-  }
-  public var responseCode: Swift.Int? {
-    get
-  }
-  public var failedStringEncoding: Swift.String.Encoding? {
-    get
-  }
-}
-extension Lemnisk.AFError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-public protocol DataResponseSerializerProtocol {
-  associatedtype SerializedObject
-  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Self.SerializedObject> { get }
-}
-public struct DataResponseSerializer<Value> : Lemnisk.DataResponseSerializerProtocol {
-  public typealias SerializedObject = Value
-  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Value>
-  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Lemnisk.Result<Value>)
-}
-public protocol DownloadResponseSerializerProtocol {
-  associatedtype SerializedObject
-  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Self.SerializedObject> { get }
-}
-public struct DownloadResponseSerializer<Value> : Lemnisk.DownloadResponseSerializerProtocol {
-  public typealias SerializedObject = Value
-  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Value>
-  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Lemnisk.Result<Value>)
-}
-extension Lemnisk.DataRequest {
-  @discardableResult
-  public func response(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DefaultDataResponse) -> Swift.Void) -> Self
-  @discardableResult
-  public func response<T>(queue: Dispatch.DispatchQueue? = nil, responseSerializer: T, completionHandler: @escaping (Lemnisk.DataResponse<T.SerializedObject>) -> Swift.Void) -> Self where T : Lemnisk.DataResponseSerializerProtocol
-}
-extension Lemnisk.DownloadRequest {
-  @discardableResult
-  public func response(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DefaultDownloadResponse) -> Swift.Void) -> Self
-  @discardableResult
-  public func response<T>(queue: Dispatch.DispatchQueue? = nil, responseSerializer: T, completionHandler: @escaping (Lemnisk.DownloadResponse<T.SerializedObject>) -> Swift.Void) -> Self where T : Lemnisk.DownloadResponseSerializerProtocol
-}
-extension Lemnisk.Request {
-  public static func serializeResponseData(response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Foundation.Data>
-}
-extension Lemnisk.DataRequest {
-  public static func dataResponseSerializer() -> Lemnisk.DataResponseSerializer<Foundation.Data>
-  @discardableResult
-  public func responseData(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DataResponse<Foundation.Data>) -> Swift.Void) -> Self
-}
-extension Lemnisk.DownloadRequest {
-  public static func dataResponseSerializer() -> Lemnisk.DownloadResponseSerializer<Foundation.Data>
-  @discardableResult
-  public func responseData(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (Lemnisk.DownloadResponse<Foundation.Data>) -> Swift.Void) -> Self
-}
-extension Lemnisk.Request {
-  public static func serializeResponseString(encoding: Swift.String.Encoding?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Swift.String>
-}
-extension Lemnisk.DataRequest {
-  public static func stringResponseSerializer(encoding: Swift.String.Encoding? = nil) -> Lemnisk.DataResponseSerializer<Swift.String>
-  @discardableResult
-  public func responseString(queue: Dispatch.DispatchQueue? = nil, encoding: Swift.String.Encoding? = nil, completionHandler: @escaping (Lemnisk.DataResponse<Swift.String>) -> Swift.Void) -> Self
-}
-extension Lemnisk.DownloadRequest {
-  public static func stringResponseSerializer(encoding: Swift.String.Encoding? = nil) -> Lemnisk.DownloadResponseSerializer<Swift.String>
-  @discardableResult
-  public func responseString(queue: Dispatch.DispatchQueue? = nil, encoding: Swift.String.Encoding? = nil, completionHandler: @escaping (Lemnisk.DownloadResponse<Swift.String>) -> Swift.Void) -> Self
-}
-extension Lemnisk.Request {
-  public static func serializeResponseJSON(options: Foundation.JSONSerialization.ReadingOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Any>
-}
-extension Lemnisk.DataRequest {
-  public static func jsonResponseSerializer(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> Lemnisk.DataResponseSerializer<Any>
-  @discardableResult
-  public func responseJSON(queue: Dispatch.DispatchQueue? = nil, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (Lemnisk.DataResponse<Any>) -> Swift.Void) -> Self
-}
-extension Lemnisk.DownloadRequest {
-  public static func jsonResponseSerializer(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> Lemnisk.DownloadResponseSerializer<Any>
-  @discardableResult
-  public func responseJSON(queue: Dispatch.DispatchQueue? = nil, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (Lemnisk.DownloadResponse<Any>) -> Swift.Void) -> Self
-}
-extension Lemnisk.Request {
-  public static func serializeResponsePropertyList(options: Foundation.PropertyListSerialization.ReadOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Lemnisk.Result<Any>
-}
-extension Lemnisk.DataRequest {
-  public static func propertyListResponseSerializer(options: Foundation.PropertyListSerialization.ReadOptions = []) -> Lemnisk.DataResponseSerializer<Any>
-  @discardableResult
-  public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (Lemnisk.DataResponse<Any>) -> Swift.Void) -> Self
-}
-extension Lemnisk.DownloadRequest {
-  public static func propertyListResponseSerializer(options: Foundation.PropertyListSerialization.ReadOptions = []) -> Lemnisk.DownloadResponseSerializer<Any>
-  @discardableResult
-  public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (Lemnisk.DownloadResponse<Any>) -> Swift.Void) -> Self
-}
-@objc @_inheritsConvenienceInitializers open class AFSessionDelegate : ObjectiveC.NSObject {
-  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
-  open var sessionDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
-  open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
-  open var sessionDidFinishEventsForBackgroundURLSession: ((Foundation.URLSession) -> Swift.Void)?
-  open var taskWillPerformHTTPRedirection: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.HTTPURLResponse, Foundation.URLRequest) -> Foundation.URLRequest?)?
-  open var taskWillPerformHTTPRedirectionWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)?
-  open var taskDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
-  open var taskDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
-  open var taskNeedNewBodyStream: ((Foundation.URLSession, Foundation.URLSessionTask) -> Foundation.InputStream?)?
-  open var taskNeedNewBodyStreamWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, @escaping (Foundation.InputStream?) -> Swift.Void) -> Swift.Void)?
-  open var taskDidSendBodyData: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
-  open var taskDidComplete: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Error?) -> Swift.Void)?
-  open var dataTaskDidReceiveResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse) -> Foundation.URLSession.ResponseDisposition)?
-  open var dataTaskDidReceiveResponseWithCompletion: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse, @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void) -> Swift.Void)?
-  open var dataTaskDidBecomeDownloadTask: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLSessionDownloadTask) -> Swift.Void)?
-  open var dataTaskDidReceiveData: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.Data) -> Swift.Void)?
-  open var dataTaskWillCacheResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)?
-  open var dataTaskWillCacheResponseWithCompletion: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.CachedURLResponse, @escaping (Foundation.CachedURLResponse?) -> Swift.Void) -> Swift.Void)?
-  open var downloadTaskDidFinishDownloadingToURL: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Foundation.URL) -> Swift.Void)?
-  open var downloadTaskDidWriteData: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
-  open var downloadTaskDidResumeAtOffset: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64) -> Swift.Void)?
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  open var streamTaskReadClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
-    get
-    set
-  }
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  open var streamTaskWriteClosed: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
-    get
-    set
-  }
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  open var streamTaskBetterRouteDiscovered: ((Foundation.URLSession, Foundation.URLSessionStreamTask) -> Swift.Void)? {
-    get
-    set
-  }
-  @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-  open var streamTaskDidBecomeInputAndOutputStreams: ((Foundation.URLSession, Foundation.URLSessionStreamTask, Foundation.InputStream, Foundation.OutputStream) -> Swift.Void)? {
-    get
-    set
-  }
-  open subscript(task: Foundation.URLSessionTask) -> Lemnisk.Request? {
-    get
-    set
-  }
-  @objc override dynamic public init()
-  @objc override dynamic open func responds(to selector: ObjectiveC.Selector) -> Swift.Bool
-  @objc deinit
-}
-extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: Swift.Error?)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
-  @objc dynamic open func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
-}
-extension Lemnisk.AFSessionDelegate : Foundation.URLSessionTaskDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, needNewBodyStream completionHandler: @escaping (Foundation.InputStream?) -> Swift.Void)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
-  @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-  @objc(URLSession:task:didFinishCollectingMetrics:) dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
-}
-extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDataDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didBecome downloadTask: Foundation.URLSessionDownloadTask)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse, completionHandler: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
-}
-extension Lemnisk.AFSessionDelegate : Foundation.URLSessionDownloadDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
-}
-@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-extension Lemnisk.AFSessionDelegate : Foundation.URLSessionStreamDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, readClosedFor streamTask: Foundation.URLSessionStreamTask)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, writeClosedFor streamTask: Foundation.URLSessionStreamTask)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, betterRouteDiscoveredFor streamTask: Foundation.URLSessionStreamTask)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, streamTask: Foundation.URLSessionStreamTask, didBecome inputStream: Foundation.InputStream, outputStream: Foundation.OutputStream)
-}
-public struct DefaultDataResponse {
-  public let request: Foundation.URLRequest?
-  public let response: Foundation.HTTPURLResponse?
-  public let data: Foundation.Data?
-  public let error: Swift.Error?
-  public let timeline: Lemnisk.Timeline
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?, timeline: Lemnisk.Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
-}
-public struct DataResponse<Value> {
-  public let request: Foundation.URLRequest?
-  public let response: Foundation.HTTPURLResponse?
-  public let data: Foundation.Data?
-  public let result: Lemnisk.Result<Value>
-  public let timeline: Lemnisk.Timeline
-  public var value: Value? {
-    get
-  }
-  public var error: Swift.Error? {
-    get
-  }
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, result: Lemnisk.Result<Value>, timeline: Lemnisk.Timeline = Timeline())
-}
-extension Lemnisk.DataResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-extension Lemnisk.DataResponse {
-  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.DataResponse<T>
-  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.DataResponse<T>
-  public func mapError<E>(_ transform: (Swift.Error) -> E) -> Lemnisk.DataResponse<Value> where E : Swift.Error
-  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> Lemnisk.DataResponse<Value> where E : Swift.Error
-}
-public struct DefaultDownloadResponse {
-  public let request: Foundation.URLRequest?
-  public let response: Foundation.HTTPURLResponse?
-  public let temporaryURL: Foundation.URL?
-  public let destinationURL: Foundation.URL?
-  public let resumeData: Foundation.Data?
-  public let error: Swift.Error?
-  public let timeline: Lemnisk.Timeline
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, error: Swift.Error?, timeline: Lemnisk.Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
-}
-public struct DownloadResponse<Value> {
-  public let request: Foundation.URLRequest?
-  public let response: Foundation.HTTPURLResponse?
-  public let temporaryURL: Foundation.URL?
-  public let destinationURL: Foundation.URL?
-  public let resumeData: Foundation.Data?
-  public let result: Lemnisk.Result<Value>
-  public let timeline: Lemnisk.Timeline
-  public var value: Value? {
-    get
-  }
-  public var error: Swift.Error? {
-    get
-  }
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, result: Lemnisk.Result<Value>, timeline: Lemnisk.Timeline = Timeline())
-}
-extension Lemnisk.DownloadResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-extension Lemnisk.DownloadResponse {
-  public func map<T>(_ transform: (Value) -> T) -> Lemnisk.DownloadResponse<T>
-  public func flatMap<T>(_ transform: (Value) throws -> T) -> Lemnisk.DownloadResponse<T>
-  public func mapError<E>(_ transform: (Swift.Error) -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
-  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> Lemnisk.DownloadResponse<Value> where E : Swift.Error
-}
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension Lemnisk.DefaultDataResponse {
-  public var metrics: Foundation.URLSessionTaskMetrics? {
-    get
-  }
-}
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension Lemnisk.DataResponse {
-  public var metrics: Foundation.URLSessionTaskMetrics? {
-    get
-  }
-}
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension Lemnisk.DefaultDownloadResponse {
-  public var metrics: Foundation.URLSessionTaskMetrics? {
-    get
-  }
-}
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension Lemnisk.DownloadResponse {
-  public var metrics: Foundation.URLSessionTaskMetrics? {
-    get
-  }
-}
-extension Foundation.NSNotification.Name {
-  public struct Task {
-    public static let DidResume: Foundation.Notification.Name
-    public static let DidSuspend: Foundation.Notification.Name
-    public static let DidCancel: Foundation.Notification.Name
-    public static let DidComplete: Foundation.Notification.Name
-  }
-}
-extension Foundation.Notification {
-  public struct Key {
-    public static let Task: Swift.String
-    public static let ResponseData: Swift.String
-  }
-}
+extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Equatable {}
+extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Hashable {}
+extension Lemnisk.LemniskLogLevel : Swift.Equatable {}
+extension Lemnisk.LemniskLogLevel : Swift.Hashable {}
 extension Lemnisk.HTTPMethod : Swift.Equatable {}
 extension Lemnisk.HTTPMethod : Swift.Hashable {}
 extension Lemnisk.HTTPMethod : Swift.RawRepresentable {}
@@ -1024,7 +1068,3 @@ extension Lemnisk.URLEncoding.ArrayEncoding : Swift.Equatable {}
 extension Lemnisk.URLEncoding.ArrayEncoding : Swift.Hashable {}
 extension Lemnisk.URLEncoding.BoolEncoding : Swift.Equatable {}
 extension Lemnisk.URLEncoding.BoolEncoding : Swift.Hashable {}
-extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Equatable {}
-extension Lemnisk.NetworkReachabilityManager.ConnectionType : Swift.Hashable {}
-extension Lemnisk.LemniskLogLevel : Swift.Equatable {}
-extension Lemnisk.LemniskLogLevel : Swift.Hashable {}

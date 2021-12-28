@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LemniskNotificationContent
 import AVFoundation
 import Foundation
@@ -7,47 +7,46 @@ import Swift
 import UIKit
 import UserNotifications
 import UserNotificationsUI
-import _Concurrency
-extension UIKit.UIColor {
+extension UIColor {
   public static func colorWith(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat = 1.0) -> UIKit.UIColor
 }
-extension UIKit.UIImage {
+extension UIImage {
   public class func gif(data: Foundation.Data) -> UIKit.UIImage?
   public class func gif(url: Swift.String) -> UIKit.UIImage?
   public class func gif(name: Swift.String) -> UIKit.UIImage?
   @available(iOS 9.0, *)
   public class func gif(asset: Swift.String) -> UIKit.UIImage?
 }
-extension UIKit.UIImageView {
-  @_Concurrency.MainActor(unsafe) public func loadGif(name: Swift.String)
+extension UIImageView {
+  public func loadGif(name: Swift.String)
   @available(iOS 9.0, *)
-  @_Concurrency.MainActor(unsafe) public func loadGif(asset: Swift.String)
+  public func loadGif(asset: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class LemniskNotificationViewController : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
-  @_Concurrency.MainActor(unsafe) open var lemniskNotificationView: LemniskNotificationView?
-  @_Concurrency.MainActor(unsafe) open func setAppGroupID(groupId: Swift.String)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc open func didReceive(_ notification: UserNotifications.UNNotification)
-  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers open class LemniskNotificationViewController : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
+  open var lemniskNotificationView: LemniskNotificationView?
+  open func setAppGroupID(groupId: Swift.String)
+  @objc override dynamic open func viewDidLoad()
+  @objc open func didReceive(_ notification: UserNotifications.UNNotification)
+  @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension LemniskNotificationViewController : UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGSize
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGSize
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class LemniskNotificationView : UIKit.UIView {
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var collectionviewHeightConstraint: UIKit.NSLayoutConstraint!
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var carousalCollection: UIKit.UICollectionView!
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func setRootView(rootView: UIKit.UIView)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class LemniskNotificationView : UIKit.UIView {
+  @objc @IBOutlet weak public var collectionviewHeightConstraint: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var carousalCollection: UIKit.UICollectionView!
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  public func setRootView(rootView: UIKit.UIView)
   @objc deinit
 }
-extension Foundation.PropertyListDecoder {
+extension PropertyListDecoder {
   public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
 }
