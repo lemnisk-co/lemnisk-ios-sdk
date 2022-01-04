@@ -513,6 +513,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// 2 - notDetermined
 /// 3 - unknown
 - (void)getOSConsentWithCompletion:(void (^ _Nonnull)(NSInteger))completion;
+/// This function would set the Consent Server Url, default is https://da-ae.lemnisk.co/consent/
+- (void)setConsentServerUrlWithServerUrl:(NSString * _Nonnull)serverUrl;
 /// This function would set the Custom Consent to device local storage and send sends it to server.
 - (void)setCustomConsentWithTransConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
 - (void)identify:(NSString * _Nullable)userId traits:(NSDictionary<NSString *, id> * _Nullable)traits otherIds:(NSDictionary<NSString *, id> * _Nullable)otherIds;
@@ -1126,6 +1128,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// 2 - notDetermined
 /// 3 - unknown
 - (void)getOSConsentWithCompletion:(void (^ _Nonnull)(NSInteger))completion;
+/// This function would set the Consent Server Url, default is https://da-ae.lemnisk.co/consent/
+- (void)setConsentServerUrlWithServerUrl:(NSString * _Nonnull)serverUrl;
 /// This function would set the Custom Consent to device local storage and send sends it to server.
 - (void)setCustomConsentWithTransConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
 - (void)identify:(NSString * _Nullable)userId traits:(NSDictionary<NSString *, id> * _Nullable)traits otherIds:(NSDictionary<NSString *, id> * _Nullable)otherIds;

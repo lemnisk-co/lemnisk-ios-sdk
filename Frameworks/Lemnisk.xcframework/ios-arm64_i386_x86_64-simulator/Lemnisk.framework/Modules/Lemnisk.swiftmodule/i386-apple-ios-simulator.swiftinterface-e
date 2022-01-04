@@ -300,6 +300,7 @@ extension UserDefaults {
   @objc public func getUniqueUserId() -> Swift.String?
   @objc public func resetUser()
   @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
+  @objc public func setConsentServerUrl(serverUrl: Swift.String)
   @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
   public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
