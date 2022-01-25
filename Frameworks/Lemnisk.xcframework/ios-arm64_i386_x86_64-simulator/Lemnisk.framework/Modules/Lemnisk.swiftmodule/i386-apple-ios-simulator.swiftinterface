@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
 import AdSupport
 import AppTrackingTransparency
@@ -17,7 +17,8 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 import WebKit
-extension String {
+import _Concurrency
+extension Swift.String {
   public func localized(_ comment: Swift.String = "") -> Swift.String
 }
 open class MultipartFormData {
@@ -45,10 +46,14 @@ open class MultipartFormData {
 public class Tracking {
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskAppAnalytics : ObjectiveC.NSObject {
+  public static let shared: LemniskAppAnalytics
+  @objc deinit
+}
 public protocol RequestAdapter {
   func adapt(_ urlRequest: Foundation.URLRequest) throws -> Foundation.URLRequest
 }
-public typealias RequestRetryCompletion = (Swift.Bool, Foundation.TimeInterval) -> Swift.Void
+public typealias RequestRetryCompletion = (_ shouldRetry: Swift.Bool, _ timeDelay: Foundation.TimeInterval) -> Swift.Void
 public protocol RequestRetrier {
   func should(_ manager: SessionManager, retry request: Request, with error: Swift.Error, completion: @escaping RequestRetryCompletion)
 }
@@ -114,7 +119,7 @@ extension Request : Swift.CustomDebugStringConvertible {
     public typealias Element = DownloadRequest.DownloadOptions
     public typealias RawValue = Swift.UInt
   }
-  public typealias DownloadFileDestination = (Foundation.URL, Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: DownloadRequest.DownloadOptions)
+  public typealias DownloadFileDestination = (_ temporaryURL: Foundation.URL, _ response: Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: DownloadRequest.DownloadOptions)
   override open var request: Foundation.URLRequest? {
     get
   }
@@ -145,41 +150,41 @@ extension Request : Swift.CustomDebugStringConvertible {
 open class StreamRequest : Request {
   @objc deinit
 }
-extension UIDevice {
-  public var isIphone6Plus: Swift.Bool {
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var isIphone6Plus: Swift.Bool {
     get
   }
-  public var isIphone6: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone6: Swift.Bool {
     get
   }
-  public var isIphone5Below: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone5Below: Swift.Bool {
     get
   }
-  public var isIphone6sPlus: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone6sPlus: Swift.Bool {
     get
   }
-  public var isIphone6s: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone6s: Swift.Bool {
     get
   }
-  public var isIphone4p7Inch: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone4p7Inch: Swift.Bool {
     get
   }
-  public var isIphone5p5Inch: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone5p5Inch: Swift.Bool {
     get
   }
-  public var isIphone6Below: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphone6Below: Swift.Bool {
     get
   }
-  public var isIphoneX: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphoneX: Swift.Bool {
     get
   }
-  public var isIphoneXOrAbove: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isIphoneXOrAbove: Swift.Bool {
     get
   }
-  public var isSimulator: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isSimulator: Swift.Bool {
     get
   }
-  public var isJailBroken: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isJailBroken: Swift.Bool {
     get
   }
 }
@@ -190,7 +195,6 @@ extension UIDevice {
   @objc public func logEvent(traits: [Swift.String : Any]?)
   @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
   @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
-  @objc override dynamic public init()
   @objc deinit
 }
 public protocol DataResponseSerializerProtocol {
@@ -275,21 +279,22 @@ extension DownloadRequest {
   @discardableResult
   public func responsePropertyList(queue: Dispatch.DispatchQueue? = nil, options: Foundation.PropertyListSerialization.ReadOptions = [], completionHandler: @escaping (DownloadResponse<Any>) -> Swift.Void) -> Self
 }
-extension JSONDecoder {
+extension Foundation.JSONDecoder {
   public func decode<T>(from data: Foundation.Data?) -> T? where T : Swift.Decodable
   public func decodeInBackground<T>(from data: Foundation.Data?, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
 }
-extension JSONEncoder {
+extension Foundation.JSONEncoder {
   public func encode<T>(from value: T?) -> Foundation.Data? where T : Swift.Encodable
   public func encodeInBackground<T>(from encodableObject: T?, onEncode: @escaping (Foundation.Data?) -> Swift.Void) where T : Swift.Encodable
 }
-extension UserDefaults {
+extension Foundation.UserDefaults {
   public func set<T>(object type: T, for key: Swift.String, onEncode: @escaping (Swift.Bool) -> Swift.Void) throws where T : Swift.Encodable
   public func get<T>(object type: T.Type, for key: Swift.String, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
   @objc public static let shared: Lemnisk
   @objc public func setLogLevel(_ logLevel: Swift.String)
+  @objc public func setRequestType(type: Swift.String)
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
   @objc public func registerForPushNotifications()
   @objc public func getTrackingStatus() -> Swift.String?
@@ -313,7 +318,13 @@ extension UserDefaults {
   public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enableAnalytics: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool, enableAnalytics: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
+  @objc public func trackAppCrashedEvent(_ crashReport: Swift.String?)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -323,7 +334,6 @@ extension UserDefaults {
     get
   }
   public var error: Swift.Error?
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct DefaultDataResponse {
@@ -426,7 +436,7 @@ extension DownloadResponse {
     get
   }
 }
-extension PropertyListDecoder {
+extension Foundation.PropertyListDecoder {
   public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
 }
 extension Request {
@@ -447,7 +457,7 @@ extension DataRequest {
   public func validate() -> Self
 }
 extension DownloadRequest {
-  public typealias Validation = (Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.URL?, Foundation.URL?) -> Request.ValidationResult
+  public typealias Validation = (_ request: Foundation.URLRequest?, _ response: Foundation.HTTPURLResponse, _ temporaryURL: Foundation.URL?, _ destinationURL: Foundation.URL?) -> Request.ValidationResult
   @discardableResult
   public func validate(_ validation: @escaping DownloadRequest.Validation) -> Self
   @discardableResult
@@ -457,13 +467,13 @@ extension DownloadRequest {
   @discardableResult
   public func validate() -> Self
 }
-extension UIWindow {
-  public var visibleViewController: UIKit.UIViewController? {
+extension UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) public var visibleViewController: UIKit.UIViewController? {
     get
   }
-  public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
 }
-extension UIColor {
+extension UIKit.UIColor {
   public static func colorWith(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat = 1.0) -> UIKit.UIColor
 }
 open class SessionManager {
@@ -533,7 +543,7 @@ open class SessionManager {
   @objc public func handleDeepLink(deepLink: Swift.String?)
   @objc deinit
 }
-extension NSNotification.Name {
+extension Foundation.NSNotification.Name {
   public struct Task {
     public static let DidResume: Foundation.Notification.Name
     public static let DidSuspend: Foundation.Notification.Name
@@ -541,7 +551,7 @@ extension NSNotification.Name {
     public static let DidComplete: Foundation.Notification.Name
   }
 }
-extension Notification {
+extension Foundation.Notification {
   public struct Key {
     public static let Task: Swift.String
     public static let ResponseData: Swift.String
@@ -641,12 +651,12 @@ public enum ServerTrustPolicy {
   case pinCertificates(certificates: [Security.SecCertificate], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
   case pinPublicKeys(publicKeys: [Security.SecKey], validateCertificateChain: Swift.Bool, validateHost: Swift.Bool)
   case disableEvaluation
-  case customEvaluation((Security.SecTrust, Swift.String) -> Swift.Bool)
+  case customEvaluation((_ serverTrust: Security.SecTrust, _ host: Swift.String) -> Swift.Bool)
   public static func certificates(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecCertificate]
   public static func publicKeys(in bundle: Foundation.Bundle = Bundle.main) -> [Security.SecKey]
   public func evaluate(_ serverTrust: Security.SecTrust, forHost host: Swift.String) -> Swift.Bool
 }
-extension Double {
+extension Swift.Double {
   public func stringRemovingTrailingZeros() -> Swift.String
 }
 @_hasMissingDesignatedInitializers public class RSAUtils {
@@ -654,7 +664,6 @@ extension Double {
   public class RSAUtilsError : Foundation.NSError {
     @available(*, unavailable)
     @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-    @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
     @objc deinit
   }
   @available(iOS 1.2.0, *)
@@ -816,13 +825,13 @@ extension Result {
 public protocol URLConvertible {
   func asURL() throws -> Foundation.URL
 }
-extension String : URLConvertible {
+extension Swift.String : URLConvertible {
   public func asURL() throws -> Foundation.URL
 }
-extension URL : URLConvertible {
+extension Foundation.URL : URLConvertible {
   public func asURL() throws -> Foundation.URL
 }
-extension URLComponents : URLConvertible {
+extension Foundation.URLComponents : URLConvertible {
   public func asURL() throws -> Foundation.URL
 }
 public protocol URLRequestConvertible {
@@ -833,10 +842,10 @@ extension URLRequestConvertible {
     get
   }
 }
-extension URLRequest : URLRequestConvertible {
+extension Foundation.URLRequest : URLRequestConvertible {
   public func asURLRequest() throws -> Foundation.URLRequest
 }
-extension URLRequest {
+extension Foundation.URLRequest {
   public init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws
 }
 @discardableResult

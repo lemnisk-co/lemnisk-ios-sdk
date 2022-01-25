@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Lemnisk-Swift.h</key>
 		<data>
-		WZ2KiWGnLU1OJGMFkq3MGZga1Nw=
+		ExpPvSe3vHuLMbR4ZRokD8qjDOk=
 		</data>
 		<key>Headers/Lemnisk.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nrOZ0+pwYztY4lMabmeVzbiNq+A=
+		ObKppIJhSUY9KS9bMpxM+t4k5yM=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -74,75 +74,75 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		6cCO4Fj84rN8mUXT7XoWqby5gYY=
+		1a2U4OcNRZNFdI4k62lY38gwuhE=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IANFdEmhLZyw2CJoX/TPfAPEqKM=
+		CP5YN++ahs7CdyPVUpRdfU+nVU4=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DA6Tgy1ZLR8m8iAkg8H0bd6VEs4=
+		mYmcJGg09P7mSPqx9awm3zlfEqY=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		6cCO4Fj84rN8mUXT7XoWqby5gYY=
+		1a2U4OcNRZNFdI4k62lY38gwuhE=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		IANFdEmhLZyw2CJoX/TPfAPEqKM=
+		CP5YN++ahs7CdyPVUpRdfU+nVU4=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		DA6Tgy1ZLR8m8iAkg8H0bd6VEs4=
+		mYmcJGg09P7mSPqx9awm3zlfEqY=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		bdBpgEaSP6Iossw5VYA6o8nM4m8=
+		n7BNVtBVxjvQGxc2gKPBA3B8Q4g=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XE+lGeW5E7nzcZsfb2QX/mTz9UY=
+		Lrz0+AngXDt7oQbXBIjNSc9tLXU=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bdc/VK34LB2MR5622nvQCzVaAbM=
+		IgNmz2bn0JW8yKZwK17bgtKopp4=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftdoc</key>
 		<data>
-		bdBpgEaSP6Iossw5VYA6o8nM4m8=
+		n7BNVtBVxjvQGxc2gKPBA3B8Q4g=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftinterface</key>
 		<data>
-		XE+lGeW5E7nzcZsfb2QX/mTz9UY=
+		Lrz0+AngXDt7oQbXBIjNSc9tLXU=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftmodule</key>
 		<data>
-		bdc/VK34LB2MR5622nvQCzVaAbM=
+		IgNmz2bn0JW8yKZwK17bgtKopp4=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		x744J+JUMEZBHncPvHwy4f4qvDI=
+		UJEbBkx4CTEFZyycm20lj/AiEZk=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XsO7hGpLm/LpsC+7tkvNRk1i83s=
+		axB3Cldp9WiZD6Rb49Ba2W/BAE8=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PLyBQC3hWrUj1s7EDVs1TCGijzc=
+		VgWpaZL00BUViHoEwssiuRxT/O8=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		x744J+JUMEZBHncPvHwy4f4qvDI=
+		UJEbBkx4CTEFZyycm20lj/AiEZk=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		XsO7hGpLm/LpsC+7tkvNRk1i83s=
+		axB3Cldp9WiZD6Rb49Ba2W/BAE8=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		PLyBQC3hWrUj1s7EDVs1TCGijzc=
+		VgWpaZL00BUViHoEwssiuRxT/O8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WZ2KiWGnLU1OJGMFkq3MGZga1Nw=
+			ExpPvSe3vHuLMbR4ZRokD8qjDOk=
 			</data>
 			<key>hash2</key>
 			<data>
-			k0a6ZeQ9eEze5Z+6CpYiAzLoCDVXcCE5MpC6iOsTvvU=
+			wIkrb1dKIOMpqWPvLY7NO3AzwcgSzHKKKmIYF1cZ8DY=
 			</data>
 		</dict>
 		<key>Headers/Lemnisk.h</key>
@@ -331,198 +331,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6cCO4Fj84rN8mUXT7XoWqby5gYY=
+			1a2U4OcNRZNFdI4k62lY38gwuhE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cq4sTX9+LQhIOS6RVcQu11i8FhMFfNermbHCSou8kgA=
+			kEpMhEhoG1LDYVeThYsIiaYAAH9TyCTljzm3E5Xs2oo=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IANFdEmhLZyw2CJoX/TPfAPEqKM=
+			CP5YN++ahs7CdyPVUpRdfU+nVU4=
 			</data>
 			<key>hash2</key>
 			<data>
-			txcYE1FrFEEwJULn5g3vhbfJlcJdHycahzYeKA3FPYI=
+			6NLVSxUXUIasQDN1g6SE5ObEu/q25pGrrT/8J2a36kI=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DA6Tgy1ZLR8m8iAkg8H0bd6VEs4=
+			mYmcJGg09P7mSPqx9awm3zlfEqY=
 			</data>
 			<key>hash2</key>
 			<data>
-			YmretAEM6DscFgvxj1MKp5TmvyMSXB63y8PzvsbHIps=
+			8IRVnlkqFLAvPFb1KD/p9+5SLBwXrLjTIyD9kpBQDyQ=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6cCO4Fj84rN8mUXT7XoWqby5gYY=
+			1a2U4OcNRZNFdI4k62lY38gwuhE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cq4sTX9+LQhIOS6RVcQu11i8FhMFfNermbHCSou8kgA=
+			kEpMhEhoG1LDYVeThYsIiaYAAH9TyCTljzm3E5Xs2oo=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IANFdEmhLZyw2CJoX/TPfAPEqKM=
+			CP5YN++ahs7CdyPVUpRdfU+nVU4=
 			</data>
 			<key>hash2</key>
 			<data>
-			txcYE1FrFEEwJULn5g3vhbfJlcJdHycahzYeKA3FPYI=
+			6NLVSxUXUIasQDN1g6SE5ObEu/q25pGrrT/8J2a36kI=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DA6Tgy1ZLR8m8iAkg8H0bd6VEs4=
+			mYmcJGg09P7mSPqx9awm3zlfEqY=
 			</data>
 			<key>hash2</key>
 			<data>
-			YmretAEM6DscFgvxj1MKp5TmvyMSXB63y8PzvsbHIps=
+			8IRVnlkqFLAvPFb1KD/p9+5SLBwXrLjTIyD9kpBQDyQ=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bdBpgEaSP6Iossw5VYA6o8nM4m8=
+			n7BNVtBVxjvQGxc2gKPBA3B8Q4g=
 			</data>
 			<key>hash2</key>
 			<data>
-			jto1+VI9EJY+w9PlgPaxBEvc/77QEAgEdPTE8OPgIgY=
+			ff3CA0wZCm3T/KTlm513dyfJClt8ojz2CvsftWCIDJk=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XE+lGeW5E7nzcZsfb2QX/mTz9UY=
+			Lrz0+AngXDt7oQbXBIjNSc9tLXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			k8WLGs+tuQtmdDZXK0LrUBT19IBJb5u0zdhGuqEwSkE=
+			3HtEA51Jd43QJE/9H9xdX0ldYSs8YFNBLNg8n7SDj44=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bdc/VK34LB2MR5622nvQCzVaAbM=
+			IgNmz2bn0JW8yKZwK17bgtKopp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			L+E5QOlKs2CTfpWWhbQEF1otaQSZUs+dBqkB9A2dG74=
+			Z/F3uUK/fWiXfhRvEuLY4dJCd4uvUsSDhFhysvZb78w=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bdBpgEaSP6Iossw5VYA6o8nM4m8=
+			n7BNVtBVxjvQGxc2gKPBA3B8Q4g=
 			</data>
 			<key>hash2</key>
 			<data>
-			jto1+VI9EJY+w9PlgPaxBEvc/77QEAgEdPTE8OPgIgY=
+			ff3CA0wZCm3T/KTlm513dyfJClt8ojz2CvsftWCIDJk=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XE+lGeW5E7nzcZsfb2QX/mTz9UY=
+			Lrz0+AngXDt7oQbXBIjNSc9tLXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			k8WLGs+tuQtmdDZXK0LrUBT19IBJb5u0zdhGuqEwSkE=
+			3HtEA51Jd43QJE/9H9xdX0ldYSs8YFNBLNg8n7SDj44=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bdc/VK34LB2MR5622nvQCzVaAbM=
+			IgNmz2bn0JW8yKZwK17bgtKopp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			L+E5QOlKs2CTfpWWhbQEF1otaQSZUs+dBqkB9A2dG74=
+			Z/F3uUK/fWiXfhRvEuLY4dJCd4uvUsSDhFhysvZb78w=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x744J+JUMEZBHncPvHwy4f4qvDI=
+			UJEbBkx4CTEFZyycm20lj/AiEZk=
 			</data>
 			<key>hash2</key>
 			<data>
-			TbffNq6iVHF/pj0pZ5/pra2dPOvJG5K6pq/33M6cHnw=
+			AaBYrVa2Rnr4NCOUShJConUi9sXPU3mRU2QeIU9QePw=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XsO7hGpLm/LpsC+7tkvNRk1i83s=
+			axB3Cldp9WiZD6Rb49Ba2W/BAE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ukQcM7ayGfBS+eTwMR3QNeIlBQewzGNRWSZ3Pa4ggA4=
+			jR/tZEXWVOctpvk9/l2Ab28gnuDhenfLoXzi2ijE1WU=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PLyBQC3hWrUj1s7EDVs1TCGijzc=
+			VgWpaZL00BUViHoEwssiuRxT/O8=
 			</data>
 			<key>hash2</key>
 			<data>
-			fvsXxfjqjPAKRMVW35UY8bRbMYQbARj84B7QAjOyOKM=
+			iK393hyt22g0Xjt6TkQD/5nC9/NBZAFJjqrBZ/5oDDM=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x744J+JUMEZBHncPvHwy4f4qvDI=
+			UJEbBkx4CTEFZyycm20lj/AiEZk=
 			</data>
 			<key>hash2</key>
 			<data>
-			TbffNq6iVHF/pj0pZ5/pra2dPOvJG5K6pq/33M6cHnw=
+			AaBYrVa2Rnr4NCOUShJConUi9sXPU3mRU2QeIU9QePw=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XsO7hGpLm/LpsC+7tkvNRk1i83s=
+			axB3Cldp9WiZD6Rb49Ba2W/BAE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ukQcM7ayGfBS+eTwMR3QNeIlBQewzGNRWSZ3Pa4ggA4=
+			jR/tZEXWVOctpvk9/l2Ab28gnuDhenfLoXzi2ijE1WU=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PLyBQC3hWrUj1s7EDVs1TCGijzc=
+			VgWpaZL00BUViHoEwssiuRxT/O8=
 			</data>
 			<key>hash2</key>
 			<data>
-			fvsXxfjqjPAKRMVW35UY8bRbMYQbARj84B7QAjOyOKM=
+			iK393hyt22g0Xjt6TkQD/5nC9/NBZAFJjqrBZ/5oDDM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

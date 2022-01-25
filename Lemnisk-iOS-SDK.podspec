@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "Lemnisk-iOS-SDK"
-s.version      = "3.7.7"
+s.version      = "3.7.8"
 s.summary      = "Lemnisk iOS SDK"
 s.description  = <<-DESC
                    Lemnisk's real-time marketing automation built on an intelligent & secure Customer Data Platform increases conversions, retention & growth for enterprises.
