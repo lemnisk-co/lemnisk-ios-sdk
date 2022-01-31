@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
 import AdSupport
 import AppTrackingTransparency
@@ -295,6 +295,8 @@ extension Foundation.UserDefaults {
   @objc public static let shared: Lemnisk.Lemnisk
   @objc public func setLogLevel(_ logLevel: Swift.String)
   @objc public func setRequestType(type: Swift.String)
+  @objc public func setSwizzle(state: Swift.Bool)
+  @objc public func setSwizzleForAll(state: Swift.Bool)
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
   @objc public func registerForPushNotifications()
   @objc public func getTrackingStatus() -> Swift.String?
@@ -311,20 +313,17 @@ extension Foundation.UserDefaults {
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
   @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
   @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
+  @objc public func trackAppCrashedEvent(_ crashReport: Swift.String?)
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
   public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enableAnalytics: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool, enableAnalytics: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
-  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
-  @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
-  @objc public func trackAppCrashedEvent(_ crashReport: Swift.String?)
   @objc override dynamic public init()
   @objc deinit
 }

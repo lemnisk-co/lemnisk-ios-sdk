@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/LemniskNotificationContent-Swift.h</key>
 		<data>
-		rpLHr8yAMkb5TsDFUG0Afio6hIo=
+		Wraoy8w9WV22gukZ7ToBoET+E6U=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tAwX8tGaq4bCK4Qg39Cw3AMDZKw=
+		eLinmWUItTK50KbnaRrPK1WFxuk=
 		</data>
 		<key>LemniskNotificationView.nib</key>
 		<data>
@@ -18,75 +18,75 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dz4K3R9ir7YoUK08DkBrjbSuh5g=
+		P1GQLL8G2SNfUe3jk+B7BJ+AaH4=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		cS4J1bgEKrd4pMXeVqcViPfVXCM=
+		8FCRrOMVKJCBjX0XEc1BY+ix6mE=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hovsP5DW2UxB0dTp44lkBWqWAAc=
+		nDkAUIvM1HBcFXkwx683nWnu8mM=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		dz4K3R9ir7YoUK08DkBrjbSuh5g=
+		P1GQLL8G2SNfUe3jk+B7BJ+AaH4=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		cS4J1bgEKrd4pMXeVqcViPfVXCM=
+		8FCRrOMVKJCBjX0XEc1BY+ix6mE=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		hovsP5DW2UxB0dTp44lkBWqWAAc=
+		nDkAUIvM1HBcFXkwx683nWnu8mM=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UM4at0Eu8IZQJXVCCoEjOuG9H88=
+		Ars0H77q2G/mcuKwkqht3Sdg+KY=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		e8NSRqa4wrkGsbyxnhfdJ/70NHQ=
+		2rY12oV3DylgVwH7AIrVhWNMWXU=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/fSg5hV94yF+MWyBq75Gwq6TYlU=
+		gTJ8FEn9iXMQKKiGlfN9ZdpZme0=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftdoc</key>
 		<data>
-		UM4at0Eu8IZQJXVCCoEjOuG9H88=
+		Ars0H77q2G/mcuKwkqht3Sdg+KY=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftinterface</key>
 		<data>
-		e8NSRqa4wrkGsbyxnhfdJ/70NHQ=
+		2rY12oV3DylgVwH7AIrVhWNMWXU=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftmodule</key>
 		<data>
-		/fSg5hV94yF+MWyBq75Gwq6TYlU=
+		gTJ8FEn9iXMQKKiGlfN9ZdpZme0=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		c/m/X2rfKh01sTRfw/rGxGFHwgA=
+		zyfckWy2YymM1ey5W5lVFocfHfs=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mJiaTFEK06fhkjpzP80syDXL+NI=
+		AAtjRSA6ktRcg9y+9eZAteis63c=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7H+CJU0e7xeoBgZgPyq5ULCS5X0=
+		nkgwvlf1owFf6iCvLO75nVa3RDk=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		c/m/X2rfKh01sTRfw/rGxGFHwgA=
+		zyfckWy2YymM1ey5W5lVFocfHfs=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		mJiaTFEK06fhkjpzP80syDXL+NI=
+		AAtjRSA6ktRcg9y+9eZAteis63c=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		7H+CJU0e7xeoBgZgPyq5ULCS5X0=
+		nkgwvlf1owFf6iCvLO75nVa3RDk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rpLHr8yAMkb5TsDFUG0Afio6hIo=
+			Wraoy8w9WV22gukZ7ToBoET+E6U=
 			</data>
 			<key>hash2</key>
 			<data>
-			bBIMac7OJVcKZmBdF0W9QGJl8SzxdF2XeWCZtQ9unSM=
+			Lxz/O0p4i9Vhdt9A7B3Rmw1nMpshtnE06vXuP5sNmmE=
 			</data>
 		</dict>
 		<key>LemniskNotificationView.nib</key>
@@ -121,198 +121,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dz4K3R9ir7YoUK08DkBrjbSuh5g=
+			P1GQLL8G2SNfUe3jk+B7BJ+AaH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YMPnaS/pZXz0tCdLKMGMKP5YNYW5HFsDQSO5OmULUpA=
+			5y9NFdssQOeaZVYS7p9Ox2NRzS44dGpj5XEosIV4rdw=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cS4J1bgEKrd4pMXeVqcViPfVXCM=
+			8FCRrOMVKJCBjX0XEc1BY+ix6mE=
 			</data>
 			<key>hash2</key>
 			<data>
-			8ZIo/qCxOLU8NwQIDQPZScyOD9+/J0gOjuWp0hYHZ7Q=
+			OgzAxEckMSClIL/dYHUnBUqxUMx/qAMFs78rqkpH3Zo=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hovsP5DW2UxB0dTp44lkBWqWAAc=
+			nDkAUIvM1HBcFXkwx683nWnu8mM=
 			</data>
 			<key>hash2</key>
 			<data>
-			0S9YRzgLcs6lIc0PXoGxq9QGX3ecvF9AvHc53zlDJX0=
+			4KL9opIAbqiwIq01RUqWHfen38psUOxGiNAnkF2YDws=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dz4K3R9ir7YoUK08DkBrjbSuh5g=
+			P1GQLL8G2SNfUe3jk+B7BJ+AaH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YMPnaS/pZXz0tCdLKMGMKP5YNYW5HFsDQSO5OmULUpA=
+			5y9NFdssQOeaZVYS7p9Ox2NRzS44dGpj5XEosIV4rdw=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cS4J1bgEKrd4pMXeVqcViPfVXCM=
+			8FCRrOMVKJCBjX0XEc1BY+ix6mE=
 			</data>
 			<key>hash2</key>
 			<data>
-			8ZIo/qCxOLU8NwQIDQPZScyOD9+/J0gOjuWp0hYHZ7Q=
+			OgzAxEckMSClIL/dYHUnBUqxUMx/qAMFs78rqkpH3Zo=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hovsP5DW2UxB0dTp44lkBWqWAAc=
+			nDkAUIvM1HBcFXkwx683nWnu8mM=
 			</data>
 			<key>hash2</key>
 			<data>
-			0S9YRzgLcs6lIc0PXoGxq9QGX3ecvF9AvHc53zlDJX0=
+			4KL9opIAbqiwIq01RUqWHfen38psUOxGiNAnkF2YDws=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UM4at0Eu8IZQJXVCCoEjOuG9H88=
+			Ars0H77q2G/mcuKwkqht3Sdg+KY=
 			</data>
 			<key>hash2</key>
 			<data>
-			hogX2wsaM1GO25qLSNudF0MgngWkNCnk6kOFlClsUYM=
+			D1VP5VvFS5FzER3Ci9fnxUiI1MLQuX6LuAZ3GJBbINY=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			e8NSRqa4wrkGsbyxnhfdJ/70NHQ=
+			2rY12oV3DylgVwH7AIrVhWNMWXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			h7WsMxMxNV5l0H0MGmdlz/dWooxtCeR/kCjfLbRUnHM=
+			IDEum2tvXZ8sAKsM4AOL8vag0eeU81qxmEV6XfcGofo=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/fSg5hV94yF+MWyBq75Gwq6TYlU=
+			gTJ8FEn9iXMQKKiGlfN9ZdpZme0=
 			</data>
 			<key>hash2</key>
 			<data>
-			WYDbcVXT7/1uHobglkgnnulG+p7NhFOsRUU5I867QyE=
+			BQ0WMFQtBlVr2ihcq2tCj9yxdJ27CH9OaVjs7IJxMm8=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UM4at0Eu8IZQJXVCCoEjOuG9H88=
+			Ars0H77q2G/mcuKwkqht3Sdg+KY=
 			</data>
 			<key>hash2</key>
 			<data>
-			hogX2wsaM1GO25qLSNudF0MgngWkNCnk6kOFlClsUYM=
+			D1VP5VvFS5FzER3Ci9fnxUiI1MLQuX6LuAZ3GJBbINY=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			e8NSRqa4wrkGsbyxnhfdJ/70NHQ=
+			2rY12oV3DylgVwH7AIrVhWNMWXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			h7WsMxMxNV5l0H0MGmdlz/dWooxtCeR/kCjfLbRUnHM=
+			IDEum2tvXZ8sAKsM4AOL8vag0eeU81qxmEV6XfcGofo=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/fSg5hV94yF+MWyBq75Gwq6TYlU=
+			gTJ8FEn9iXMQKKiGlfN9ZdpZme0=
 			</data>
 			<key>hash2</key>
 			<data>
-			WYDbcVXT7/1uHobglkgnnulG+p7NhFOsRUU5I867QyE=
+			BQ0WMFQtBlVr2ihcq2tCj9yxdJ27CH9OaVjs7IJxMm8=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c/m/X2rfKh01sTRfw/rGxGFHwgA=
+			zyfckWy2YymM1ey5W5lVFocfHfs=
 			</data>
 			<key>hash2</key>
 			<data>
-			S7qJR0lXLmg4U+CV9HRYtl6DcNLC2u6eJfVJZLtc7aE=
+			yt623t0K7rkJE7PdkNNBehYchljQO7pC92oDmr8BB6w=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mJiaTFEK06fhkjpzP80syDXL+NI=
+			AAtjRSA6ktRcg9y+9eZAteis63c=
 			</data>
 			<key>hash2</key>
 			<data>
-			lOcqBpbYe4a6Is7FCZ93X2LzYH6DiZltrQlgWYbdz4A=
+			Use9cFfWukxSEWtUcG3a+g//i/+nhtEhL6kiCBXl7yQ=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7H+CJU0e7xeoBgZgPyq5ULCS5X0=
+			nkgwvlf1owFf6iCvLO75nVa3RDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			DcM+S3iJ1GfSFTYywTlmPIPgYi58MD9pkwrufzIfNAs=
+			Quk1mm9P4WW9zTojaqhYQWahEIWJLwiZN7921DchwyM=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c/m/X2rfKh01sTRfw/rGxGFHwgA=
+			zyfckWy2YymM1ey5W5lVFocfHfs=
 			</data>
 			<key>hash2</key>
 			<data>
-			S7qJR0lXLmg4U+CV9HRYtl6DcNLC2u6eJfVJZLtc7aE=
+			yt623t0K7rkJE7PdkNNBehYchljQO7pC92oDmr8BB6w=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mJiaTFEK06fhkjpzP80syDXL+NI=
+			AAtjRSA6ktRcg9y+9eZAteis63c=
 			</data>
 			<key>hash2</key>
 			<data>
-			lOcqBpbYe4a6Is7FCZ93X2LzYH6DiZltrQlgWYbdz4A=
+			Use9cFfWukxSEWtUcG3a+g//i/+nhtEhL6kiCBXl7yQ=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7H+CJU0e7xeoBgZgPyq5ULCS5X0=
+			nkgwvlf1owFf6iCvLO75nVa3RDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			DcM+S3iJ1GfSFTYywTlmPIPgYi58MD9pkwrufzIfNAs=
+			Quk1mm9P4WW9zTojaqhYQWahEIWJLwiZN7921DchwyM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
