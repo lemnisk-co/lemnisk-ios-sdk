@@ -3,6 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AvailableLibraries</key>
+	<array>
 		<dict>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64_i386_x86_64-simulator</string>
