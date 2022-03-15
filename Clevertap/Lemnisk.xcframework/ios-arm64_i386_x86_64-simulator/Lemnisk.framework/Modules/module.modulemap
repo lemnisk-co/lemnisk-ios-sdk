@@ -1,0 +1,11 @@
+framework module Lemnisk {
+  umbrella header "Lemnisk.h"
+
+  export *
+  module * { export * }
+}
+
+module Lemnisk.Swift {
+    header "Lemnisk-Swift.h"
+    requires objc
+}
