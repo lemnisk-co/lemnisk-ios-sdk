@@ -184,6 +184,18 @@
 		<data>
 		H7hrEWjsdDFUBi6MnMWxcaS3zLQ=
 		</data>
+		<key>Frameworks/SDWebImage.framework/Info.plist</key>
+		<data>
+		xT2ps2fRfC0enBqLMehL7Qqbibc=
+		</data>
+		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
+		<data>
+		gKLkKJOog0dd7arqoWRBohFOBD0=
+		</data>
+		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<data>
+		5jYSiULKt3mtUnIe65vkcPwaTqE=
+		</data>
 		<key>Inbox.momd/Inbox.mom</key>
 		<data>
 		Rv5ZO6GuEURkle/BJtK22Z5v98c=
@@ -740,6 +752,39 @@
 			<key>hash2</key>
 			<data>
 			FUxDPEkZKcXvaG6DjjI2ZKAOag2CLMyVj7TasD5JoI8=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xT2ps2fRfC0enBqLMehL7Qqbibc=
+			</data>
+			<key>hash2</key>
+			<data>
+			NJe9gatT2LclvwiiExXNDLFSyFeDLI88VC46vuU8h80=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gKLkKJOog0dd7arqoWRBohFOBD0=
+			</data>
+			<key>hash2</key>
+			<data>
+			34BW+gEydr+NMkBsz/8LoZOkp9W4qZK+RZSl+P7AjWk=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5jYSiULKt3mtUnIe65vkcPwaTqE=
+			</data>
+			<key>hash2</key>
+			<data>
+			6HUwZCdt2KiZZUfvsdOXb5hHEhcgzIAGs3zVraR7dTU=
 			</data>
 		</dict>
 		<key>Inbox.momd/Inbox.mom</key>

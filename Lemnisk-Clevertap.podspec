@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "Lemnisk-Clevertap"
-s.version      = "1.0.1"
+s.version      = "1.0.2"
 s.summary      = "Lemnisk-Clevertap iOS SDK"
 s.description  = <<-DESC
                    Lemnisk's real-time marketing automation built on an intelligent & secure Customer Data Platform increases conversions, retention & growth for enterprises.

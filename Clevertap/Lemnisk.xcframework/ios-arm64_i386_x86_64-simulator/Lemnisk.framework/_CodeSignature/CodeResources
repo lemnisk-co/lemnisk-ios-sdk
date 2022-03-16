@@ -178,7 +178,7 @@
 		</data>
 		<key>Frameworks/CleverTapSDK.framework/CleverTapSDK</key>
 		<data>
-		uxosN3jQwty4t64G5Rg9UIuyyLE=
+		j0fx4X2R9pyfZmlcKRtzoF2hv6o=
 		</data>
 		<key>Frameworks/CleverTapSDK.framework/DigiCertGlobalRootCA.crt</key>
 		<data>
@@ -187,6 +187,18 @@
 		<key>Frameworks/CleverTapSDK.framework/DigiCertSHA2SecureServerCA.crt</key>
 		<data>
 		H7hrEWjsdDFUBi6MnMWxcaS3zLQ=
+		</data>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/Info.plist</key>
+		<data>
+		xT2ps2fRfC0enBqLMehL7Qqbibc=
+		</data>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/SDWebImage</key>
+		<data>
+		gKLkKJOog0dd7arqoWRBohFOBD0=
+		</data>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<data>
+		5jYSiULKt3mtUnIe65vkcPwaTqE=
 		</data>
 		<key>Frameworks/CleverTapSDK.framework/Inbox.momd/Inbox.mom</key>
 		<data>
@@ -202,7 +214,7 @@
 		</data>
 		<key>Frameworks/CleverTapSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		1AL0Ue8Lk3VZu3R4rlbmzaqHrZw=
+		3JhMEJ5jrFlxXU6QFJORvIEDUHw=
 		</data>
 		<key>Frameworks/CleverTapSDK.framework/ct_default_audio.png</key>
 		<data>
@@ -876,11 +888,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uxosN3jQwty4t64G5Rg9UIuyyLE=
+			j0fx4X2R9pyfZmlcKRtzoF2hv6o=
 			</data>
 			<key>hash2</key>
 			<data>
-			lat6xnbSLNPB3sJoJc12CEzM7RS/kfkNyoU2ASzBXzc=
+			70LNFRx2Co/MLL1VSs9o1D2IG0CpNFXWnUuyrE4/aWw=
 			</data>
 		</dict>
 		<key>Frameworks/CleverTapSDK.framework/DigiCertGlobalRootCA.crt</key>
@@ -903,6 +915,39 @@
 			<key>hash2</key>
 			<data>
 			FUxDPEkZKcXvaG6DjjI2ZKAOag2CLMyVj7TasD5JoI8=
+			</data>
+		</dict>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xT2ps2fRfC0enBqLMehL7Qqbibc=
+			</data>
+			<key>hash2</key>
+			<data>
+			NJe9gatT2LclvwiiExXNDLFSyFeDLI88VC46vuU8h80=
+			</data>
+		</dict>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/SDWebImage</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gKLkKJOog0dd7arqoWRBohFOBD0=
+			</data>
+			<key>hash2</key>
+			<data>
+			34BW+gEydr+NMkBsz/8LoZOkp9W4qZK+RZSl+P7AjWk=
+			</data>
+		</dict>
+		<key>Frameworks/CleverTapSDK.framework/Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5jYSiULKt3mtUnIe65vkcPwaTqE=
+			</data>
+			<key>hash2</key>
+			<data>
+			6HUwZCdt2KiZZUfvsdOXb5hHEhcgzIAGs3zVraR7dTU=
 			</data>
 		</dict>
 		<key>Frameworks/CleverTapSDK.framework/Inbox.momd/Inbox.mom</key>
@@ -942,11 +987,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1AL0Ue8Lk3VZu3R4rlbmzaqHrZw=
+			3JhMEJ5jrFlxXU6QFJORvIEDUHw=
 			</data>
 			<key>hash2</key>
 			<data>
-			iKCTIykarKZfAYc2X3YBPp2Limy4x12wmhP0hUDHMKw=
+			pVqOAtB8sMU9KRT/Q6O7U+6OUofTItdo+HpYe+l6jns=
 			</data>
 		</dict>
 		<key>Frameworks/CleverTapSDK.framework/ct_default_audio.png</key>

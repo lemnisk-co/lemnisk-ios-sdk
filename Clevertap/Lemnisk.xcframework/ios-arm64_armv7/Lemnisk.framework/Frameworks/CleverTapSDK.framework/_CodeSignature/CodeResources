@@ -184,6 +184,18 @@
 		<data>
 		H7hrEWjsdDFUBi6MnMWxcaS3zLQ=
 		</data>
+		<key>Frameworks/SDWebImage.framework/Info.plist</key>
+		<data>
+		OJEI3mh/W+nQEMZfq8E+Tst95MU=
+		</data>
+		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
+		<data>
+		3OU7kMk/jGARBp02uSH1tb3p27Q=
+		</data>
+		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<data>
+		l0hp351x3TWbxmRqaqdmyjyyVUM=
+		</data>
 		<key>Headers/CleverTap+DisplayUnit.h</key>
 		<data>
 		+vPaZrOfjdz7vF/WRVFq+6Z1Lc0=
@@ -1044,6 +1056,39 @@
 			<key>hash2</key>
 			<data>
 			FUxDPEkZKcXvaG6DjjI2ZKAOag2CLMyVj7TasD5JoI8=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OJEI3mh/W+nQEMZfq8E+Tst95MU=
+			</data>
+			<key>hash2</key>
+			<data>
+			n0lhuhgTQTrPjlnpdvnD1U4exA3QV5/Oc4VF+rPri84=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3OU7kMk/jGARBp02uSH1tb3p27Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			0I0GqMryftYsd14t1oCOleNP+MgGF7gDQeZVEYgkfqU=
+			</data>
+		</dict>
+		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			l0hp351x3TWbxmRqaqdmyjyyVUM=
+			</data>
+			<key>hash2</key>
+			<data>
+			9epi0PjvKH8WdKWNfU6otucdMozmikPWnUJ0fSvPiP8=
 			</data>
 		</dict>
 		<key>Headers/CleverTap+DisplayUnit.h</key>
