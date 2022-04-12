@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "Lemnisk-NotificationContent"
-s.version      = "3.8.2"
+s.version      = "3.8.5"
 s.summary      = "Lemnisk Notification Content extension for iOS SDK"
 s.description  = <<-DESC
                    Lemnisk Notification Content extension for iOS SDK to display custom content interfaces like carousel for iOS 10 push notifications.

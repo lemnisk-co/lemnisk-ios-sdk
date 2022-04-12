@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lkV/sQg+v6ikQHdcKojkWqDx2Ts=
+		rdAiW9W22Jv9cgde5jBpszZYE9o=
 		</data>
 		<key>LemniskNotificationView.nib</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		A6BDggvk19/OHWNUdHIVYyaOa6Y=
+		pcNBjJbeeezTkk8EOsVACjeVi/M=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		A6BDggvk19/OHWNUdHIVYyaOa6Y=
+		pcNBjJbeeezTkk8EOsVACjeVi/M=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0JEZVFK4z+Au+RpUcHwvOw9kzy0=
+		WmrPCJSRcagBl3zjYsLQ2uQ9PSE=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftmodule</key>
 		<data>
-		0JEZVFK4z+Au+RpUcHwvOw9kzy0=
+		WmrPCJSRcagBl3zjYsLQ2uQ9PSE=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		emPhWxudSUAKLSLKctWySjdOnGA=
+		2gLZl3I6A7Ob3zbRQ3lTuEiwyqM=
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		emPhWxudSUAKLSLKctWySjdOnGA=
+		2gLZl3I6A7Ob3zbRQ3lTuEiwyqM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -143,11 +143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			A6BDggvk19/OHWNUdHIVYyaOa6Y=
+			pcNBjJbeeezTkk8EOsVACjeVi/M=
 			</data>
 			<key>hash2</key>
 			<data>
-			510zmRwGgai4IfAoo0uxcsHOM4DjqhlXZN2fjmGlQpw=
+			Oa4qAoWUX6rMBtV+V/FWcd9/6BECmo31Vuf7hJkW+2I=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/arm64.swiftdoc</key>
@@ -176,11 +176,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			A6BDggvk19/OHWNUdHIVYyaOa6Y=
+			pcNBjJbeeezTkk8EOsVACjeVi/M=
 			</data>
 			<key>hash2</key>
 			<data>
-			510zmRwGgai4IfAoo0uxcsHOM4DjqhlXZN2fjmGlQpw=
+			Oa4qAoWUX6rMBtV+V/FWcd9/6BECmo31Vuf7hJkW+2I=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -209,11 +209,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0JEZVFK4z+Au+RpUcHwvOw9kzy0=
+			WmrPCJSRcagBl3zjYsLQ2uQ9PSE=
 			</data>
 			<key>hash2</key>
 			<data>
-			aQX2B3XVL/Sixe+sJPCymjxDvG/O4b8rLBtP5Lknkag=
+			1ehqMKdH2WT169cdNBx3f3w4Dra09qnbwFa+5JnLfd0=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/i386.swiftdoc</key>
@@ -242,11 +242,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0JEZVFK4z+Au+RpUcHwvOw9kzy0=
+			WmrPCJSRcagBl3zjYsLQ2uQ9PSE=
 			</data>
 			<key>hash2</key>
 			<data>
-			aQX2B3XVL/Sixe+sJPCymjxDvG/O4b8rLBtP5Lknkag=
+			1ehqMKdH2WT169cdNBx3f3w4Dra09qnbwFa+5JnLfd0=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -275,11 +275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			emPhWxudSUAKLSLKctWySjdOnGA=
+			2gLZl3I6A7Ob3zbRQ3lTuEiwyqM=
 			</data>
 			<key>hash2</key>
 			<data>
-			lq9jHwzrw5AbNDGQiqqffRhjnEVTlQEa2dqTNx4k7z4=
+			rI6GP1Lpfuldb9RnqIG7FRe9X2ObFued2KihhVingzI=
 			</data>
 		</dict>
 		<key>Modules/LemniskNotificationContent.swiftmodule/x86_64.swiftdoc</key>
@@ -308,11 +308,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			emPhWxudSUAKLSLKctWySjdOnGA=
+			2gLZl3I6A7Ob3zbRQ3lTuEiwyqM=
 			</data>
 			<key>hash2</key>
 			<data>
-			lq9jHwzrw5AbNDGQiqqffRhjnEVTlQEa2dqTNx4k7z4=
+			rI6GP1Lpfuldb9RnqIG7FRe9X2ObFued2KihhVingzI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

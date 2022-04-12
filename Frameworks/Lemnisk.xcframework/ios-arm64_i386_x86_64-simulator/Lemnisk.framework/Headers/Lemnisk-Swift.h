@@ -547,6 +547,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl;
+- (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl notifcationCenterUrl:(NSString * _Nonnull)notifcationCenterUrl;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl launchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1193,6 +1194,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl;
+- (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl notifcationCenterUrl:(NSString * _Nonnull)notifcationCenterUrl;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl launchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1839,6 +1841,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)configureWithCampaignId:(NSString * _Nonnull)campaignId serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl enablePush:(BOOL)enablePush;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl;
+- (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl notifcationCenterUrl:(NSString * _Nonnull)notifcationCenterUrl;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl launchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

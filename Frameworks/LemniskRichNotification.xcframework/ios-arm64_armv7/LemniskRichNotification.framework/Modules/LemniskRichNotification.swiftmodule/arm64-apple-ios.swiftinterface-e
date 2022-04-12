@@ -8,6 +8,7 @@ import Swift
 import UserNotifications
 import _Concurrency
 @objc @_inheritsConvenienceInitializers open class LemniskNotificationService : UserNotifications.UNNotificationServiceExtension {
+  public static let shared: LemniskRichNotification.LemniskNotificationService
   open func setAppGroupID(groupId: Swift.String)
   @objc override dynamic open func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
   @objc override dynamic open func serviceExtensionTimeWillExpire()
@@ -18,6 +19,14 @@ import _Concurrency
   @objc public init(lemId: Swift.String)
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class MacroMappingHandler : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
 public struct AES256Crypter {
   public init(key: Foundation.Data, iv: Foundation.Data) throws
+}
+@objc @_inheritsConvenienceInitializers public class Utilities : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
 }

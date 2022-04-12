@@ -220,6 +220,12 @@ SWIFT_CLASS("_TtC23LemniskRichNotification26LemniskNotificationService")
 @end
 
 
+
+SWIFT_CLASS("_TtC23LemniskRichNotification19MacroMappingHandler")
+@interface MacroMappingHandler : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSString;
 
 SWIFT_CLASS("_TtC23LemniskRichNotification18NSEEncryptionUtils")
@@ -227,6 +233,12 @@ SWIFT_CLASS("_TtC23LemniskRichNotification18NSEEncryptionUtils")
 - (nonnull instancetype)initWithLemId:(NSString * _Nonnull)lemId OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC23LemniskRichNotification9Utilities")
+@interface Utilities : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -456,6 +468,12 @@ SWIFT_CLASS("_TtC23LemniskRichNotification26LemniskNotificationService")
 @end
 
 
+
+SWIFT_CLASS("_TtC23LemniskRichNotification19MacroMappingHandler")
+@interface MacroMappingHandler : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSString;
 
 SWIFT_CLASS("_TtC23LemniskRichNotification18NSEEncryptionUtils")
@@ -463,6 +481,12 @@ SWIFT_CLASS("_TtC23LemniskRichNotification18NSEEncryptionUtils")
 - (nonnull instancetype)initWithLemId:(NSString * _Nonnull)lemId OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC23LemniskRichNotification9Utilities")
+@interface Utilities : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #if __has_attribute(external_source_symbol)
