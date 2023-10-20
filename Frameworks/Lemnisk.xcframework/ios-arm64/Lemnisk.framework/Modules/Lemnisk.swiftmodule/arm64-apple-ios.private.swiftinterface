@@ -1,0 +1,324 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.106 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Lemnisk
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AdSupport
+import AppTrackingTransparency
+import CommonCrypto
+import CoreLocation
+import CoreTelephony
+import Foundation
+@_exported import Lemnisk
+import MessageUI
+import MobileCoreServices
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import UserNotificationsUI
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @available(iOS 14, *)
+public class LemniskTracking {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskAppAnalytics : ObjectiveC.NSObject {
+  public static let shared: LemniskAppAnalytics
+  @objc deinit
+}
+public protocol CrashEyeDelegate : ObjectiveC.NSObjectProtocol {
+  func crashEyeDidCatchCrash(with model: CrashModel)
+}
+@objc @_inheritsConvenienceInitializers open class CrashModel : ObjectiveC.NSObject, Foundation.NSCoding {
+  open var type: Swift.Int!
+  open var name: Swift.String!
+  open var reason: Swift.String!
+  open var appinfo: Swift.String!
+  open var callStack: Swift.String!
+  @objc required convenience public init(coder decoder: Foundation.NSCoder)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class LemniskCrashEye : ObjectiveC.NSObject {
+  public static var isOpen: Swift.Bool {
+    get
+  }
+  open class func add(delegate: any CrashEyeDelegate)
+  open class func remove(delegate: any CrashEyeDelegate)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var isIphone6Plus: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone6: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone5Below: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone6sPlus: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone6s: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone4p7Inch: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone5p5Inch: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphone6Below: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphoneX: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isIphoneXOrAbove: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isSimulator: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isJailBroken: Swift.Bool {
+    get
+  }
+}
+@objc @objcMembers public class LemniskAnalytics : ObjectiveC.NSObject {
+  @objc public static let shared: LemniskAnalytics
+  @objc public init(cahceEnabled: Swift.Bool)
+  @objc public func logEvent(name: Swift.String, traits: [Swift.String : Any]?)
+  @objc public func logEvent(traits: [Swift.String : Any]?)
+  @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
+  @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
+  @objc deinit
+}
+extension UIKit.UIColor {
+  public static func colorWith(red: CoreFoundation.CGFloat, green: CoreFoundation.CGFloat, blue: CoreFoundation.CGFloat, alpha: CoreFoundation.CGFloat = 1.0) -> UIKit.UIColor
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class LemniskNotificationViewController : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
+  @_Concurrency.MainActor(unsafe) open var lemniskNotificationView: LemniskNotificationView?
+  @_Concurrency.MainActor(unsafe) open func setAppGroupID(groupId: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc open func didReceive(_ notification: UserNotifications.UNNotification)
+  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LemniskNotificationViewController : UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class LemniskNotificationView : UIKit.UIView {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var collectionviewHeightConstraint: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var carousalCollection: UIKit.UICollectionView!
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setRootView(rootView: UIKit.UIView)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
+  @objc public static let shared: Lemnisk
+  @objc public func setLogLevel(_ logLevel: Swift.String)
+  @objc public func setRequestType(type: Swift.String)
+  @objc public func setSwizzle(state: Swift.Bool)
+  @objc public func setSwizzleForAll(state: Swift.Bool)
+  @objc public func isLemniskPush(userInfo: [Swift.String : Any]?) -> Swift.Bool
+  @objc public func application(_ application: UIKit.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Foundation.Data)
+  @objc public func application(_ application: UIKit.UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Swift.Error)
+  @objc public func application(_ application: UIKit.UIApplication, didReceiveRemoteNotification userInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
+  @objc public func registerForPushNotifications()
+  @objc public func getTrackingStatus() -> Swift.String?
+  @objc public func showTrackingDialog() -> Swift.String?
+  @objc public func getAPNSToken() -> Swift.String
+  @objc public func setAppGroupID(groupId: Swift.String)
+  @objc public func setUniqueUserId(_ uniqueUserId: Swift.String)
+  @objc public func getUniqueUserId() -> Swift.String?
+  @objc public func resetUser()
+  @objc public func setCustomerDeviceId(deviceId: Swift.String)
+  @objc public func overrideDeviceId(deviceId: Swift.String)
+  @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
+  @objc public func setConsentServerUrl(serverUrl: Swift.String)
+  @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
+  public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
+  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
+  @objc public func trackAppCrashedEvent(_ crashReport: [Swift.String : Any])
+  public func getUnreadCount(tokenizedCid: Swift.String, completion: @escaping (Swift.Int?) -> ())
+  public func markRead(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func markBulkRead(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func markDelete(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func markBulkDelete(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func readAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func deleteAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, notifcationCenterUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  public func configure(writeKey: Swift.String, serverUrl: Swift.String, lemniskCleverTapCore: LemniskCleverTapCore?, lemniskAppsflyer: LemniskAppsFlyerCore?, lemniskFirebaseCore: LemniskFirebaseCore?)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Lemnisk : CrashEyeDelegate {
+  @objc dynamic public func crashEyeDidCatchCrash(with model: CrashModel)
+}
+extension UIKit.UIImage {
+  public class func gif(data: Foundation.Data) -> UIKit.UIImage?
+  public class func gif(url: Swift.String) -> UIKit.UIImage?
+  public class func gif(name: Swift.String) -> UIKit.UIImage?
+  @available(iOS 9.0, *)
+  public class func gif(asset: Swift.String) -> UIKit.UIImage?
+}
+public struct LemniskNetworkManager {
+}
+extension Foundation.JSONDecoder {
+  public func decode<T>(from data: Foundation.Data?) -> T? where T : Swift.Decodable
+  public func decodeInBackground<T>(from data: Foundation.Data?, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+}
+extension Foundation.PropertyListDecoder {
+  public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LemniskEncryptionUtils : ObjectiveC.NSObject {
+  @objc public func getApplicationKeyTag(type: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LemniskAppDelegate : ObjectiveC.NSObject {
+  @objc public static let shared: LemniskAppDelegate
+  @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
+  @objc public func handleNotificationAction(center: UserNotifications.UNUserNotificationCenter, response: UserNotifications.UNNotificationResponse)
+  @objc public func willPresentRemoteNotification(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @objc public func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Foundation.Data)
+  @objc public func didFailToRegisterForRemoteNotificationsWithError(error: any Swift.Error)
+  @objc public func handleDeepLink(deepLink: Swift.String?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class LemniskUtilities : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Foundation.JSONEncoder {
+  public func encode<T>(from value: T?) -> Foundation.Data? where T : Swift.Encodable
+  public func encodeInBackground<T>(from encodableObject: T?, onEncode: @escaping (Foundation.Data?) -> Swift.Void) where T : Swift.Encodable
+}
+extension Swift.String {
+  public func localized(_ comment: Swift.String = "") -> Swift.String
+}
+extension Foundation.UserDefaults {
+  public func set<T>(object type: T, for key: Swift.String, onEncode: @escaping (Swift.Bool) -> Swift.Void) throws where T : Swift.Encodable
+  public func get<T>(object type: T.Type, for key: Swift.String, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+  public var isCleverTapSDKEnabled: Swift.Bool {
+    get
+    set
+  }
+  public var isFirebaseSDKEnabled: Swift.Bool {
+    get
+    set
+  }
+  public var isAppsFlyerEnabled: Swift.Bool {
+    get
+    set
+  }
+}
+extension Swift.Double {
+  public func stringRemovingTrailingZeros() -> Swift.String
+}
+@objc @_inheritsConvenienceInitializers public class LemniskMacroMappingHandler : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LemniskPush : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc final public let destructiveCategories: [Swift.String]
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum LemniskLogLevel : Swift.Int, Swift.RawRepresentable {
+  case debug
+  case off
+  public typealias RawValue = Swift.String
+  public var rawValue: LemniskLogLevel.RawValue {
+    get
+  }
+  public init?(rawValue: LemniskLogLevel.RawValue)
+}
+public struct LemniskAppsFlyerCore {
+  public var enable: Swift.Bool
+  public var afAppId: Swift.String
+  public var afDevKey: Swift.String
+  public init(enable: Swift.Bool, afAppId: Swift.String, afDevKey: Swift.String)
+}
+public struct LemniskCleverTapCore {
+  public var enable: Swift.Bool
+  public var isDebug: Swift.Bool
+  public init(enable: Swift.Bool, isDebug: Swift.Bool)
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func loadGif(name: Swift.String)
+  @available(iOS 9.0, *)
+  @_Concurrency.MainActor(unsafe) public func loadGif(asset: Swift.String)
+}
+public struct LemniskAES256Crypter {
+  public init(key: Foundation.Data, iv: Foundation.Data) throws
+}
+@objc @_inheritsConvenienceInitializers open class LemniskNotificationService : UserNotifications.UNNotificationServiceExtension {
+  public static let shared: LemniskNotificationService
+  open func setAppGroupID(groupId: Swift.String)
+  public func setLogLevel(_ logLevel: Swift.String)
+  @objc override dynamic open func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
+  @objc override dynamic open func serviceExtensionTimeWillExpire()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct LemniskFirebaseCore {
+  public var projectName: Swift.String
+  public var enable: Swift.Bool
+  public var appId: Swift.String
+  public var apiKey: Swift.String
+  public var projectId: Swift.String
+  public var messagingSenderId: Swift.String
+  public init(projectName: Swift.String, enable: Swift.Bool, appId: Swift.String, apiKey: Swift.String, projectId: Swift.String, messagingSenderId: Swift.String)
+}
+extension UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) public var visibleViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskBanner : ObjectiveC.NSObject {
+  public static let shared: LemniskBanner
+  public var fitToTheScreen: Swift.Bool
+  public func getTheBannerView(slotid: Swift.String) -> UIKit.UIView?
+  public func getTheBannerView() -> UIKit.UIView?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LemniskNSEEncryptionUtils : ObjectiveC.NSObject {
+  @objc public static let shared: LemniskNSEEncryptionUtils
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension LemniskLogLevel : Swift.Equatable {}
+extension LemniskLogLevel : Swift.Hashable {}
