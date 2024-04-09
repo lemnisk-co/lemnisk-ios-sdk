@@ -2674,13 +2674,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -3076,13 +3069,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -10614,16 +10600,6 @@
         "mangledName": "$s10Foundation11JSONDecoderC",
         "moduleName": "Foundation",
         "isOpen": true,
-        "intro_Macosx": "10.10",
-        "intro_iOS": "8.0",
-        "intro_tvOS": "9.0",
-        "intro_watchOS": "2.0",
-        "declAttributes": [
-          "Available",
-          "Available",
-          "Available",
-          "Available"
-        ],
         "isExternal": true,
         "conformances": [
           {
@@ -10732,16 +10708,6 @@
         "mangledName": "$s10Foundation19PropertyListDecoderC",
         "moduleName": "Foundation",
         "isOpen": true,
-        "intro_Macosx": "10.10",
-        "intro_iOS": "8.0",
-        "intro_tvOS": "9.0",
-        "intro_watchOS": "2.0",
-        "declAttributes": [
-          "Available",
-          "Available",
-          "Available",
-          "Available"
-        ],
         "isExternal": true,
         "conformances": [
           {
@@ -10895,25 +10861,8 @@
         "mangledName": "$s10Foundation11JSONEncoderC",
         "moduleName": "Foundation",
         "isOpen": true,
-        "intro_Macosx": "10.10",
-        "intro_iOS": "8.0",
-        "intro_tvOS": "9.0",
-        "intro_watchOS": "2.0",
-        "declAttributes": [
-          "Available",
-          "Available",
-          "Available",
-          "Available"
-        ],
         "isExternal": true,
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          },
           {
             "kind": "Conformance",
             "name": "TopLevelEncoder",
@@ -10935,6 +10884,13 @@
             ],
             "usr": "s:7Combine15TopLevelEncoderP",
             "mangledName": "$s7Combine15TopLevelEncoderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
           }
         ]
       },
@@ -11501,41 +11457,6 @@
             "printedName": "CVarArg",
             "usr": "s:s7CVarArgP",
             "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Transferable",
-            "printedName": "Transferable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "Representation",
-                "printedName": "Representation",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "OpaqueTypeArchetype",
-                    "printedName": "some CoreTransferable.TransferRepresentation",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "TransferRepresentation",
-                        "printedName": "CoreTransferable.TransferRepresentation",
-                        "usr": "s:16CoreTransferable22TransferRepresentationP"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Sendable",
-                        "printedName": "Swift.Sendable",
-                        "usr": "s:s8SendableP"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "usr": "s:16CoreTransferable0B0P",
-            "mangledName": "$s16CoreTransferable0B0P"
           }
         ]
       },
@@ -12454,57 +12375,6 @@
             ],
             "usr": "s:s21_ObjectiveCBridgeableP",
             "mangledName": "$ss21_ObjectiveCBridgeableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "VectorArithmetic",
-            "printedName": "VectorArithmetic",
-            "usr": "s:7SwiftUI16VectorArithmeticP",
-            "mangledName": "$s7SwiftUI16VectorArithmeticP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_FormatSpecifiable",
-            "printedName": "_FormatSpecifiable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "_Arg",
-                "printedName": "_Arg",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:7SwiftUI18_FormatSpecifiableP",
-            "mangledName": "$s7SwiftUI18_FormatSpecifiableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Animatable",
-            "printedName": "Animatable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "AnimatableData",
-                "printedName": "AnimatableData",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:7SwiftUI10AnimatableP",
-            "mangledName": "$s7SwiftUI10AnimatableP"
           }
         ]
       },
@@ -12642,13 +12512,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -12847,13 +12710,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -19516,7 +19372,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 7,
-      "value": "\"3.8.7\""
+      "value": "\"3.8.8\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -23898,7 +23754,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 7,
-      "value": "\"3.8.7\""
+      "value": "\"3.8.8\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -33199,273 +33055,280 @@
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1225,
+      "offset": 1454,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1523,
       "length": 17,
       "value": "\"requestWithPerm\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1245,
+      "offset": 1543,
       "length": 11,
       "value": "\"apiString\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1321,
+      "offset": 1619,
       "length": 8,
       "value": "\"method\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1400,
+      "offset": 1698,
       "length": 6,
       "value": "\"json\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1466,
+      "offset": 1764,
       "length": 8,
       "value": "\"header\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1536,
+      "offset": 1834,
       "length": 17,
       "value": "\"timeoutInterval\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1624,
+      "offset": 1922,
       "length": 15,
       "value": "\"apiIdentifier\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1725,
+      "offset": 2023,
       "length": 18,
       "value": "\"subApiIdentifier\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1902,
+      "offset": 2180,
       "length": 12,
       "value": "\"urlRequest\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1917,
+      "offset": 2195,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1986,
+      "offset": 2264,
       "length": 8,
       "value": "\"method\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2065,
+      "offset": 2343,
       "length": 6,
       "value": "\"json\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2140,
+      "offset": 2418,
       "length": 8,
       "value": "\"header\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2228,
+      "offset": 2506,
       "length": 17,
       "value": "\"timeoutInterval\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "FloatLiteral",
-      "offset": 2498,
+      "offset": 2776,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2542,
+      "offset": 2820,
       "length": 17,
       "value": "\"requestWithPerm\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2650,
+      "offset": 2928,
       "length": 8,
       "value": "\"method\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2750,
+      "offset": 3028,
       "length": 11,
       "value": "\"apiString\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2880,
+      "offset": 3158,
       "length": 8,
       "value": "\"header\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "Dictionary",
-      "offset": 2914,
+      "offset": 3192,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2969,
+      "offset": 3247,
       "length": 6,
       "value": "\"json\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "Dictionary",
-      "offset": 2998,
+      "offset": 3276,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3064,
+      "offset": 3342,
       "length": 17,
       "value": "\"timeoutInterval\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "FloatLiteral",
-      "offset": 3097,
+      "offset": 3375,
       "length": 4,
       "value": "60.0"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3312,
+      "offset": 3590,
       "length": 15,
       "value": "\"apiIdentifier\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3343,
+      "offset": 3621,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3437,
+      "offset": 3715,
       "length": 18,
       "value": "\"subApiIdentifier\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3471,
+      "offset": 3749,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 3644,
+      "offset": 3922,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3906,
+      "offset": 4184,
       "length": 12,
       "value": "\"urlRequest\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4001,
+      "offset": 4279,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4069,
+      "offset": 4347,
       "length": 8,
       "value": "\"method\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4140,
+      "offset": 4418,
       "length": 6,
       "value": "\"json\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4214,
+      "offset": 4492,
       "length": 17,
       "value": "\"timeoutInterval\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "FloatLiteral",
-      "offset": 4247,
+      "offset": 4525,
       "length": 4,
       "value": "60.0"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4300,
+      "offset": 4578,
       "length": 8,
       "value": "\"header\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "Dictionary",
-      "offset": 4334,
+      "offset": 4612,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 4573,
+      "offset": 4851,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
       "kind": "Array",
-      "offset": 4838,
+      "offset": 5116,
       "length": 2,
       "value": "[]"
     },
@@ -34923,7 +34786,7 @@
       "kind": "StringLiteral",
       "offset": 15631,
       "length": 7,
-      "value": "\"3.8.7\""
+      "value": "\"3.8.8\""
     },
     {
       "filePath": "\/Users\/koteswarudu-akula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",

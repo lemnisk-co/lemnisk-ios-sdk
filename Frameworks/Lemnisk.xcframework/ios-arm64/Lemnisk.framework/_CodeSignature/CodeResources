@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Lemnisk-Swift.h</key>
 		<data>
-		hWwSwuzPtSwMEvgskEAGFN1DL6w=
+		qPajH27zc/301Fj1lxSokGiGMVk=
 		</data>
 		<key>Headers/Lemnisk.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		JA13z2Oi7Wws25GcIkxYKTzURkE=
+		ToQRw1z8sb235B5wKLv9Bvnokmc=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -74,31 +74,31 @@
 		</data>
 		<key>LemniskNotificationView.nib</key>
 		<data>
-		A/0omU463yZA5diXvjJb4s9yudk=
+		AlNJ3XcfA7Wd66TQWTCahL+NEWc=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		MB4E6mm2TVOatEkKknl7y8iqXoo=
+		tH9MmwXte80C/ReBSUtCEoaLA8w=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		SIzxD8PR1JeyBbmKA3ipNzn2B+I=
+		VqvIMlNpKQ90DMpsUXnpbLGy0VA=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Znsw2f5tO/sKJD1ElV7fQWrAsTw=
+		BJfZzS2UOY9QdJ2OII0qdU6p2VU=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		SIzxD8PR1JeyBbmKA3ipNzn2B+I=
+		VqvIMlNpKQ90DMpsUXnpbLGy0VA=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		jVEAswQEkVxce+Y0kFwZDWp5M38=
+		iAiBNTeLd1c1eLJ2Lfo8iY8mxZw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		++l4hP8vTzEZXpXJOCG9kpDJH4Q=
+		OcIeUhblit+pwnTtD0u/CMOSWqU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hWwSwuzPtSwMEvgskEAGFN1DL6w=
+			qPajH27zc/301Fj1lxSokGiGMVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			jTdhrqNh5rukRZuDSkEKO8+xicoFCXpOnuOvrRQcxeU=
+			FetwHOeyOCEY1ICuvndCB6hByNgLxaTvVKQxBP6Rzi8=
 			</data>
 		</dict>
 		<key>Headers/Lemnisk.h</key>
@@ -283,77 +283,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			A/0omU463yZA5diXvjJb4s9yudk=
+			AlNJ3XcfA7Wd66TQWTCahL+NEWc=
 			</data>
 			<key>hash2</key>
 			<data>
-			mkUt6UAfn3fCiR4sclCQTtx9vASleDrpdqWDhwx6eN0=
+			0VtiD6inni/7ptv7ERziFw9UE3CyhKpDyrqfhaGuBWY=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MB4E6mm2TVOatEkKknl7y8iqXoo=
+			tH9MmwXte80C/ReBSUtCEoaLA8w=
 			</data>
 			<key>hash2</key>
 			<data>
-			AZ0qTgo4MkpPhPhZRaDiODEx6OUm5YSJYrFWmlURUdg=
+			Cb/uL0psf+x+AgRy9A2i06qJ5AqI/s/RbFRbaVNwSq0=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SIzxD8PR1JeyBbmKA3ipNzn2B+I=
+			VqvIMlNpKQ90DMpsUXnpbLGy0VA=
 			</data>
 			<key>hash2</key>
 			<data>
-			bpKCVRVoXQNFQHhM2aalLHI0o57nT035t1+Z0+GPLCE=
+			8HzoD6NjjjRs6Ur44PdekFT5FtNLkEI1lPByYIuA8mY=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Znsw2f5tO/sKJD1ElV7fQWrAsTw=
+			BJfZzS2UOY9QdJ2OII0qdU6p2VU=
 			</data>
 			<key>hash2</key>
 			<data>
-			CuAgD/sSVOUsdpF2zW0xXZYwm7ebSB0mbLYJMRVT5gc=
+			UaEvDiY2xpq2TTs11tyBDWaM5ohQ9PQWK1f/I5j6oQg=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SIzxD8PR1JeyBbmKA3ipNzn2B+I=
+			VqvIMlNpKQ90DMpsUXnpbLGy0VA=
 			</data>
 			<key>hash2</key>
 			<data>
-			bpKCVRVoXQNFQHhM2aalLHI0o57nT035t1+Z0+GPLCE=
+			8HzoD6NjjjRs6Ur44PdekFT5FtNLkEI1lPByYIuA8mY=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jVEAswQEkVxce+Y0kFwZDWp5M38=
+			iAiBNTeLd1c1eLJ2Lfo8iY8mxZw=
 			</data>
 			<key>hash2</key>
 			<data>
-			/lGAoPk9b5iNJFZVE1ei3swUlgZvZVPP00Wlj0x4Id4=
+			irq1t5R2bRhl+dnewQ9/dLCoKaVM1wHCwvOTdB6oeMY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			++l4hP8vTzEZXpXJOCG9kpDJH4Q=
+			OcIeUhblit+pwnTtD0u/CMOSWqU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9iTgDNw5ryde37a7Y6CBDJignn55tHtWWbJ7pIC07qc=
+			f3N85Zc1O0fcGLuRlzNRV+4Gc4TnP+UgspdzP6/dFug=
 			</data>
 		</dict>
 	</dict>
