@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Lemnisk-Swift.h</key>
 		<data>
-		qPajH27zc/301Fj1lxSokGiGMVk=
+		tsaEwjRo6KNC6EdC3yRd3nOyj4k=
 		</data>
 		<key>Headers/Lemnisk.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ToQRw1z8sb235B5wKLv9Bvnokmc=
+		3xCorFUw2FNZ7sR9nEt7k5Z4gXY=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -74,52 +74,44 @@
 		</data>
 		<key>LemniskNotificationView.nib</key>
 		<data>
-		AlNJ3XcfA7Wd66TQWTCahL+NEWc=
+		1N3N8UdnA2n1FJyynTtMX/LeV+c=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		tH9MmwXte80C/ReBSUtCEoaLA8w=
+		6osjgQd7pepMprbvNgCMM3oU1jw=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		VqvIMlNpKQ90DMpsUXnpbLGy0VA=
+		oGOTIoZNOfevNrpSXHlFTTd4dpk=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		BJfZzS2UOY9QdJ2OII0qdU6p2VU=
+		sYtOXY8L7KjcQiGk9eYp3PWAy/E=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		VqvIMlNpKQ90DMpsUXnpbLGy0VA=
+		oGOTIoZNOfevNrpSXHlFTTd4dpk=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		iAiBNTeLd1c1eLJ2Lfo8iY8mxZw=
+		+Ik61XMWCo6MqVifmvIdkoD740k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		OcIeUhblit+pwnTtD0u/CMOSWqU=
+		++l4hP8vTzEZXpXJOCG9kpDJH4Q=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/Lemnisk-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qPajH27zc/301Fj1lxSokGiGMVk=
-			</data>
 			<key>hash2</key>
 			<data>
-			FetwHOeyOCEY1ICuvndCB6hByNgLxaTvVKQxBP6Rzi8=
+			U3Jz83R+bzmuI/cdM4fOzviJOgi+OgMZYbaTjS84uZc=
 			</data>
 		</dict>
 		<key>Headers/Lemnisk.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LqD+fVwj+HA/yfvh//HbVZyJDPg=
-			</data>
 			<key>hash2</key>
 			<data>
 			Upo8C938V46+61TH3wr64yByz9zMx4ZYkP0VBZ/4kZk=
@@ -127,10 +119,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9wpAq95JuXimISOrewToQ6QM71A=
-			</data>
 			<key>hash2</key>
 			<data>
 			akAvkfZrdVAnSfEchq87E5MzkHIqGvEZJzEUSgLJnhc=
@@ -138,10 +126,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gMf+C4AX3e7PLg1u4sUIKlgOdkk=
-			</data>
 			<key>hash2</key>
 			<data>
 			n/F5AgZ4nxEnXfL68s3msk7YLKafgwOYGA/J8dBXs2o=
@@ -149,10 +133,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskBannerView.nib/objects-11.0+.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			nYEZw4Rku7BMDmA3CLKfjdhcjcs=
-			</data>
 			<key>hash2</key>
 			<data>
 			jd7+zHSlpWHEqmimHCQrcIk4rA8cZUoykQxVsZJiMPM=
@@ -160,10 +140,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskBannerView.nib/runtime.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Hzh+lYmjA4cOXJ8cxkCac144kCk=
-			</data>
 			<key>hash2</key>
 			<data>
 			nl829YT6CA5hV8iyegkX+AwF+ByL7ntyBsJgUIbXyAs=
@@ -171,10 +147,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappBottomView.nib/objects-11.0+.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ClmKLQzEayH2lqyiqi+FSVHlPNY=
-			</data>
 			<key>hash2</key>
 			<data>
 			hGUj0pTzDtReqWx+sJtC/pc6tM2q6fgFST8yCoLa/hM=
@@ -182,10 +154,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappBottomView.nib/runtime.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qlrez1hoE/SU3tXW6bYWxsr4jW8=
-			</data>
 			<key>hash2</key>
 			<data>
 			gTat8JfIaWg8yhyOag2N/xIo2Gq2X/zYzREsBF5tfDM=
@@ -193,10 +161,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappCenterView.nib/objects-11.0+.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			17N+65JGLWV4erzAFaz5R+bs1MM=
-			</data>
 			<key>hash2</key>
 			<data>
 			tqtNCLUTgrFaZ21CL7ZEB4EXPO1+mdMluAfbToj4Qr8=
@@ -204,10 +168,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappCenterView.nib/runtime.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			JQ8quPoUZnToDfX2ki6jKaMTGaw=
-			</data>
 			<key>hash2</key>
 			<data>
 			1vnXokpG7xy2n226dxH+IGGkDVtx2S6b+z9tu789CEY=
@@ -215,10 +175,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappFullView.nib/objects-11.0+.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qdL8q3Zm+hgx0TOwwOPutTbUDkI=
-			</data>
 			<key>hash2</key>
 			<data>
 			NnqD0nz6G23Ew/F56tas4C4Mo8qos63ir3RFhjzPO4E=
@@ -226,10 +182,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappFullView.nib/runtime.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			zGcvWWvmBRI+e5STRVrxZEugt8o=
-			</data>
 			<key>hash2</key>
 			<data>
 			gSTQ5mBdKu4Ai82Gu+PgZVe/6t5+FGps5QS9Q50VEgQ=
@@ -237,10 +189,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappTopView.nib/objects-11.0+.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			/ewRVTMtXjZdKP7Fq6VAYuA8hKM=
-			</data>
 			<key>hash2</key>
 			<data>
 			dRZlLu/ihTxXfYjkW2cLqm6aZTtEgjtqKnWNHCKBzmI=
@@ -248,10 +196,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/LemniskInappTopView.nib/runtime.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ieHTWDHaHV+eQVOIBCY4hQCPYqM=
-			</data>
 			<key>hash2</key>
 			<data>
 			Ok3MMrEMMiRBgZydVNzJPRUGDVqVwMiUZgFN2kUZkQI=
@@ -259,10 +203,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/NetworkErrors.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2gtbxJC4OVJG1gOdZxIAjJmsygw=
-			</data>
 			<key>hash2</key>
 			<data>
 			IO55vbf2cJCDHSzmJ/GtxT4HRNUHoYLAe9ooiCv05DI=
@@ -270,10 +210,6 @@
 		</dict>
 		<key>LemniskBundle.bundle/products.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vtNrXGI4DUR0opQ7qtaKWFAQC74=
-			</data>
 			<key>hash2</key>
 			<data>
 			FMNU+bkh9eiWUMHsIwEJwWBXecNpbi4CyyBs/NgsE/c=
@@ -281,79 +217,51 @@
 		</dict>
 		<key>LemniskNotificationView.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			AlNJ3XcfA7Wd66TQWTCahL+NEWc=
-			</data>
 			<key>hash2</key>
 			<data>
-			0VtiD6inni/7ptv7ERziFw9UE3CyhKpDyrqfhaGuBWY=
+			sBjyDkvIv/k3jnnj+O9WuPdkahV7xcGlRbqsmGG93bA=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			tH9MmwXte80C/ReBSUtCEoaLA8w=
-			</data>
 			<key>hash2</key>
 			<data>
-			Cb/uL0psf+x+AgRy9A2i06qJ5AqI/s/RbFRbaVNwSq0=
+			hXDolIB/xiV5JUwzEfm9DsAQtQFfte6/ibKRLC1//GQ=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VqvIMlNpKQ90DMpsUXnpbLGy0VA=
-			</data>
 			<key>hash2</key>
 			<data>
-			8HzoD6NjjjRs6Ur44PdekFT5FtNLkEI1lPByYIuA8mY=
+			BoHz3Na6U5mwlZOtfkbeqpdLNtDcquZtgNlGA2DUJtQ=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			BJfZzS2UOY9QdJ2OII0qdU6p2VU=
-			</data>
 			<key>hash2</key>
 			<data>
-			UaEvDiY2xpq2TTs11tyBDWaM5ohQ9PQWK1f/I5j6oQg=
+			ioECRUgaluJ/N8nXVL/m46QflWg3aT67Kg9pV9EOH/s=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VqvIMlNpKQ90DMpsUXnpbLGy0VA=
-			</data>
 			<key>hash2</key>
 			<data>
-			8HzoD6NjjjRs6Ur44PdekFT5FtNLkEI1lPByYIuA8mY=
+			BoHz3Na6U5mwlZOtfkbeqpdLNtDcquZtgNlGA2DUJtQ=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			iAiBNTeLd1c1eLJ2Lfo8iY8mxZw=
-			</data>
 			<key>hash2</key>
 			<data>
-			irq1t5R2bRhl+dnewQ9/dLCoKaVM1wHCwvOTdB6oeMY=
+			QfDXbzlzn1hV/Ysron6G3p9Z+ynM8RiJmgLT2DDyVjY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			OcIeUhblit+pwnTtD0u/CMOSWqU=
-			</data>
 			<key>hash2</key>
 			<data>
-			f3N85Zc1O0fcGLuRlzNRV+4Gc4TnP+UgspdzP6/dFug=
+			9iTgDNw5ryde37a7Y6CBDJignn55tHtWWbJ7pIC07qc=
 			</data>
 		</dict>
 	</dict>
