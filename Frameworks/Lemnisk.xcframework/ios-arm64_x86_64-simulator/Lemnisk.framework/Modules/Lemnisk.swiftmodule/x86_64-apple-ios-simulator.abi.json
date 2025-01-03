@@ -6823,6 +6823,23 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "Lemnisk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Lemnisk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "LemniskMacroMappingHandler",
         "printedName": "LemniskMacroMappingHandler",
@@ -9922,6 +9939,16 @@
         "printedName": "UserNotificationsUI",
         "declKind": "Import",
         "moduleName": "Lemnisk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Lemnisk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -15630,7 +15657,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 7,
-      "value": "\"3.9.1\""
+      "value": "\"3.9.2\""
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -15936,7 +15963,7 @@
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskNetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5204,
+      "offset": 5244,
       "length": 5,
       "value": "false"
     },
@@ -15994,7 +16021,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 7,
-      "value": "\"3.9.1\""
+      "value": "\"3.9.2\""
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -17350,42 +17377,42 @@
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 30357,
+      "offset": 30473,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 30634,
+      "offset": 30750,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 30950,
+      "offset": 31066,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 31676,
+      "offset": 31792,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 32469,
+      "offset": 32585,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 32688,
+      "offset": 32804,
       "length": 4,
       "value": "true"
     },
@@ -17464,7 +17491,7 @@
       "kind": "StringLiteral",
       "offset": 15851,
       "length": 7,
-      "value": "\"3.9.1\""
+      "value": "\"3.9.2\""
     },
     {
       "filePath": "\/Users\/abhishek\/Lemnisk\/repos\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
