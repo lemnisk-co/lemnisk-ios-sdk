@@ -281,6 +281,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import Dispatch;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -547,7 +548,14 @@ SWIFT_CLASS("_TtC7Lemnisk33LemniskNotificationViewController")
 
 SWIFT_CLASS("_TtC7Lemnisk11LemniskPush")
 @interface LemniskPush : NSObject <UNUserNotificationCenterDelegate>
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL swizzled;)
++ (BOOL)swizzled SWIFT_WARN_UNUSED_RESULT;
++ (void)setSwizzled:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) dispatch_queue_t _Nonnull swizzleQueue;)
++ (dispatch_queue_t _Nonnull)swizzleQueue SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull destructiveCategories;
+@property (nonatomic) BOOL alreadyCalledDidRegisterToken;
+- (void)swizzleDelegateMethods;
 - (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center willPresentNotification:(UNNotification * _Nonnull)notification withCompletionHandler:(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -865,6 +873,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import Dispatch;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -1131,7 +1140,14 @@ SWIFT_CLASS("_TtC7Lemnisk33LemniskNotificationViewController")
 
 SWIFT_CLASS("_TtC7Lemnisk11LemniskPush")
 @interface LemniskPush : NSObject <UNUserNotificationCenterDelegate>
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL swizzled;)
++ (BOOL)swizzled SWIFT_WARN_UNUSED_RESULT;
++ (void)setSwizzled:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) dispatch_queue_t _Nonnull swizzleQueue;)
++ (dispatch_queue_t _Nonnull)swizzleQueue SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull destructiveCategories;
+@property (nonatomic) BOOL alreadyCalledDidRegisterToken;
+- (void)swizzleDelegateMethods;
 - (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center willPresentNotification:(UNNotification * _Nonnull)notification withCompletionHandler:(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

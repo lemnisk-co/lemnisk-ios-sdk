@@ -254,7 +254,11 @@ extension Swift.Double {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class LemniskPush : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc public static var swizzled: Swift.Bool
+  @objc public static let swizzleQueue: Dispatch.DispatchQueue
   @objc final public let destructiveCategories: [Swift.String]
+  @objc public var alreadyCalledDidRegisterToken: Swift.Bool
+  @objc public func swizzleDelegateMethods()
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
   @objc override dynamic public init()

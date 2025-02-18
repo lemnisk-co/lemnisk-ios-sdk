@@ -6981,6 +6981,162 @@
         "children": [
           {
             "kind": "Var",
+            "name": "swizzled",
+            "printedName": "swizzled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(cpy)swizzled",
+            "mangledName": "$s7Lemnisk0A4PushC8swizzledSbvpZ",
+            "moduleName": "Lemnisk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(cm)swizzled",
+                "mangledName": "$s7Lemnisk0A4PushC8swizzledSbvgZ",
+                "moduleName": "Lemnisk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(cm)setSwizzled:",
+                "mangledName": "$s7Lemnisk0A4PushC8swizzledSbvsZ",
+                "moduleName": "Lemnisk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7Lemnisk0A4PushC8swizzledSbvMZ",
+                "mangledName": "$s7Lemnisk0A4PushC8swizzledSbvMZ",
+                "moduleName": "Lemnisk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "swizzleQueue",
+            "printedName": "swizzleQueue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(cpy)swizzleQueue",
+            "mangledName": "$s7Lemnisk0A4PushC12swizzleQueueSo17OS_dispatch_queueCvpZ",
+            "moduleName": "Lemnisk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DispatchQueue",
+                    "printedName": "Dispatch.DispatchQueue",
+                    "usr": "c:objc(cs)OS_dispatch_queue"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(cm)swizzleQueue",
+                "mangledName": "$s7Lemnisk0A4PushC12swizzleQueueSo17OS_dispatch_queueCvgZ",
+                "moduleName": "Lemnisk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "destructiveCategories",
             "printedName": "destructiveCategories",
             "children": [
@@ -7045,6 +7201,120 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "alreadyCalledDidRegisterToken",
+            "printedName": "alreadyCalledDidRegisterToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(py)alreadyCalledDidRegisterToken",
+            "mangledName": "$s7Lemnisk0A4PushC29alreadyCalledDidRegisterTokenSbvp",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(im)alreadyCalledDidRegisterToken",
+                "mangledName": "$s7Lemnisk0A4PushC29alreadyCalledDidRegisterTokenSbvg",
+                "moduleName": "Lemnisk",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(im)setAlreadyCalledDidRegisterToken:",
+                "mangledName": "$s7Lemnisk0A4PushC29alreadyCalledDidRegisterTokenSbvs",
+                "moduleName": "Lemnisk",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7Lemnisk0A4PushC29alreadyCalledDidRegisterTokenSbvM",
+                "mangledName": "$s7Lemnisk0A4PushC29alreadyCalledDidRegisterTokenSbvM",
+                "moduleName": "Lemnisk",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "swizzleDelegateMethods",
+            "printedName": "swizzleDelegateMethods()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)LemniskPush(im)swizzleDelegateMethods",
+            "mangledName": "$s7Lemnisk0A4PushC22swizzleDelegateMethodsyyF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -15664,7 +15934,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 7,
-      "value": "\"3.9.3\""
+      "value": "\"3.9.4\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -16028,7 +16298,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 7,
-      "value": "\"3.9.3\""
+      "value": "\"3.9.4\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -17370,79 +17640,184 @@
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 309,
+      "offset": 308,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "StringLiteral",
-      "offset": 374,
+      "offset": 372,
       "length": 23,
       "value": "\"com.lemnisk.swizzling\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Dictionary",
-      "offset": 450,
+      "offset": 448,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 550,
+      "offset": 548,
       "length": 129,
       "value": "[\"default.no\", \"default.dismiss\", \"default.decline\", \"default.notinterested\", \"default.notinterested__ar\", \"default.dismiss__ar\"]"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "BooleanLiteral",
+      "offset": 725,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 754,
+      "offset": 805,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 26932,
+      "length": 29,
+      "value": "\"swizzleApplicationDelegates\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 27099,
+      "length": 34,
+      "value": "\"_class for appDelegate \""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 27132,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 28311,
+      "length": 63,
+      "value": "\"Swizzling didRegisterForRemoteNotificationsWithDeviceToken...\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 28734,
+      "length": 63,
+      "value": "\"Swizzling didFailToRegisterForRemoteNotificationsWithError...\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 29169,
+      "length": 43,
+      "value": "\"Swizzling didReceiveRemoteNotification...\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 30274,
+      "length": 67,
+      "value": "\"calling previous didRegisterForRemoteNotificationsWithDeviceToken\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 31402,
+      "length": 58,
+      "value": "\"calling previous didFailToRegisterForRemoteNotifications\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "BooleanLiteral",
+      "offset": 32574,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 32703,
+      "length": 54,
+      "value": "\"go result from previous didReceiveRemoteNotification\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "BooleanLiteral",
+      "offset": 32959,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 33114,
+      "length": 47,
+      "value": "\"calling previous didReceiveRemoteNotification\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 30968,
+      "offset": 38378,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 31245,
+      "offset": 38655,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 31561,
+      "offset": 38971,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 39154,
+      "length": 30,
+      "value": "\"calling original willPresent\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "Array",
-      "offset": 32287,
+      "offset": 39758,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 33080,
+      "offset": 40819,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
       "kind": "BooleanLiteral",
-      "offset": 33299,
+      "offset": 41038,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/LemniskPush.swift",
+      "kind": "StringLiteral",
+      "offset": 41181,
+      "length": 29,
+      "value": "\"calling original didReceive\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskCacheRequest.swift",
@@ -17519,7 +17894,7 @@
       "kind": "StringLiteral",
       "offset": 15851,
       "length": 7,
-      "value": "\"3.9.3\""
+      "value": "\"3.9.4\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
