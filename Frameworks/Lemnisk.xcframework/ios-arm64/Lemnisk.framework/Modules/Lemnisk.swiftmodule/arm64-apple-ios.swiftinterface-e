@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Lemnisk
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
@@ -133,18 +133,26 @@ extension UIKit.UIDevice {
   @objc public func setConsentServerUrl(serverUrl: Swift.String)
   @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
   public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
+  @objc public func getCustomConsentObjc(completion: @escaping (Foundation.NSNumber?, Foundation.NSNumber?) -> Swift.Void)
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
   @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
   @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
   @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
   @objc public func trackAppCrashedEvent(_ crashReport: [Swift.String : Any])
   public func getUnreadCount(tokenizedCid: Swift.String, completion: @escaping (Swift.Int?) -> ())
+  @objc public func getUnreadCountObjc(tokenizedCid: Swift.String, completion: @escaping (Foundation.NSNumber?) -> Swift.Void)
   public func markRead(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func markReadObjc(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func markBulkRead(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func markBulkReadObjc(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func markDelete(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func markDeleteObjc(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func markBulkDelete(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func markBulkDeleteObjc(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func readAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func readAllObjc(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func deleteAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  @objc public func deleteAllObjc(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
