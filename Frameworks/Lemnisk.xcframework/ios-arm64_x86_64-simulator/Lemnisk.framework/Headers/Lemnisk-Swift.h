@@ -423,6 +423,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl launchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (void)registerLemniskNotificationTasks;
+- (void)setCertificatePinningEnabled:(BOOL)enabled;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -485,6 +486,8 @@ SWIFT_CLASS("_TtC7Lemnisk15LemniskCrashEye")
 
 SWIFT_CLASS("_TtC7Lemnisk22LemniskEncryptionUtils")
 @interface LemniskEncryptionUtils : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull kPrivateKeySuffix;
+- (NSString * _Nonnull)getApplicationKeyTagForCertificatesWithType:(NSString * _Nonnull)type SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getApplicationKeyTagWithType:(NSString * _Nonnull)type SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1025,6 +1028,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl launchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
 - (void)configureWithWriteKey:(NSString * _Nonnull)writeKey serverUrl:(NSString * _Nonnull)serverUrl adserverUrl:(NSString * _Nonnull)adserverUrl enablePush:(BOOL)enablePush;
 - (void)registerLemniskNotificationTasks;
+- (void)setCertificatePinningEnabled:(BOOL)enabled;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1087,6 +1091,8 @@ SWIFT_CLASS("_TtC7Lemnisk15LemniskCrashEye")
 
 SWIFT_CLASS("_TtC7Lemnisk22LemniskEncryptionUtils")
 @interface LemniskEncryptionUtils : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull kPrivateKeySuffix;
+- (NSString * _Nonnull)getApplicationKeyTagForCertificatesWithType:(NSString * _Nonnull)type SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getApplicationKeyTagWithType:(NSString * _Nonnull)type SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
