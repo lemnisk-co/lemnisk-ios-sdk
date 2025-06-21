@@ -112,6 +112,8 @@ extension UIKit.UIDevice {
   @objc public func setRequestType(type: Swift.String)
   @objc public func setSwizzle(state: Swift.Bool)
   @objc public func setSwizzleForAll(state: Swift.Bool)
+  @objc public func setSwizzleForAppDelegates(state: Swift.Bool)
+  @objc public func setSwizzleForNotificationCenterDelegates(state: Swift.Bool)
   @objc public func isLemniskPush(userInfo: [Swift.String : Any]?) -> Swift.Bool
   @objc public func application(_ application: UIKit.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Foundation.Data)
   @objc public func application(_ application: UIKit.UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Swift.Error)
@@ -119,7 +121,7 @@ extension UIKit.UIDevice {
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
   @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
-  @objc public func registerForPushNotifications()
+  @objc public func registerForPushNotifications(completion: ((Swift.Bool, Swift.String) -> Swift.Void)? = nil)
   @objc public func getTrackingStatus() -> Swift.String?
   @objc public func showTrackingDialog() -> Swift.String?
   @objc public func getAPNSToken() -> Swift.String

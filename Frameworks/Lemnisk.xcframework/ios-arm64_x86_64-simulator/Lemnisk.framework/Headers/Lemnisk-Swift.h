@@ -335,10 +335,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)setLogLevel:(NSString * _Nonnull)logLevel;
 /// This function would set the API Request type. Allowed arguments are either GET/POST
 - (void)setRequestTypeWithType:(NSString * _Nonnull)type;
-/// This function would set the method swizzling for registration and didReceiveRemoteNotification.
 - (void)setSwizzleWithState:(BOOL)state;
-/// This function would set the method swizzling for all notification delegate methods.
 - (void)setSwizzleForAllWithState:(BOOL)state;
+/// This function would set the method swizzling for registration and didReceiveRemoteNotification.
+- (void)setSwizzleForAppDelegatesWithState:(BOOL)state;
+/// This function would set the method swizzling for all notification delegate methods.
+- (void)setSwizzleForNotificationCenterDelegatesWithState:(BOOL)state;
 - (BOOL)isLemniskPushWithUserInfo:(NSDictionary<NSString *, id> * _Nullable)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
@@ -349,7 +351,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// then SDK will create the Default Action Categories.
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
 /// This function would show Push Notification authorization prompt.
-- (void)registerForPushNotifications;
+- (void)registerForPushNotificationsWithCompletion:(void (^ _Nullable)(BOOL, NSString * _Nonnull))completion;
 /// This function would return IDFA tracking authorization status for iOS14+, for others it will return nil
 - (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
 /// This function would show the IDFA authorization prompt for iOS14+
@@ -940,10 +942,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 - (void)setLogLevel:(NSString * _Nonnull)logLevel;
 /// This function would set the API Request type. Allowed arguments are either GET/POST
 - (void)setRequestTypeWithType:(NSString * _Nonnull)type;
-/// This function would set the method swizzling for registration and didReceiveRemoteNotification.
 - (void)setSwizzleWithState:(BOOL)state;
-/// This function would set the method swizzling for all notification delegate methods.
 - (void)setSwizzleForAllWithState:(BOOL)state;
+/// This function would set the method swizzling for registration and didReceiveRemoteNotification.
+- (void)setSwizzleForAppDelegatesWithState:(BOOL)state;
+/// This function would set the method swizzling for all notification delegate methods.
+- (void)setSwizzleForNotificationCenterDelegatesWithState:(BOOL)state;
 - (BOOL)isLemniskPushWithUserInfo:(NSDictionary<NSString *, id> * _Nullable)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
@@ -954,7 +958,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// then SDK will create the Default Action Categories.
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
 /// This function would show Push Notification authorization prompt.
-- (void)registerForPushNotifications;
+- (void)registerForPushNotificationsWithCompletion:(void (^ _Nullable)(BOOL, NSString * _Nonnull))completion;
 /// This function would return IDFA tracking authorization status for iOS14+, for others it will return nil
 - (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
 /// This function would show the IDFA authorization prompt for iOS14+
