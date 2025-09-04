@@ -351,7 +351,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// then SDK will create the Default Action Categories.
 - (void)registerForPushNotificationsWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories;
 /// This function would show Push Notification authorization prompt.
-- (void)registerForPushNotificationsWithCompletion:(void (^ _Nullable)(BOOL, NSString * _Nonnull))completion;
+- (void)registerForPushNotifications;
+/// This function would show Push Notification authorization prompt with completion handler.
+- (void)registerForPushNotificationsWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nonnull))completion;
 /// This function would return IDFA tracking authorization status for iOS14+, for others it will return nil
 - (NSString * _Nullable)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
 /// This function would show the IDFA authorization prompt for iOS14+
@@ -404,9 +406,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Lemnisk * _N
 /// This function would set the Custom Consent to device local storage and send sends it to server.
 - (void)setCustomConsentWithTransConsent:(BOOL)transConsent promoConsent:(BOOL)promoConsent;
 - (void)getCustomConsentObjcWithCompletion:(void (^ _Nonnull)(NSNumber * _Nullable, NSNumber * _Nullable))completion;
+- (void)identify:(NSString * _Nullable)userId traits:(NSDictionary<NSString *, id> * _Nullable)traits;
 - (void)identify:(NSString * _Nullable)userId traits:(NSDictionary<NSString *, id> * _Nullable)traits otherIds:(NSDictionary<NSString *, id> * _Nullable)otherIds;
+- (void)track:(NSString * _Nullable)event properties:(NSDictionary<NSString *, id> * _Nullable)properties;
 - (void)track:(NSString * _Nullable)event properties:(NSDictionary<NSString *, id> * _Nullable)properties otherIds:(NSDictionary<NSString *, id> * _Nullable)otherIds;
+- (void)screen:(NSString * _Nullable)name properties:(NSDictionary<NSString *, id> * _Nullable)properties;
 - (void)screen:(NSString * _Nullable)name properties:(NSDictionary<NSString *, id> * _Nullable)properties otherIds:(NSDictionary<NSString *, id> * _Nullable)otherIds;
+- (void)setCrossPlatformSDKVersion:(NSString * _Nonnull)version;
 - (void)trackAppBackgroundedEvent:(NSDictionary<NSString *, id> * _Nullable)properties;
 - (void)trackAppCrashedEvent:(NSDictionary<NSString *, id> * _Nonnull)crashReport;
 - (void)getUnreadCountObjcWithTokenizedCid:(NSString * _Nonnull)tokenizedCid completion:(void (^ _Nonnull)(NSNumber * _Nullable))completion;

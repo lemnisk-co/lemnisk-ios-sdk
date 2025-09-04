@@ -120,8 +120,9 @@ extension UIKit.UIDevice {
   @objc public func application(_ application: UIKit.UIApplication, didReceiveRemoteNotification userInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
-  @objc public func registerForPushNotifications(categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
-  @objc public func registerForPushNotifications(completion: ((Swift.Bool, Swift.String) -> Swift.Void)? = nil)
+  @objc public func registerForPushNotifications(withCategories categories: Swift.Set<UserNotifications.UNNotificationCategory>?)
+  @objc public func registerForPushNotifications()
+  @objc public func registerForPushNotifications(completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
   @objc public func getTrackingStatus() -> Swift.String?
   @objc public func showTrackingDialog() -> Swift.String?
   @objc public func getAPNSToken() -> Swift.String
@@ -136,9 +137,13 @@ extension UIKit.UIDevice {
   @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
   public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
   @objc public func getCustomConsentObjc(completion: @escaping (Foundation.NSNumber?, Foundation.NSNumber?) -> Swift.Void)
+  @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?)
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?)
   @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?)
   @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  @objc public func setCrossPlatformSDKVersion(_ version: Swift.String)
   @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
   @objc public func trackAppCrashedEvent(_ crashReport: [Swift.String : Any])
   public func getUnreadCount(tokenizedCid: Swift.String, completion: @escaping (Swift.Int?) -> ())

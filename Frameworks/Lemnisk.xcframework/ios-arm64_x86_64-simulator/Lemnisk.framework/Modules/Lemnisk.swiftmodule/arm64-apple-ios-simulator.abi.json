@@ -2684,7 +2684,7 @@
           {
             "kind": "Function",
             "name": "registerForPushNotifications",
-            "printedName": "registerForPushNotifications(categories:)",
+            "printedName": "registerForPushNotifications(withCategories:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2711,13 +2711,34 @@
                     "usr": "s:Sh"
                   }
                 ],
-                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)registerForPushNotificationsWithCategories:",
-            "mangledName": "$s7LemniskAAC28registerForPushNotifications10categoriesyShySo22UNNotificationCategoryCGSg_tF",
+            "mangledName": "$s7LemniskAAC28registerForPushNotifications14withCategoriesyShySo22UNNotificationCategoryCGSg_tF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "registerForPushNotifications",
+            "printedName": "registerForPushNotifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)registerForPushNotifications",
+            "mangledName": "$s7LemniskAAC28registerForPushNotificationsyyF",
             "moduleName": "Lemnisk",
             "declAttributes": [
               "AccessControl",
@@ -2737,49 +2758,40 @@
                 "printedName": "()"
               },
               {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.Bool, Swift.String) -> ())?",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool, Swift.String) -> ()",
                 "children": [
                   {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.Bool, Swift.String) -> ()",
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.Bool, Swift.String)",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Swift.Bool, Swift.String)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ]
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
                       }
                     ]
                   }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
+                ]
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)registerForPushNotificationsWithCompletion:",
-            "mangledName": "$s7LemniskAAC28registerForPushNotifications10completionyySb_SStcSg_tF",
+            "mangledName": "$s7LemniskAAC28registerForPushNotifications10completionyySb_SStc_tF",
             "moduleName": "Lemnisk",
             "declAttributes": [
               "AccessControl",
@@ -3279,6 +3291,68 @@
           {
             "kind": "Function",
             "name": "identify",
+            "printedName": "identify(_:traits:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)identify:traits:",
+            "mangledName": "$s7LemniskAAC8identify_6traitsySSSg_SDySSypGSgtF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "identify",
             "printedName": "identify(_:traits:otherIds:)",
             "children": [
               {
@@ -3358,6 +3432,68 @@
             "declKind": "Func",
             "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)identify:traits:otherIds:",
             "mangledName": "$s7LemniskAAC8identify_6traits8otherIdsySSSg_SDySSypGSgAHtF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "track",
+            "printedName": "track(_:properties:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)track:properties:",
+            "mangledName": "$s7LemniskAAC5track_10propertiesySSSg_SDySSypGSgtF",
             "moduleName": "Lemnisk",
             "declAttributes": [
               "AccessControl",
@@ -3457,6 +3593,68 @@
           {
             "kind": "Function",
             "name": "screen",
+            "printedName": "screen(_:properties:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)screen:properties:",
+            "mangledName": "$s7LemniskAAC6screen_10propertiesySSSg_SDySSypGSgtF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "screen",
             "printedName": "screen(_:properties:otherIds:)",
             "children": [
               {
@@ -3536,6 +3734,33 @@
             "declKind": "Func",
             "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)screen:properties:otherIds:",
             "mangledName": "$s7LemniskAAC6screen_10properties8otherIdsySSSg_SDySSypGSgAHtF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCrossPlatformSDKVersion",
+            "printedName": "setCrossPlatformSDKVersion(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)setCrossPlatformSDKVersion:",
+            "mangledName": "$s7LemniskAAC26setCrossPlatformSDKVersionyySSF",
             "moduleName": "Lemnisk",
             "declAttributes": [
               "AccessControl",
@@ -15454,497 +15679,504 @@
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2975,
+      "offset": 2984,
+      "length": 28,
+      "value": "\"cross_platform_sdk_version\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3045,
       "length": 18,
       "value": "\"sdk_build_number\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3023,
+      "offset": 3093,
       "length": 15,
       "value": "\"sdk_build_env\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3069,
+      "offset": 3139,
       "length": 16,
       "value": "\"sdk_build_name\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3115,
+      "offset": 3185,
       "length": 14,
       "value": "\"push_enabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3158,
+      "offset": 3228,
       "length": 13,
       "value": "\"notif_state\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3195,
+      "offset": 3265,
       "length": 12,
       "value": "\"event_type\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3240,
+      "offset": 3310,
       "length": 18,
       "value": "\"is_token_refresh\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3286,
+      "offset": 3356,
       "length": 11,
       "value": "\"event_sdk\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3326,
+      "offset": 3396,
       "length": 14,
       "value": "\"event_source\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3362,
+      "offset": 3432,
       "length": 5,
       "value": "\"csm\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3389,
+      "offset": 3459,
       "length": 5,
       "value": "\"rid\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3419,
+      "offset": 3489,
       "length": 9,
       "value": "\"src_rid\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3451,
+      "offset": 3521,
       "length": 6,
       "value": "\"meta\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3483,
+      "offset": 3553,
       "length": 9,
       "value": "\"payload\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3521,
+      "offset": 3591,
       "length": 5,
       "value": "\"ack\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3553,
+      "offset": 3623,
       "length": 7,
       "value": "\"title\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3590,
+      "offset": 3660,
       "length": 10,
       "value": "\"subtitle\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3626,
+      "offset": 3696,
       "length": 6,
       "value": "\"body\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3660,
+      "offset": 3730,
       "length": 18,
       "value": "\"input_event_name\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3709,
+      "offset": 3779,
       "length": 9,
       "value": "\"context\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3748,
+      "offset": 3818,
       "length": 6,
       "value": "\"prop\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3781,
+      "offset": 3851,
       "length": 9,
       "value": "\"payload\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3817,
+      "offset": 3887,
       "length": 11,
       "value": "\"push_type\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3855,
+      "offset": 3925,
       "length": 11,
       "value": "\"push_from\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3888,
+      "offset": 3958,
       "length": 5,
       "value": "\"lat\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3916,
+      "offset": 3986,
       "length": 6,
       "value": "\"long\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3949,
+      "offset": 4019,
       "length": 10,
       "value": "\"latitude\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3987,
+      "offset": 4057,
       "length": 11,
       "value": "\"longitude\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4021,
+      "offset": 4091,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4056,
+      "offset": 4126,
       "length": 12,
       "value": "\"geofenceId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4096,
+      "offset": 4166,
       "length": 18,
       "value": "\"transitionIntent\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4147,
+      "offset": 4217,
       "length": 9,
       "value": "\"entered\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4191,
+      "offset": 4261,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4226,
+      "offset": 4296,
       "length": 8,
       "value": "\"exited\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4268,
+      "offset": 4338,
       "length": 3,
       "value": "\"2\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4295,
+      "offset": 4365,
       "length": 7,
       "value": "\"place\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4332,
+      "offset": 4402,
       "length": 13,
       "value": "\"geoLocation\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4369,
+      "offset": 4439,
       "length": 7,
       "value": "\"param\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4405,
+      "offset": 4475,
       "length": 6,
       "value": "\"e800\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4440,
+      "offset": 4510,
       "length": 5,
       "value": "\"cid\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4468,
+      "offset": 4538,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4508,
+      "offset": 4578,
       "length": 17,
       "value": "\"input_push_type\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4549,
+      "offset": 4619,
       "length": 7,
       "value": "\"event\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4580,
+      "offset": 4650,
       "length": 7,
       "value": "\"lemid\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4613,
+      "offset": 4683,
       "length": 16,
       "value": "\"ifaFlagEnabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4658,
+      "offset": 4728,
       "length": 13,
       "value": "\"ios_version\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4699,
+      "offset": 4769,
       "length": 12,
       "value": "\"ios_device\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4738,
+      "offset": 4808,
       "length": 12,
       "value": "\"device_ets\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4780,
+      "offset": 4850,
       "length": 15,
       "value": "\"app_namespace\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4821,
+      "offset": 4891,
       "length": 9,
       "value": "\"carrier\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4857,
+      "offset": 4927,
       "length": 10,
       "value": "\"timezone\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4891,
+      "offset": 4961,
       "length": 7,
       "value": "\"msgId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4927,
+      "offset": 4997,
       "length": 19,
       "value": "\"originalTimestamp\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4973,
+      "offset": 5043,
       "length": 8,
       "value": "\"sentAt\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5010,
+      "offset": 5080,
       "length": 13,
       "value": "\"device_lang\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5056,
+      "offset": 5126,
       "length": 18,
       "value": "\"device_pref_lang\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5103,
+      "offset": 5173,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5138,
+      "offset": 5208,
       "length": 13,
       "value": "\"pushSubType\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5178,
+      "offset": 5248,
       "length": 10,
       "value": "\"deviceId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5216,
+      "offset": 5286,
       "length": 11,
       "value": "\"publicKey\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5258,
+      "offset": 5328,
       "length": 15,
       "value": "\"tokenized_cid\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5302,
+      "offset": 5372,
       "length": 6,
       "value": "\"idfv\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5339,
+      "offset": 5409,
       "length": 14,
       "value": "\"custDeviceId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5383,
+      "offset": 5453,
       "length": 13,
       "value": "\"unreadCount\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5423,
+      "offset": 5493,
       "length": 10,
       "value": "\"markRead\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5462,
+      "offset": 5532,
       "length": 12,
       "value": "\"markDelete\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5500,
+      "offset": 5570,
       "length": 9,
       "value": "\"readAll\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5537,
+      "offset": 5607,
       "length": 11,
       "value": "\"deleteAll\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5576,
+      "offset": 5646,
       "length": 8,
       "value": "\"\/certs\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5622,
+      "offset": 5692,
       "length": 12,
       "value": "\"lemnisk.co\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskAPIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5664,
+      "offset": 5734,
       "length": 14,
       "value": "\"certificate_\""
     },
@@ -16784,14 +17016,14 @@
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Lemnisk.swift",
       "kind": "BooleanLiteral",
-      "offset": 14492,
+      "offset": 15330,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Lemnisk.swift",
       "kind": "BooleanLiteral",
-      "offset": 16070,
+      "offset": 16908,
       "length": 5,
       "value": "false"
     },
@@ -17275,48 +17507,48 @@
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "StringLiteral",
       "offset": 305,
-      "length": 7,
-      "value": "\"3.9.9\""
+      "length": 8,
+      "value": "\"3.9.10\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 455,
+      "offset": 456,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1363,
+      "offset": 1364,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1414,
+      "offset": 1415,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1474,
+      "offset": 1475,
       "length": 38,
       "value": "\"https:\/\/mu-pl.lemnisk.co\/analyze\/ael\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8575,
+      "offset": 8576,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 19154,
+      "offset": 19265,
       "length": 1,
       "value": "1"
     },
@@ -17681,279 +17913,279 @@
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
       "offset": 2766,
-      "length": 7,
-      "value": "\"3.9.9\""
+      "length": 8,
+      "value": "\"3.9.10\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 2890,
+      "offset": 2891,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 3709,
+      "offset": 3710,
       "length": 8,
       "value": "12000000"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3884,
+      "offset": 3885,
       "length": 20,
       "value": "\"selectedServerType\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 3949,
+      "offset": 3950,
       "length": 28,
       "value": "\"silentPushTriggerTimeStamp\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4028,
+      "offset": 4029,
       "length": 34,
       "value": "\"LemniskCertificatePinningEnabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 4256,
+      "offset": 4257,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 4547,
+      "offset": 4548,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 4582,
+      "offset": 4583,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 4626,
+      "offset": 4627,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4776,
+      "offset": 4777,
       "length": 26,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss'Z'\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4887,
+      "offset": 4888,
       "length": 30,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5002,
+      "offset": 5003,
       "length": 17,
       "value": "\"yyyyMMdd-HHmmss\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5104,
+      "offset": 5105,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5201,
+      "offset": 5202,
       "length": 9,
       "value": "\"MMMM dd\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5295,
+      "offset": 5296,
       "length": 9,
       "value": "\"hh:mm a\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5389,
+      "offset": 5390,
       "length": 12,
       "value": "\"MM.dd.yyyy\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5486,
+      "offset": 5487,
       "length": 5,
       "value": "\"UTC\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5576,
+      "offset": 5577,
       "length": 11,
       "value": "\"Yesterday\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5684,
+      "offset": 5685,
       "length": 12,
       "value": "\"MM\/dd\/yyyy\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 6022,
+      "offset": 6023,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 6437,
+      "offset": 6438,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 6809,
+      "offset": 6810,
       "length": 2,
       "value": "64"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "FloatLiteral",
-      "offset": 6864,
+      "offset": 6865,
       "length": 10,
       "value": "0.46666666"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7034,
+      "offset": 7035,
       "length": 4,
       "value": "\"OK\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7088,
+      "offset": 7089,
       "length": 10,
       "value": "\"Settings\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7143,
+      "offset": 7144,
       "length": 5,
       "value": "\"Yes\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7192,
+      "offset": 7193,
       "length": 4,
       "value": "\"No\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7244,
+      "offset": 7245,
       "length": 8,
       "value": "\"Cancel\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7301,
+      "offset": 7302,
       "length": 9,
       "value": "\"Dismiss\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7357,
+      "offset": 7358,
       "length": 7,
       "value": "\"Close\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7402,
+      "offset": 7403,
       "length": 9,
       "value": "\"Lemnisk\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7468,
+      "offset": 7469,
       "length": 84,
       "value": "\"Your device could not send e-mail.Please check e-mail configuration and try again.\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7608,
+      "offset": 7609,
       "length": 26,
       "value": "\"isDashboardObserverAdded\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7660,
+      "offset": 7661,
       "length": 9,
       "value": "\"entered\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7694,
+      "offset": 7695,
       "length": 8,
       "value": "\"exited\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7730,
+      "offset": 7731,
       "length": 4,
       "value": "\"--\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "StringLiteral",
-      "offset": 7760,
+      "offset": 7761,
       "length": 9,
       "value": "\"lemnisk\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 8927,
+      "offset": 8928,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 9638,
+      "offset": 9639,
       "length": 1,
       "value": "1"
     },
@@ -18233,345 +18465,352 @@
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16654,
+      "offset": 17620,
       "length": 10,
       "value": "\"appBuild\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16693,
+      "offset": 17659,
       "length": 12,
       "value": "\"appVersion\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16735,
+      "offset": 17701,
       "length": 13,
       "value": "\"appLastSeen\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16783,
+      "offset": 17749,
       "length": 18,
       "value": "\"appLastEventSent\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16836,
+      "offset": 17802,
       "length": 18,
       "value": "\"appLastSessionId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16892,
+      "offset": 17858,
       "length": 21,
       "value": "\"appLastSessionEpoch\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 16944,
+      "offset": 17910,
       "length": 14,
       "value": "\"appCrashLogs\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "IntegerLiteral",
-      "offset": 17040,
+      "offset": 18006,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17078,
+      "offset": 18044,
       "length": 19,
       "value": "\"Lemnisk_AccountId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17132,
+      "offset": 18098,
       "length": 19,
       "value": "\"Lemnisk_ServerUrl\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17193,
+      "offset": 18159,
       "length": 26,
       "value": "\"Lemnisk_ConsentServerUrl\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17256,
+      "offset": 18222,
       "length": 21,
       "value": "\"Lemnisk_AdServerUrl\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17314,
+      "offset": 18280,
       "length": 21,
       "value": "\"Lemnisk_deviceToken\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17374,
+      "offset": 18340,
       "length": 22,
       "value": "\"notificationUserinfo\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17426,
+      "offset": 18392,
       "length": 14,
       "value": "\"push_enabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17476,
+      "offset": 18442,
       "length": 21,
       "value": "\"system_push_enabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17526,
+      "offset": 18492,
       "length": 12,
       "value": "\"activities\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17568,
+      "offset": 18534,
       "length": 13,
       "value": "\"impressions\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17613,
+      "offset": 18579,
       "length": 14,
       "value": "\"dimissEvents\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17652,
+      "offset": 18618,
       "length": 8,
       "value": "\"clicks\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17694,
+      "offset": 18660,
       "length": 17,
       "value": "\"LastRefreshTime\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17756,
+      "offset": 18722,
       "length": 28,
       "value": "\"LastDidUpdateLocationsTime\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17818,
+      "offset": 18784,
       "length": 17,
       "value": "\"LastEntryRegion\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17871,
+      "offset": 18837,
       "length": 19,
       "value": "\"isGeoFenceEnabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17923,
+      "offset": 18889,
       "length": 16,
       "value": "\"LastExitRegion\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 17971,
+      "offset": 18937,
       "length": 15,
       "value": "\"LemniskUserId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18022,
+      "offset": 18988,
       "length": 19,
       "value": "\"lemniskApiReqType\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18073,
+      "offset": 19039,
       "length": 15,
       "value": "\"prevOSConsent\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18127,
+      "offset": 19093,
       "length": 22,
       "value": "\"lemniskCustomConsent\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18183,
+      "offset": 19149,
       "length": 17,
       "value": "\"isLemPushActive\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18250,
+      "offset": 19216,
       "length": 33,
       "value": "\"isSwizzleEnabledForAppDelegates\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18349,
+      "offset": 19315,
       "length": 48,
       "value": "\"isSwizzleEnabledForNotificationCenterDelegates\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18437,
+      "offset": 19403,
       "length": 22,
       "value": "\"notifcationCenterUrl\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18501,
+      "offset": 19467,
       "length": 16,
       "value": "\"Lemnisk_userId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18544,
+      "offset": 19510,
       "length": 18,
       "value": "\"Lemnisk_writeKey\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18590,
+      "offset": 19556,
       "length": 23,
       "value": "\"Lemnisk_cdpActivities\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18649,
+      "offset": 19615,
       "length": 31,
       "value": "\"Lemnisk_cdpActivitiesIdentify\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18713,
+      "offset": 19679,
       "length": 28,
       "value": "\"Lemnisk_cdpActivitiesTrack\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18775,
+      "offset": 19741,
       "length": 29,
       "value": "\"Lemnisk_cdpActivitiesScreen\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18834,
+      "offset": 19800,
       "length": 12,
       "value": "\"appGroupId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18874,
+      "offset": 19840,
       "length": 11,
       "value": "\"publicKey\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18916,
+      "offset": 19882,
       "length": 14,
       "value": "\"uniqueUserId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 18965,
+      "offset": 19931,
       "length": 25,
       "value": "\"LemniskCustomerDeviceId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19025,
+      "offset": 19991,
       "length": 25,
       "value": "\"LemniskOverrideDeviceId\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19099,
+      "offset": 20065,
       "length": 32,
       "value": "\"reAssociatePushTokenAfterReset\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19175,
+      "offset": 20141,
       "length": 34,
       "value": "\"LemniskShouldRefreshSubscription\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19275,
+      "offset": 20241,
       "length": 23,
       "value": "\"isCleverTapSDKEnabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19337,
+      "offset": 20303,
       "length": 22,
       "value": "\"isFirebaseSDKEnabled\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 19396,
+      "offset": 20362,
       "length": 20,
       "value": "\"isAppsFlyerEnabled\""
+    },
+    {
+      "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Extensions\/LemniskUserDefaults+Extension.swift",
+      "kind": "StringLiteral",
+      "offset": 20455,
+      "length": 28,
+      "value": "\"cross_platform_sdk_version\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/DataModels\/LemniskBannerInfo.swift",
@@ -19171,21 +19410,21 @@
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
       "kind": "IntegerLiteral",
-      "offset": 7534,
+      "offset": 7640,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
       "kind": "StringLiteral",
-      "offset": 15950,
-      "length": 7,
-      "value": "\"3.9.9\""
+      "offset": 16056,
+      "length": 8,
+      "value": "\"3.9.10\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
       "kind": "StringLiteral",
-      "offset": 16093,
+      "offset": 16200,
       "length": 2,
       "value": "\"\""
     },
