@@ -6708,6 +6708,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -7147,6 +7154,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -12296,6 +12310,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ExpressibleByColorLiteral",
             "printedName": "_ExpressibleByColorLiteral",
             "usr": "s:s26_ExpressibleByColorLiteralP",
@@ -12552,6 +12573,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ExpressibleByImageLiteral",
             "printedName": "_ExpressibleByImageLiteral",
             "usr": "s:s26_ExpressibleByImageLiteralP",
@@ -12707,6 +12735,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "TopLevelDecoder",
             "printedName": "TopLevelDecoder",
             "children": [
@@ -12729,10 +12771,10 @@
           },
           {
             "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
+            "name": "NetworkDecoder",
+            "printedName": "NetworkDecoder",
+            "usr": "s:7Network0A7DecoderP",
+            "mangledName": "$s7Network0A7DecoderP"
           }
         ]
       },
@@ -12839,6 +12881,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "TopLevelDecoder",
             "printedName": "TopLevelDecoder",
             "children": [
@@ -12861,10 +12917,10 @@
           },
           {
             "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
+            "name": "NetworkDecoder",
+            "printedName": "NetworkDecoder",
+            "usr": "s:7Network0A7DecoderP",
+            "mangledName": "$s7Network0A7DecoderP"
           }
         ]
       },
@@ -13023,6 +13079,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "TopLevelEncoder",
             "printedName": "TopLevelEncoder",
             "children": [
@@ -13042,6 +13105,13 @@
             ],
             "usr": "s:7Combine15TopLevelEncoderP",
             "mangledName": "$s7Combine15TopLevelEncoderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "NetworkEncoder",
+            "printedName": "NetworkEncoder",
+            "usr": "s:7Network0A7EncoderP",
+            "mangledName": "$s7Network0A7EncoderP"
           }
         ]
       },
@@ -13174,6 +13244,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -14428,6 +14505,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Strideable",
             "printedName": "Strideable",
             "children": [
@@ -14656,6 +14740,28 @@
             ],
             "usr": "s:7SwiftUI10AnimatableP",
             "mangledName": "$s7SwiftUI10AnimatableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AtomicRepresentable",
+            "printedName": "AtomicRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AtomicRepresentation",
+                "printedName": "AtomicRepresentation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "_Atomic64BitStorage",
+                    "printedName": "Synchronization._Atomic64BitStorage",
+                    "usr": "s:15Synchronization19_Atomic64BitStorageV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:15Synchronization19AtomicRepresentableP",
+            "mangledName": "$s15Synchronization19AtomicRepresentableP"
           }
         ]
       },
@@ -14831,6 +14937,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -15053,6 +15166,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
@@ -17508,7 +17628,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 8,
-      "value": "\"3.9.10\""
+      "value": "\"3.9.11\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -17914,7 +18034,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 8,
-      "value": "\"3.9.10\""
+      "value": "\"3.9.11\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -19419,7 +19539,7 @@
       "kind": "StringLiteral",
       "offset": 16056,
       "length": 8,
-      "value": "\"3.9.10\""
+      "value": "\"3.9.11\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",

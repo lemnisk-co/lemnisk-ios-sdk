@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Lemnisk
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Lemnisk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -114,62 +114,126 @@ extension UIKit.UIDevice {
   @objc public func setSwizzleForAll(state: Swift.Bool)
   @objc public func setSwizzleForAppDelegates(state: Swift.Bool)
   @objc public func setSwizzleForNotificationCenterDelegates(state: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func isLemniskPush(userInfo: [Swift.String : Any]?) -> Swift.Bool
+  #endif
   @objc public func application(_ application: UIKit.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Foundation.Data)
   @objc public func application(_ application: UIKit.UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Swift.Error)
   @objc public func application(_ application: UIKit.UIApplication, didReceiveRemoteNotification userInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func registerForPushNotifications(withCategories categories: Swift.Set<UserNotifications.UNNotificationCategory>?)
+  #endif
   @objc public func registerForPushNotifications()
   @objc public func registerForPushNotifications(completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getTrackingStatus() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func showTrackingDialog() -> Swift.String?
+  #endif
   @objc public func getAPNSToken() -> Swift.String
   @objc public func setAppGroupID(groupId: Swift.String)
   @objc public func setUniqueUserId(_ uniqueUserId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getUniqueUserId() -> Swift.String?
+  #endif
   @objc public func resetUser()
   @objc public func setCustomerDeviceId(deviceId: Swift.String)
   @objc public func overrideDeviceId(deviceId: Swift.String)
   @objc public func getOSConsent(completion: @escaping (Swift.Int) -> ())
   @objc public func setConsentServerUrl(serverUrl: Swift.String)
   @objc public func setCustomConsent(transConsent: Swift.Bool, promoConsent: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCustomConsent(completion: @escaping (Swift.Bool?, Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getCustomConsentObjc(completion: @escaping (Foundation.NSNumber?, Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func identify(_ userId: Swift.String?, traits: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func track(_ event: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func screen(_ name: Swift.String?, properties: [Swift.String : Any]?, otherIds: [Swift.String : Any]?)
+  #endif
   @objc public func setCrossPlatformSDKVersion(_ version: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
+  #endif
   @objc public func trackAppCrashedEvent(_ crashReport: [Swift.String : Any])
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getUnreadCount(tokenizedCid: Swift.String, completion: @escaping (Swift.Int?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getUnreadCountObjc(tokenizedCid: Swift.String, completion: @escaping (Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func markRead(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func markReadObjc(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func markBulkRead(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func markBulkReadObjc(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func markDelete(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func markDeleteObjc(tokenizedCid: Swift.String, pid: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func markBulkDelete(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func markBulkDeleteObjc(tokenizedCid: Swift.String, pids: [Swift.String], completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func readAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func readAllObjc(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func deleteAll(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Swift.Bool?) -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func deleteAllObjc(tokenizedCid: Swift.String, type: Swift.String, completion: @escaping (_ success: Foundation.NSNumber?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  #endif
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(campaignId: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String? = nil, enableGeoFence: Swift.Bool? = nil, enablePush: Swift.Bool? = false)
+  #endif
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, notifcationCenterUrl: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func configure(writeKey: Swift.String, serverUrl: Swift.String, lemniskCleverTapCore: LemniskCleverTapCore?, lemniskAppsflyer: LemniskAppsFlyerCore?, lemniskFirebaseCore: LemniskFirebaseCore?)
+  #endif
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func registerLemniskNotificationTasks()
   @objc public func setCertificatePinningEnabled(_ enabled: Swift.Bool)
@@ -182,10 +246,18 @@ extension Lemnisk : CrashEyeDelegate {
 @objc @objcMembers public class LemniskAnalytics : ObjectiveC.NSObject {
   @objc public static let shared: LemniskAnalytics
   @objc public init(cahceEnabled: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logEvent(name: Swift.String, traits: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logEvent(traits: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logActivity(name: Swift.String, traits: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func isLemniskPushNotification(userInfo: [Swift.String : Any]?) -> Swift.Bool
+  #endif
   @objc deinit
 }
 extension UIKit.UIColor {
@@ -197,8 +269,12 @@ extension UIKit.UIColor {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc open func didReceive(_ notification: UserNotifications.UNNotification)
   @_Concurrency.MainActor @preconcurrency @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension LemniskNotificationViewController : UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
@@ -212,16 +288,26 @@ extension LemniskNotificationViewController : UIKit.UICollectionViewDelegate, UI
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class LemniskNotificationView : UIKit.UIView {
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var collectionviewHeightConstraint: UIKit.NSLayoutConstraint!
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var carousalCollection: UIKit.UICollectionView!
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency public func setRootView(rootView: UIKit.UIView)
   @objc deinit
 }
 extension UIKit.UIImage {
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func gif(data: Foundation.Data) -> UIKit.UIImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func gif(url: Swift.String) -> UIKit.UIImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func gif(name: Swift.String) -> UIKit.UIImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 9.0, *)
   public class func gif(asset: Swift.String) -> UIKit.UIImage?
+  #endif
 }
 public struct LemniskNetworkManager {
 }
@@ -231,11 +317,17 @@ public struct LemniskNetworkManager {
   @objc deinit
 }
 extension Foundation.JSONDecoder {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decode<T>(from data: Foundation.Data?) -> T? where T : Swift.Decodable
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decodeInBackground<T>(from data: Foundation.Data?, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+  #endif
 }
 extension Foundation.PropertyListDecoder {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decode<T>(_ type: T.Type, from data: Foundation.Data, skipKeyPath keypath: Swift.String?) throws -> T? where T : Swift.Decodable
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class LemniskEncryptionUtils : ObjectiveC.NSObject {
   @objc final public let kPrivateKeySuffix: Swift.String
@@ -249,10 +341,14 @@ extension Foundation.PropertyListDecoder {
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
   @objc public func handleNotificationAction(center: UserNotifications.UNUserNotificationCenter, response: UserNotifications.UNNotificationResponse)
   @objc public func willPresentRemoteNotification(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  #endif
   @objc public func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Foundation.Data)
   @objc public func didFailToRegisterForRemoteNotificationsWithError(error: any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func handleDeepLink(deepLink: Swift.String?)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class LemniskUtilities : ObjectiveC.NSObject {
@@ -260,15 +356,21 @@ extension Foundation.PropertyListDecoder {
   @objc deinit
 }
 extension Foundation.JSONEncoder {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func encode<T>(from value: T?) -> Foundation.Data? where T : Swift.Encodable
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func encodeInBackground<T>(from encodableObject: T?, onEncode: @escaping (Foundation.Data?) -> Swift.Void) where T : Swift.Encodable
+  #endif
 }
 extension Swift.String {
   public func localized(_ comment: Swift.String = "") -> Swift.String
 }
 extension Foundation.UserDefaults {
   public func set<T>(object type: T, for key: Swift.String, onEncode: @escaping (Swift.Bool) -> Swift.Void) throws where T : Swift.Encodable
+  #if compiler(>=5.3) && $NonescapableTypes
   public func get<T>(object type: T.Type, for key: Swift.String, onDecode: @escaping (T?) -> Swift.Void) where T : Swift.Decodable
+  #endif
   public var isCleverTapSDKEnabled: Swift.Bool {
     get
     set
@@ -304,7 +406,9 @@ extension Swift.Double {
   public var rawValue: LemniskLogLevel.RawValue {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: LemniskLogLevel.RawValue)
+  #endif
 }
 public struct LemniskAppsFlyerCore {
   public var enable: Swift.Bool
@@ -331,7 +435,9 @@ public struct LemniskAES256Crypter {
   open func setServerUrl(url: Swift.String)
   public func setLogLevel(_ logLevel: Swift.String)
   @objc override dynamic open func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func logEvent(userInfo: [Swift.String : Any]?, type: Swift.String, errorMsg: Swift.String? = nil, completion: (() -> Swift.Void)? = nil)
+  #endif
   @objc override dynamic open func serviceExtensionTimeWillExpire()
   @objc override dynamic public init()
   @objc deinit
@@ -346,16 +452,24 @@ public struct LemniskFirebaseCore {
   public init(projectName: Swift.String, enable: Swift.Bool, appId: Swift.String, apiKey: Swift.String, projectId: Swift.String, messagingSenderId: Swift.String)
 }
 extension UIKit.UIWindow {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public var visibleViewController: UIKit.UIViewController? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public class func getVisibleViewControllerFrom(_ viewController: UIKit.UIViewController?) -> UIKit.UIViewController?
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskBanner : ObjectiveC.NSObject {
   public static let shared: LemniskBanner
   public var fitToTheScreen: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getTheBannerView(slotid: Swift.String) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getTheBannerView() -> UIKit.UIView?
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class LemniskNSEEncryptionUtils : ObjectiveC.NSObject {
