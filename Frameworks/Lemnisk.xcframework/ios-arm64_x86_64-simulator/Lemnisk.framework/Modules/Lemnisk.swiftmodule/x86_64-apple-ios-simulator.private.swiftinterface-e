@@ -237,6 +237,7 @@ extension UIKit.UIDevice {
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func registerLemniskNotificationTasks()
   @objc public func setCertificatePinningEnabled(_ enabled: Swift.Bool)
+  @objc public func setupNotificationDelegates()
   @objc override dynamic public init()
   @objc deinit
 }

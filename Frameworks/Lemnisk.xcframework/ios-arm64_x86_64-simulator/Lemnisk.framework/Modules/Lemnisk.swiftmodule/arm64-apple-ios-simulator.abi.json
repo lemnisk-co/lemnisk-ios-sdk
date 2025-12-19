@@ -5305,6 +5305,27 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "setupNotificationDelegates",
+            "printedName": "setupNotificationDelegates()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Lemnisk@objc(cs)Lemnisk(im)setupNotificationDelegates",
+            "mangledName": "$s7LemniskAAC26setupNotificationDelegatesyyF",
+            "moduleName": "Lemnisk",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -17628,7 +17649,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 8,
-      "value": "\"3.9.12\""
+      "value": "\"3.9.13\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -18034,7 +18055,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 8,
-      "value": "\"3.9.12\""
+      "value": "\"3.9.13\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -19553,7 +19574,7 @@
       "kind": "StringLiteral",
       "offset": 16258,
       "length": 8,
-      "value": "\"3.9.12\""
+      "value": "\"3.9.13\""
     },
     {
       "filePath": "\/Users\/koteswaruduakula\/Desktop\/Lemnisk\/lemnisk-app-sdk\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",

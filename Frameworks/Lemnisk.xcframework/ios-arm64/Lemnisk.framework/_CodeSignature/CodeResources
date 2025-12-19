@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Lemnisk-Swift.h</key>
 		<data>
-		tocEW2ILONm0rHoJHC+PUiUr53M=
+		N+t89LbT9gboUSCdlPQLVeuqa3k=
 		</data>
 		<key>Headers/Lemnisk.h</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		t5bAkrOr/wdCrAML+six1GqckAw=
+		/mpzIDHQw+ktTjTcsUCRfJOnf5g=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		4hq56coWOngzRUnYTZBHMimPmEw=
+		uoUukCjwaMbKk/JsC+mWwyf3A+c=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -90,11 +90,11 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		4hq56coWOngzRUnYTZBHMimPmEw=
+		uoUukCjwaMbKk/JsC+mWwyf3A+c=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		qPgWD6rWoTGe6gQjLm9Lvs2tLug=
+		FCXop3Gk2NvlEVGa6IH9jLtv54k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Oy9TAk0YbpUuBH0R8Xy7hbmslMw5/AiunshPtvcAxiw=
+			lEAW7FjmWk3nv8av9T9O3/dGIgM5Q2S/ixUl7k9VdYE=
 			</data>
 		</dict>
 		<key>Headers/Lemnisk.h</key>
@@ -226,14 +226,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eqnoCNU+nM4UcR7FAmuvfZ1EW5Fk28lOlJlqbmEJNlU=
+			ggk2DEknz/6VJ4c/kgPoDd9/uW1L6Nq6pqlz+SqznZE=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eRxy706HH4dva5UaX/jZXuPP1USCsc3fetNbmHq5Fdo=
+			ZoUn2arXC6yUf09WWEXFUhDHcwUpbWIVz9Gpdn6fVhA=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -247,14 +247,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eRxy706HH4dva5UaX/jZXuPP1USCsc3fetNbmHq5Fdo=
+			ZoUn2arXC6yUf09WWEXFUhDHcwUpbWIVz9Gpdn6fVhA=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lEJOJlK5YQ1Etmq0enEOgyFZiSHd1/R6EadTp6DYuc8=
+			p/wGGp+9MPd65P0S5UM+Z2110qEPdW/MaamwX5Bkvhg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
