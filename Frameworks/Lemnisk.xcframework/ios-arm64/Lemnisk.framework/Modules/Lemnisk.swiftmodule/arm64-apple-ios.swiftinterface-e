@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Lemnisk
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -23,12 +23,58 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public struct LemniskSDKConfigurationResponse : Swift.Codable {
+  public let status: Swift.String?
+  public let message: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var sdkConfig: Lemnisk.LemniskSDKConfiguration? {
+    get
+  }
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LemniskSDKConfiguration : Swift.Codable {
+  public let adserverUrl: Swift.String?
+  public let geofenceUrl: Swift.String?
+  public let consentServerUrl: Swift.String?
+  public let notificationCenterUrl: Swift.String?
+  public let loggingEndpoint: Swift.String?
+  public let enablePush: Swift.Bool?
+  public let enableGeoFence: Swift.Bool?
+  public let enableAnalytics: Swift.Bool?
+  public let enableCrashReporting: Swift.Bool?
+  public let enableInAppMessaging: Swift.Bool?
+  public let enableSessionTracking: Swift.Bool?
+  public let debugMode: Swift.Bool?
+  public let enableTokenRefresh: Swift.Bool?
+  public let enablePullNotification: Swift.Bool?
+  public let enableSwizzling: Swift.Bool?
+  public let enableAppDelegateSwizzling: Swift.Bool?
+  public let enableNotificationCenterSwizzling: Swift.Bool?
+  public let enableCertificatePinning: Swift.Bool?
+  public let apiRequestType: Swift.String?
+  public let tokenRefreshInterval: Swift.Int?
+  public let pullFetchInterval: Swift.Int?
+  public let minRefreshInterval: Swift.Int?
+  public let engagementQueueMaxSize: Swift.Int?
+  public let errorQueueMaxSize: Swift.Int?
+  public let engagementMaxAttempts: Swift.Int?
+  public let errorMaxAttempts: Swift.Int?
+  public let sessionTimeoutMinutes: Swift.Int?
+  public let activeSessionThresholdSeconds: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 @_hasMissingDesignatedInitializers @available(iOS 14, *)
 public class LemniskTracking {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LemniskAppAnalytics : ObjectiveC.NSObject {
   public static let shared: Lemnisk.LemniskAppAnalytics
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func start(_ launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  #endif
   @objc deinit
 }
 public protocol CrashEyeDelegate : ObjectiveC.NSObjectProtocol {
@@ -100,6 +146,7 @@ extension UIKit.UIDevice {
   @objc public static let swizzleQueue: Dispatch.DispatchQueue
   @objc final public let destructiveCategories: [Swift.String]
   @objc public var alreadyCalledDidRegisterToken: Swift.Bool
+  @objc public func checkAndHandlePermissionChange()
   @objc public func swizzleDelegateMethods()
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
@@ -108,6 +155,14 @@ extension UIKit.UIDevice {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Lemnisk : ObjectiveC.NSObject {
   @objc public static let shared: Lemnisk.Lemnisk
+  @objc public var isConfigured: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static var currentContext: Swift.String? {
+    @objc get
+  }
+  #endif
   @objc public func setLogLevel(_ logLevel: Swift.String)
   @objc public func setRequestType(type: Swift.String)
   @objc public func setSwizzle(state: Swift.Bool)
@@ -171,6 +226,12 @@ extension UIKit.UIDevice {
   #endif
   @objc public func setCrossPlatformSDKVersion(_ version: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setContext(_ contextValue: Swift.String?)
+  #endif
+  @objc public func clearContext()
+  @objc public func pauseInApp()
+  @objc public func resumeInApp()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func trackAppBackgroundedEvent(_ properties: [Swift.String : Any]?)
   #endif
   @objc public func trackAppCrashedEvent(_ crashReport: [Swift.String : Any])
@@ -227,6 +288,7 @@ extension UIKit.UIDevice {
   #endif
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, enablePush: Swift.Bool)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String)
+  @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, notifcationCenterUrl: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
@@ -235,9 +297,23 @@ extension UIKit.UIDevice {
   public func configure(writeKey: Swift.String, serverUrl: Swift.String, lemniskCleverTapCore: Lemnisk.LemniskCleverTapCore?, lemniskAppsflyer: Lemnisk.LemniskAppsFlyerCore?, lemniskFirebaseCore: Lemnisk.LemniskFirebaseCore?)
   #endif
   @objc public func configure(writeKey: Swift.String, serverUrl: Swift.String, adserverUrl: Swift.String, enablePush: Swift.Bool)
+  @objc public func configure(config: [Swift.String : Any])
   @objc public func registerLemniskNotificationTasks()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func autoBootstrapFromInfoPlist(launchOptions: [Swift.AnyHashable : Any]?)
+  #endif
   @objc public func setCertificatePinningEnabled(_ enabled: Swift.Bool)
   @objc public func setupNotificationDelegates()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getCachedConfiguration() -> Lemnisk.LemniskSDKConfiguration?
+  #endif
+  @objc public func isRemoteConfigurationFetched() -> Swift.Bool
+  @objc public func isAnalyticsEnabled() -> Swift.Bool
+  @objc public func isCrashReportingEnabled() -> Swift.Bool
+  @objc public func isInAppMessagingEnabled() -> Swift.Bool
+  @objc public func isSessionTrackingEnabled() -> Swift.Bool
+  @objc public func isPushEnabled() -> Swift.Bool
+  @objc public func isGeoFenceEnabled() -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
@@ -478,5 +554,814 @@ extension UIKit.UIWindow {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class DeliveredMIDStore : ObjectiveC.NSObject {
+  @objc public static func addMID(_ mid: Swift.String)
+  @objc public static func sendReconciliationEvent()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class InAppManager {
+  public static let shared: Lemnisk.InAppManager
+  public static let plistKeyEnabled: Swift.String
+  final public func start(sdkVersion: Swift.String)
+  final public var isEnabled: Swift.Bool {
+    get
+  }
+  final public func prewarmRenderer()
+  final public var isPaused: Swift.Bool {
+    get
+  }
+  final public func pause()
+  final public func resume()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setContext(_ context: Swift.String?)
+  #endif
+  final public func clearContext()
+  final public func showTestFromPayload(_ payload: [Swift.String : Any])
+  final public func onTrack(name: Swift.String, properties: [Swift.String : Any])
+  final public func onScreen(name: Swift.String, properties: [Swift.String : Any])
+  final public func onSessionStart(firstSession: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setCurrentPresenter(_ vc: UIKit.UIViewController?)
+  #endif
+  final public func onRemoteConfigApplied()
+  final public func scheduleFetch()
+  final public var campaigns: [Lemnisk.InAppCampaign] {
+    get
+  }
+  final public var channelCap: [Lemnisk.CapEntry] {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public var globalCoolOff: Lemnisk.GlobalCoolOff? {
+    get
+  }
+  #endif
+  final public var macros: [Swift.String : Swift.String] {
+    get
+  }
+  final public var configVersion: Swift.Int {
+    get
+  }
+  @objc deinit
+}
+extension Lemnisk.InAppManager : Lemnisk.InAppDisplayDispatcher.MacrosSource {
+  final public var currentMacros: [Swift.String : Swift.String] {
+    get
+  }
+}
+public enum Platform : Swift.String, Swift.Codable {
+  case android
+  case ios
+  case huawei
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CapPeriod : Swift.String, Swift.Codable {
+  case day
+  case week
+  case month
+  case lifetime
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ConditionOperator : Swift.String, Swift.Codable {
+  case eq, neq
+  case gt, gte, lt, lte
+  case `in`
+  case notIn
+  case contains
+  case exists
+  case notExists
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DelayUnit : Swift.String, Swift.Codable {
+  case seconds
+  case minutes
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ContentType : Swift.String, Swift.Codable {
+  case beefreeHtml
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PlacementType : Swift.String, Swift.Codable {
+  case top
+  case center
+  case bottom
+  case fullscreen
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CoolOffAction : Swift.String, Swift.Codable {
+  case drop
+  case queue
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum JSONValue : Swift.Codable, Swift.Equatable {
+  case string(Swift.String)
+  case int(Swift.Int64)
+  case double(Swift.Double)
+  case bool(Swift.Bool)
+  case array([Lemnisk.JSONValue])
+  case object([Swift.String : Lemnisk.JSONValue])
+  case null
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: Lemnisk.JSONValue, b: Lemnisk.JSONValue) -> Swift.Bool
+}
+public struct Condition : Swift.Codable, Swift.Equatable {
+  public let property: Swift.String
+  public let `operator`: Lemnisk.ConditionOperator
+  public let value: Lemnisk.JSONValue?
+  public static func == (a: Lemnisk.Condition, b: Lemnisk.Condition) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CapEntry : Swift.Codable, Swift.Equatable {
+  public let max: Swift.Int
+  public let period: Lemnisk.CapPeriod
+  public static func == (a: Lemnisk.CapEntry, b: Lemnisk.CapEntry) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Delay : Swift.Codable, Swift.Equatable {
+  public let value: Swift.Int
+  public let unit: Lemnisk.DelayUnit
+  public static func == (a: Lemnisk.Delay, b: Lemnisk.Delay) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Overlay : Swift.Codable, Swift.Equatable {
+  public let enabled: Swift.Bool
+  public let color: Swift.String?
+  public let opacity: Swift.Double?
+  public init(from decoder: any Swift.Decoder) throws
+  public static func == (a: Lemnisk.Overlay, b: Lemnisk.Overlay) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct Display : Swift.Codable, Swift.Equatable {
+  public let placement: Lemnisk.PlacementType
+  public let overlay: Lemnisk.Overlay
+  public let autoDismissSeconds: Swift.Int
+  public let closeButtonEnabled: Swift.Bool
+  public static func == (a: Lemnisk.Display, b: Lemnisk.Display) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Content : Swift.Codable, Swift.Equatable {
+  public let type: Lemnisk.ContentType
+  public let url: Swift.String
+  public let hash: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+  public static func == (a: Lemnisk.Content, b: Lemnisk.Content) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct FrequencyCap : Swift.Codable, Swift.Equatable {
+  public let engagement: [Lemnisk.CapEntry]
+  public let segment: [Lemnisk.CapEntry]
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: Lemnisk.FrequencyCap, b: Lemnisk.FrequencyCap) -> Swift.Bool
+}
+public struct GlobalCoolOff : Swift.Codable, Swift.Equatable {
+  public let enabled: Swift.Bool
+  public let periodSeconds: Swift.Int?
+  public let lastImpressionTs: Swift.Int64?
+  public let action: Lemnisk.CoolOffAction?
+  public static func == (a: Lemnisk.GlobalCoolOff, b: Lemnisk.GlobalCoolOff) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CoolOffSettings : Swift.Codable, Swift.Equatable {
+  public static let actionQueue: Swift.String
+  public static let actionDrop: Swift.String
+  public static let `default`: Lemnisk.CoolOffSettings
+  public let honorCoolOff: Swift.Bool
+  public let coolOffAction: Swift.String
+  public init(honorCoolOff: Swift.Bool, coolOffAction: Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+  public var queueOnCoolOff: Swift.Bool {
+    get
+  }
+  public static func == (a: Lemnisk.CoolOffSettings, b: Lemnisk.CoolOffSettings) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct CustomEventRule : Swift.Codable, Swift.Equatable {
+  public let event: Swift.String
+  public let eventConditions: [Lemnisk.Condition]
+  public let contexts: [Swift.String]
+  public static func == (a: Lemnisk.CustomEventRule, b: Lemnisk.CustomEventRule) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ScreenLoadRule : Swift.Codable, Swift.Equatable {
+  public let screen: Swift.String
+  public let eventConditions: [Lemnisk.Condition]
+  public let contexts: [Swift.String]
+  public init(screen: Swift.String, eventConditions: [Lemnisk.Condition] = [], contexts: [Swift.String])
+  public init(from decoder: any Swift.Decoder) throws
+  public static func == (a: Lemnisk.ScreenLoadRule, b: Lemnisk.ScreenLoadRule) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum Trigger : Swift.Equatable {
+  case customEvent(rules: [Lemnisk.CustomEventRule], sessionConditions: [Lemnisk.Condition])
+  case screenLoad(rules: [Lemnisk.ScreenLoadRule], sessionConditions: [Lemnisk.Condition])
+  case sessionStart(sessionConditions: [Lemnisk.Condition])
+  public var sessionConditions: [Lemnisk.Condition] {
+    get
+  }
+  public static func == (a: Lemnisk.Trigger, b: Lemnisk.Trigger) -> Swift.Bool
+}
+public struct UnknownTriggerType : Swift.Error, Swift.Equatable {
+  public let value: Swift.String
+  public static func == (a: Lemnisk.UnknownTriggerType, b: Lemnisk.UnknownTriggerType) -> Swift.Bool
+}
+extension Lemnisk.Trigger : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct InAppCampaign : Swift.Codable, Swift.Equatable {
+  public let campaignId: Swift.String?
+  public let segmentId: Swift.String
+  public let engagementId: Swift.String
+  public let priority: Swift.Int
+  public let version: Swift.Int
+  public let ttl: Swift.Int64
+  public let platforms: [Lemnisk.Platform]
+  public let trigger: Lemnisk.Trigger
+  public let delay: Lemnisk.Delay
+  public let display: Lemnisk.Display
+  public let content: Lemnisk.Content
+  public let frequencyCap: Lemnisk.FrequencyCap
+  public let coolOffSettings: Lemnisk.CoolOffSettings?
+  public var effectiveCoolOffSettings: Lemnisk.CoolOffSettings {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromTestPayload(_ payload: [Swift.String : Any]) -> Lemnisk.InAppCampaign?
+  #endif
+  public static func == (a: Lemnisk.InAppCampaign, b: Lemnisk.InAppCampaign) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct InAppConfig : Swift.Codable, Swift.Equatable {
+  public let configVersion: Swift.Int
+  public let configHash: Swift.String?
+  public let serverTime: Swift.Int64
+  public let syncIntervalSeconds: Swift.Int?
+  public let unchanged: Swift.Bool?
+  public let channelCap: [Lemnisk.CapEntry]?
+  public let globalCoolOff: Lemnisk.GlobalCoolOff?
+  public let frequencyState: Lemnisk.JSONValue?
+  public let campaigns: [Lemnisk.InAppCampaign]?
+  public let macros: [Swift.String : Swift.String]?
+  public static func == (a: Lemnisk.InAppConfig, b: Lemnisk.InAppConfig) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InAppCampaignResponse : Swift.Codable, Swift.Equatable {
+  public let status: Swift.String
+  public let data: Lemnisk.InAppConfig?
+  public let error: Lemnisk.InAppCampaignResponse.ErrorPayload?
+  public var isSuccess: Swift.Bool {
+    get
+  }
+  public struct ErrorPayload : Swift.Codable, Swift.Equatable {
+    public let code: Swift.String
+    public let message: Swift.String
+    public static func == (a: Lemnisk.InAppCampaignResponse.ErrorPayload, b: Lemnisk.InAppCampaignResponse.ErrorPayload) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public static func == (a: Lemnisk.InAppCampaignResponse, b: Lemnisk.InAppCampaignResponse) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Sha256 {
+  public static func prefix(_ hexHash: Swift.String) -> Swift.String
+  public static func hex(_ data: Foundation.Data) -> Swift.String
+  public static func isValidSha256Hex(_ s: Swift.String) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func normalize(_ contractHash: Swift.String?) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func verify(_ data: Foundation.Data, expectedNormalised: Swift.String?) -> Swift.Bool
+  #endif
+}
+public enum AtomicFileWriter {
+  public static func write(_ data: Foundation.Data, to url: Foundation.URL) throws
+  public static func writeString(_ s: Swift.String, to url: Foundation.URL) throws
+}
+final public class InAppPaths {
+  final public let root: Foundation.URL
+  convenience public init() throws
+  public init(subpath: Swift.String) throws
+  public static func forTest() throws -> Lemnisk.InAppPaths
+  final public func wipe()
+  final public var contentDir: Foundation.URL {
+    get
+  }
+  final public var assetDir: Foundation.URL {
+    get
+  }
+  final public var stateDir: Foundation.URL {
+    get
+  }
+  final public var indexFile: Foundation.URL {
+    get
+  }
+  final public var metaFile: Foundation.URL {
+    get
+  }
+  final public var rulesFile: Foundation.URL {
+    get
+  }
+  final public var perCampaignStateFile: Foundation.URL {
+    get
+  }
+  final public var frequencyStateFile: Foundation.URL {
+    get
+  }
+  final public func contentFile(for hexHash: Swift.String) -> Foundation.URL
+  final public func assetFile(for hexHash: Swift.String) -> Foundation.URL
+  @objc deinit
+}
+final public class InAppContentStore {
+  public struct HashMismatchError : Swift.Error, Swift.Equatable {
+    public let expected: Swift.String
+    public let actual: Swift.String
+    public static func == (a: Lemnisk.InAppContentStore.HashMismatchError, b: Lemnisk.InAppContentStore.HashMismatchError) -> Swift.Bool
+  }
+  public init(paths: Lemnisk.InAppPaths)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func has(_ contentHashHex: Swift.String?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func readBytes(_ contentHashHex: Swift.String) throws -> Foundation.Data?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func readString(_ contentHashHex: Swift.String) throws -> Swift.String?
+  #endif
+  final public func write(_ contentHashHex: Swift.String, bytes: Foundation.Data) throws
+  final public func verifyAndWrite(expectedHashHex: Swift.String, bytes: Foundation.Data) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func delete(_ contentHashHex: Swift.String?) -> Swift.Bool
+  #endif
+  final public func listAllHashes() -> [Swift.String]
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func lastModified(_ contentHashHex: Swift.String) -> Foundation.Date?
+  #endif
+  @objc deinit
+}
+final public class InAppAssetStore {
+  public init(paths: Lemnisk.InAppPaths)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func has(_ assetHashHex: Swift.String?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func readBytes(_ assetHashHex: Swift.String) throws -> Foundation.Data?
+  #endif
+  final public func write(_ assetHashHex: Swift.String, bytes: Foundation.Data) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func delete(_ assetHashHex: Swift.String?) -> Swift.Bool
+  #endif
+  final public func listAllHashes() -> [Swift.String]
+  final public func totalBytes() -> Swift.Int64
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func lastModified(_ assetHashHex: Swift.String) -> Foundation.Date?
+  #endif
+  final public func touch(_ assetHashHex: Swift.String)
+  final public func byteSize(_ assetHashHex: Swift.String) -> Swift.Int64
+  @objc deinit
+}
+final public class InAppIndexStore {
+  public init(paths: Lemnisk.InAppPaths)
+  final public func load()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func contentHash(for campaignId: Swift.String?) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func assetHash(for assetUrl: Swift.String?) -> Swift.String?
+  #endif
+  final public func contentSnapshot() -> [Swift.String : Swift.String]
+  final public func assetSnapshot() -> [Swift.String : Swift.String]
+  final public func putContentHash(campaignId: Swift.String, hash: Swift.String) throws
+  final public func putAssetHash(assetUrl: Swift.String, hash: Swift.String) throws
+  final public func replaceContentMap(_ newContent: [Swift.String : Swift.String]) throws
+  final public func removeAsset(_ assetUrl: Swift.String) throws
+  final public func clear() throws
+  @objc deinit
+}
+final public class InAppMetaStore {
+  public struct Meta : Swift.Codable, Swift.Equatable {
+    public var configVersion: Swift.Int
+    public var lastSyncedAt: Swift.Int64
+    public var sdkVersion: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(configVersion: Swift.Int, lastSyncedAt: Swift.Int64, sdkVersion: Swift.String?)
+    #endif
+    public static var empty: Lemnisk.InAppMetaStore.Meta {
+      get
+    }
+    public static func == (a: Lemnisk.InAppMetaStore.Meta, b: Lemnisk.InAppMetaStore.Meta) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public init(paths: Lemnisk.InAppPaths)
+  final public func load() -> Lemnisk.InAppMetaStore.Meta
+  final public func save(_ meta: Lemnisk.InAppMetaStore.Meta) throws
+  @objc deinit
+}
+final public class InAppStateStore {
+  public static let inAppChannelId: Swift.Int
+  public init(paths: Lemnisk.InAppPaths)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func perCampaign(for engagementId: Swift.String?) -> Lemnisk.PerCampaignState
+  #endif
+  final public func putPerCampaign(_ state: Lemnisk.PerCampaignState, for engagementId: Swift.String) throws
+  final public func replacePerCampaign(_ next: [Swift.String : Lemnisk.PerCampaignState]) throws
+  final public func perCampaignSnapshot() -> [Swift.String : Lemnisk.PerCampaignState]
+  final public func currentFrequency() -> Lemnisk.FrequencyState
+  final public func putFrequency(_ next: Lemnisk.FrequencyState) throws
+  final public func hasPersistedState() -> Swift.Bool
+  final public func seedFromServerIfFresh(_ serverFrequencyState: Lemnisk.JSONValue)
+  @objc deinit
+}
+public struct PerCampaignState : Swift.Codable, Swift.Equatable {
+  public let displayCount: Swift.Int
+  public let lastShownAt: Swift.Int64
+  public let clickIds: [Swift.String]
+  public init(displayCount: Swift.Int, lastShownAt: Swift.Int64, clickIds: [Swift.String])
+  public static var empty: Lemnisk.PerCampaignState {
+    get
+  }
+  public static func == (a: Lemnisk.PerCampaignState, b: Lemnisk.PerCampaignState) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FrequencyCounter : Swift.Codable, Swift.Equatable {
+  public let count: Swift.Int
+  public let windowStart: Swift.Int64
+  public init(count: Swift.Int, windowStart: Swift.Int64)
+  public static var empty: Lemnisk.FrequencyCounter {
+    get
+  }
+  public func incremented(now: Swift.Int64) -> Lemnisk.FrequencyCounter
+  public static func == (a: Lemnisk.FrequencyCounter, b: Lemnisk.FrequencyCounter) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PerScopeCounters : Swift.Codable, Swift.Equatable {
+  public let day: Lemnisk.FrequencyCounter
+  public let week: Lemnisk.FrequencyCounter
+  public let month: Lemnisk.FrequencyCounter
+  public let lifetime: Lemnisk.FrequencyCounter
+  public init(day: Lemnisk.FrequencyCounter, week: Lemnisk.FrequencyCounter, month: Lemnisk.FrequencyCounter, lifetime: Lemnisk.FrequencyCounter)
+  public static var empty: Lemnisk.PerScopeCounters {
+    get
+  }
+  public static func == (a: Lemnisk.PerScopeCounters, b: Lemnisk.PerScopeCounters) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FrequencyState : Swift.Codable, Swift.Equatable {
+  public let channelId: Swift.Int
+  public let channel: Lemnisk.PerScopeCounters
+  public let segments: [Swift.String : Lemnisk.PerScopeCounters]
+  public let engagements: [Swift.String : Lemnisk.PerScopeCounters]
+  public let globalLastImpressionAt: Swift.Int64
+  public init(channelId: Swift.Int, channel: Lemnisk.PerScopeCounters, segments: [Swift.String : Lemnisk.PerScopeCounters], engagements: [Swift.String : Lemnisk.PerScopeCounters], globalLastImpressionAt: Swift.Int64)
+  public static func empty(channelId: Swift.Int) -> Lemnisk.FrequencyState
+  public static func == (a: Lemnisk.FrequencyState, b: Lemnisk.FrequencyState) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum InAppSyncResult {
+  case success(Lemnisk.InAppConfig)
+  case unchanged(configVersion: Swift.Int)
+  case terminalError(code: Swift.String, message: Swift.String)
+  case transientError(code: Swift.String, message: Swift.String)
+}
+final public class InAppEndpoints {
+  public static let analyzeBaseUserDefaultsKey: Swift.String
+  public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func campaignsUrl(writeKey: Swift.String) -> Foundation.URL?
+  #endif
+  @objc deinit
+}
+final public class InAppSyncClient {
+  public static let capabilityInAppV2: Swift.String
+  public init(sdkVersion: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func fetch(lastConfigVersion: Swift.Int, lastConfigHash: Swift.String?, completion: @escaping (Lemnisk.InAppSyncResult) -> Swift.Void)
+  #endif
+  @objc deinit
+}
+public enum HtmlAssetExtractor {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func extractImageUrls(_ html: Swift.String?) -> [Swift.String]
+  #endif
+}
+final public class InAppContentPrefetcher {
+  public init(contentStore: Lemnisk.InAppContentStore, assetStore: Lemnisk.InAppAssetStore, indexStore: Lemnisk.InAppIndexStore, ioQueue: Dispatch.DispatchQueue)
+  final public func setReporter(_ reporter: Lemnisk.InAppEventReporter)
+  final public func prefetch(_ campaigns: [Lemnisk.InAppCampaign])
+  final public func ensureCachedAsync(_ c: Lemnisk.InAppCampaign, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+public enum InAppEvent : Swift.Equatable {
+  case sessionStart
+  case screenLoad(name: Swift.String, properties: [Swift.String : Any])
+  case customEvent(name: Swift.String, properties: [Swift.String : Any])
+  public static func == (lhs: Lemnisk.InAppEvent, rhs: Lemnisk.InAppEvent) -> Swift.Bool
+}
+final public class SessionState {
+  public init(startedAtMs: Swift.Int64, firstSession: Swift.Bool)
+  final public var eventCount: Swift.Int {
+    get
+  }
+  final public func incrementEventCount()
+  final public func sessionDurationSeconds(now: Swift.Int64) -> Swift.Int64
+  final public var isFirstSession: Swift.Bool {
+    get
+  }
+  final public func snapshot(now: Swift.Int64) -> [Swift.String : Any]
+  @objc deinit
+}
+final public class EarlyEventsBuffer {
+  public static let defaultCapacity: Swift.Int
+  public init(capacity: Swift.Int = EarlyEventsBuffer.defaultCapacity)
+  final public func offer(_ event: Lemnisk.InAppEvent)
+  final public func drain() -> [Lemnisk.InAppEvent]
+  final public var size: Swift.Int {
+    get
+  }
+  @objc deinit
+}
+public enum InAppRuleEvaluator {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func matches(trigger: Lemnisk.Trigger, event: Lemnisk.InAppEvent, currentContext: Swift.String?, sessionState: [Swift.String : Any]) -> Swift.Bool
+  #endif
+}
+final public class InAppFrequencyTracker {
+  public init(stateStore: Lemnisk.InAppStateStore)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func passesCaps(segmentId: Swift.String?, engagementId: Swift.String?, channelCap: [Lemnisk.CapEntry], engagementCap: [Lemnisk.CapEntry], segmentCap: [Lemnisk.CapEntry], nowMs: Swift.Int64) -> Swift.Bool
+  #endif
+  final public func lastImpressionAtMs() -> Swift.Int64
+  final public func inCoolOff(globalCoolOffSeconds: Swift.Int, nowMs: Swift.Int64) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func recordImpression(segmentId: Swift.String?, engagementId: Swift.String?, nowMs: Swift.Int64)
+  #endif
+  @objc deinit
+}
+final public class InAppDisplayQueue {
+  public init()
+  @discardableResult
+  final public func tryReserve(_ engagementId: Swift.String) -> Swift.Bool
+  final public func release(_ engagementId: Swift.String)
+  final public var isReserved: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public var currentlyShowingId: Swift.String? {
+    get
+  }
+  #endif
+  @objc deinit
+}
+final public class InAppTriggerEngine {
+  final public func setReporter(_ reporter: Lemnisk.InAppEventReporter)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(frequency: Lemnisk.InAppFrequencyTracker, gate: Lemnisk.InAppDisplayQueue, earlyEvents: Lemnisk.EarlyEventsBuffer, onWinnerSelected: ((Lemnisk.InAppCampaign) -> Swift.Void)? = nil)
+  #endif
+  final public func onSessionStarted(nowMs: Swift.Int64, firstSession: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func onRulesUpdated(campaigns: [Lemnisk.InAppCampaign], channelCap: [Lemnisk.CapEntry], globalCoolOff: Lemnisk.GlobalCoolOff?)
+  #endif
+  final public func pause()
+  final public func resume()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setContext(_ context: Swift.String?)
+  #endif
+  final public func onEvent(_ event: Lemnisk.InAppEvent)
+  @objc deinit
+}
+public enum MacroSubstitutor {
+  public static func substitute(_ html: Swift.String, macros: [Swift.String : Swift.String]) -> Swift.String
+  public static func findUnresolvedTokens(_ html: Swift.String) -> [Swift.String]
+  public static func htmlEscape(_ value: Swift.String) -> Swift.String
+}
+public enum SafeAreaInjector {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func inject(into webView: WebKit.WKWebView, hostView: UIKit.UIView?)
+  #endif
+}
+@objc @_Concurrency.MainActor @preconcurrency final public class InAppJsBridge : ObjectiveC.NSObject, WebKit.WKScriptMessageHandler {
+  public protocol Listener : AnyObject {
+    func bridgeCtaTapped(deeplink: Swift.String, label: Swift.String)
+    func bridgeCloseTapped()
+    func bridgeFormSubmitted(payload: Swift.String)
+    func bridgeLinkTapped(url: Swift.String)
+  }
+  @_Concurrency.MainActor @preconcurrency public static let bridgeName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let installerScript: Swift.String
+  @_Concurrency.MainActor @preconcurrency weak final public var listener: (any Lemnisk.InAppJsBridge.Listener)?
+  @_Concurrency.MainActor @preconcurrency final public var onPainted: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public init(listener: any Lemnisk.InAppJsBridge.Listener)
+  @_Concurrency.MainActor @preconcurrency @objc final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  @objc deinit
+}
+@objc @available(iOS 11.0, *)
+@_Concurrency.MainActor @preconcurrency final public class InAppAssetSchemeHandler : ObjectiveC.NSObject, WebKit.WKURLSchemeHandler {
+  @_Concurrency.MainActor @preconcurrency public static let scheme: Swift.String
+  @_Concurrency.MainActor @preconcurrency public init(assetStore: Lemnisk.InAppAssetStore)
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, start urlSchemeTask: any WebKit.WKURLSchemeTask)
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, stop urlSchemeTask: any WebKit.WKURLSchemeTask)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class InAppPopupViewController : UIKit.UIViewController, WebKit.WKNavigationDelegate {
+  public struct Bootstrap {
+    public let campaign: Lemnisk.InAppCampaign
+    public let html: Swift.String
+    public let assetStore: Lemnisk.InAppAssetStore
+    public let reporter: Lemnisk.InAppEventReporter?
+    public var listener: (any Lemnisk.InAppJsBridge.Listener)?
+    public var isTest: Swift.Bool
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(campaign: Lemnisk.InAppCampaign, html: Swift.String, assetStore: Lemnisk.InAppAssetStore, reporter: Lemnisk.InAppEventReporter?, listener: any Lemnisk.InAppJsBridge.Listener)
+    #endif
+  }
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency public init(bootstrap: Lemnisk.InAppPopupViewController.Bootstrap)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func loadView()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  #endif
+}
+final public class InAppDisplayDispatcher {
+  public protocol MacrosSource : AnyObject {
+    var currentMacros: [Swift.String : Swift.String] { get }
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(queue: Lemnisk.InAppDisplayQueue, frequency: Lemnisk.InAppFrequencyTracker, coolOffProvider: @escaping () -> Lemnisk.GlobalCoolOff?, contentStore: Lemnisk.InAppContentStore, assetStore: Lemnisk.InAppAssetStore, indexStore: Lemnisk.InAppIndexStore, ioQueue: Dispatch.DispatchQueue, macrosSource: any Lemnisk.InAppDisplayDispatcher.MacrosSource)
+  #endif
+  final public func setReporter(_ reporter: Lemnisk.InAppEventReporter)
+  final public func setPrefetcher(_ prefetcher: Lemnisk.InAppContentPrefetcher)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setCurrentPresenter(_ vc: UIKit.UIViewController?)
+  #endif
+  final public func show(_ winner: Lemnisk.InAppCampaign)
+  final public func cancelPendingDelayed()
+  public struct TestRenderContext {
+    public let paths: Lemnisk.InAppPaths
+    public let content: Lemnisk.InAppContentStore
+    public let asset: Lemnisk.InAppAssetStore
+    public let index: Lemnisk.InAppIndexStore
+    public let prefetcher: Lemnisk.InAppContentPrefetcher
+    public let reporter: Lemnisk.InAppEventReporter
+    public init(paths: Lemnisk.InAppPaths, content: Lemnisk.InAppContentStore, asset: Lemnisk.InAppAssetStore, index: Lemnisk.InAppIndexStore, prefetcher: Lemnisk.InAppContentPrefetcher, reporter: Lemnisk.InAppEventReporter)
+  }
+  final public func showTest(_ campaign: Lemnisk.InAppCampaign, context: Lemnisk.InAppDisplayDispatcher.TestRenderContext)
+  @objc deinit
+}
+public enum InAppEventType : Swift.String {
+  case impression
+  case click
+  case closedUser
+  case closedAuto
+  case failed
+  case droppedCoolOff
+  case droppedFreqCap
+  case droppedPriority
+  case droppedConflict
+  case droppedQueueExpired
+  case enginePaused
+  case engineResumed
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class InAppEventReporter {
+  public init(sdkVersion: Swift.String, platform: Swift.String, stateStore: Lemnisk.InAppStateStore, frequencyTracker: Lemnisk.InAppFrequencyTracker, isTest: Swift.Bool = false)
+  final public func reportImpression(_ campaign: Lemnisk.InAppCampaign)
+  final public func stampNextImpressionQueueRetries(_ engagementId: Swift.String, retryCount: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func reportClick(_ campaign: Lemnisk.InAppCampaign, label: Swift.String?, url: Swift.String?)
+  #endif
+  final public func reportFormSubmit(_ campaign: Lemnisk.InAppCampaign, eventName: Swift.String, fields: [Swift.String : Any])
+  final public func reportClosedUser(_ campaign: Lemnisk.InAppCampaign)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func reportClosedAuto(_ campaign: Lemnisk.InAppCampaign, reason: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func reportFailed(_ campaign: Lemnisk.InAppCampaign, reason: Swift.String?)
+  #endif
+  final public func reportDropped(_ type: Lemnisk.InAppEventType, campaign: Lemnisk.InAppCampaign)
+  final public func reportDropped(_ type: Lemnisk.InAppEventType, campaign: Lemnisk.InAppCampaign, extraProps: [Swift.String : Any])
+  final public func reportEngineState(_ type: Lemnisk.InAppEventType)
+  @objc deinit
+}
+final public class InAppRulesStore {
+  public static let storeVersion: Swift.Int
+  public static let maxCacheAgeMs: Swift.Int64
+  public struct Persisted : Swift.Codable {
+    public let storeVersion: Swift.Int
+    public let configVersion: Swift.Int
+    public let configHash: Swift.String?
+    public let lastSyncedAt: Swift.Int64
+    public let campaigns: [Lemnisk.InAppCampaign]
+    public let channelCap: [Lemnisk.CapEntry]
+    public let globalCoolOff: Lemnisk.GlobalCoolOff?
+    public let macros: [Swift.String : Swift.String]
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(configVersion: Swift.Int, configHash: Swift.String?, lastSyncedAt: Swift.Int64, campaigns: [Lemnisk.InAppCampaign], channelCap: [Lemnisk.CapEntry], globalCoolOff: Lemnisk.GlobalCoolOff?, macros: [Swift.String : Swift.String])
+    #endif
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public init(paths: Lemnisk.InAppPaths)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func loadIfFresh() -> Lemnisk.InAppRulesStore.Persisted?
+  #endif
+  final public func save(_ p: Lemnisk.InAppRulesStore.Persisted) throws
+  @objc deinit
+}
 extension Lemnisk.LemniskLogLevel : Swift.Equatable {}
 extension Lemnisk.LemniskLogLevel : Swift.Hashable {}
+extension Lemnisk.Platform : Swift.Equatable {}
+extension Lemnisk.Platform : Swift.Hashable {}
+extension Lemnisk.Platform : Swift.RawRepresentable {}
+extension Lemnisk.CapPeriod : Swift.Equatable {}
+extension Lemnisk.CapPeriod : Swift.Hashable {}
+extension Lemnisk.CapPeriod : Swift.RawRepresentable {}
+extension Lemnisk.ConditionOperator : Swift.Equatable {}
+extension Lemnisk.ConditionOperator : Swift.Hashable {}
+extension Lemnisk.ConditionOperator : Swift.RawRepresentable {}
+extension Lemnisk.DelayUnit : Swift.Equatable {}
+extension Lemnisk.DelayUnit : Swift.Hashable {}
+extension Lemnisk.DelayUnit : Swift.RawRepresentable {}
+extension Lemnisk.ContentType : Swift.Equatable {}
+extension Lemnisk.ContentType : Swift.Hashable {}
+extension Lemnisk.ContentType : Swift.RawRepresentable {}
+extension Lemnisk.PlacementType : Swift.Equatable {}
+extension Lemnisk.PlacementType : Swift.Hashable {}
+extension Lemnisk.PlacementType : Swift.RawRepresentable {}
+extension Lemnisk.CoolOffAction : Swift.Equatable {}
+extension Lemnisk.CoolOffAction : Swift.Hashable {}
+extension Lemnisk.CoolOffAction : Swift.RawRepresentable {}
+extension Lemnisk.InAppJsBridge : Swift.Sendable {}
+@available(iOS 11.0, *)
+extension Lemnisk.InAppAssetSchemeHandler : Swift.Sendable {}
+extension Lemnisk.InAppEventType : Swift.Equatable {}
+extension Lemnisk.InAppEventType : Swift.Hashable {}
+extension Lemnisk.InAppEventType : Swift.RawRepresentable {}
