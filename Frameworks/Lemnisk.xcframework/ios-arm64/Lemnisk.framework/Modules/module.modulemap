@@ -7,5 +7,4 @@ framework module Lemnisk {
 
 module Lemnisk.Swift {
   header "Lemnisk-Swift.h"
-  requires objc
 }
