@@ -43175,7 +43175,7 @@
       "kind": "StringLiteral",
       "offset": 305,
       "length": 8,
-      "value": "\"3.10.1\""
+      "value": "\"3.10.2\""
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/NotificationContent\/LemniskNotificationViewController.swift",
@@ -43931,7 +43931,7 @@
       "kind": "StringLiteral",
       "offset": 2766,
       "length": 8,
-      "value": "\"3.10.1\""
+      "value": "\"3.10.2\""
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Constants\/LemniskGeneralConstants.swift",
@@ -45028,7 +45028,7 @@
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/PerodicTasks\/PeriodicTaskScheduler.swift",
       "kind": "BooleanLiteral",
-      "offset": 1229,
+      "offset": 1569,
       "length": 5,
       "value": "false"
     },
@@ -45597,7 +45597,7 @@
       "kind": "StringLiteral",
       "offset": 20071,
       "length": 8,
-      "value": "\"3.10.1\""
+      "value": "\"3.10.2\""
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/RichNotification\/LemniskNotificationService.swift",
@@ -45916,22 +45916,29 @@
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskNetworkManagerWithPinningURLSession.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1371,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskNetworkManagerWithPinningURLSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 671,
+      "offset": 1708,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskNetworkManagerWithPinningURLSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 676,
+      "offset": 1713,
       "length": 5,
       "value": "86400"
     },
     {
       "filePath": "\/Users\/koteshwarudu\/Desktop\/Lemnisk\/lemnisk-app-sdk-hotfix-3101\/ios-swift-sdk\/LemniskFrameworkCode\/Lemnisk\/Source\/Network\/LemniskNetworkManagerWithPinningURLSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 1060,
+      "offset": 2097,
       "length": 10,
       "value": "1794355199"
     },

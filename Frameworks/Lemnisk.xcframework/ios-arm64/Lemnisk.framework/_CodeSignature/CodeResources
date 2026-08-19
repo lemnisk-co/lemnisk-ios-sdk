@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QEPoMNE8iBmFTtgZgwX/VtWHwsI=
+		fKECUue+Zccd7Vjii7Sf6Nor/uE=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		wBVVNtvtM0ZYyFOc5t13K0vFuhw=
+		oxk1zLECjHk4gx94s9zP/HlEVBw=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		NjgpmVOY4EdYeGsEq6VDzce5y4I=
+		M+ctfMQjja68YJQWaHjsscGyKyw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -226,7 +226,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			COxGUdNQFJxnS+WjMV2XCP/29otlt4/hlcQ0qAbhrtE=
+			YdWFCo1xBm4SZKYhCJmeZTs/Sipaq2ApgRKB2SzSZsY=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -254,7 +254,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MMOhEWwwkqaCe7MVXuE5L5IpdXMNCIV68/aMlDUzpOs=
+			NY/oNTnhr0ghlwrTVoaDj27exFqPlV1r+Fe42ZqRbdk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
