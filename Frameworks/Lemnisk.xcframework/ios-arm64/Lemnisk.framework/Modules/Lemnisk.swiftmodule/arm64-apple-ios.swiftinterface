@@ -23,6 +23,15 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public struct LemniskPiiEncryptionConfig : Swift.Codable {
+  public let enabled: Swift.Bool?
+  public let algorithm: Swift.String?
+  public let keyVersion: Swift.String?
+  public let publicKey: Swift.String?
+  public let paths: [Swift.String]?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public struct LemniskSDKConfigurationResponse : Swift.Codable {
   public let status: Swift.String?
   public let message: Swift.String?
@@ -61,6 +70,7 @@ public struct LemniskSDKConfiguration : Swift.Codable {
   public let errorMaxAttempts: Swift.Int?
   public let sessionTimeoutMinutes: Swift.Int?
   public let activeSessionThresholdSeconds: Swift.Int?
+  public let piiEncryption: LemniskPiiEncryptionConfig?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }

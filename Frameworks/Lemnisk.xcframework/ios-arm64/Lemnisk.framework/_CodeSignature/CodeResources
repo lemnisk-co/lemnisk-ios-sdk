@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fKECUue+Zccd7Vjii7Sf6Nor/uE=
+		noNX2rV/Kd9RLyfe7A0t+tfe4EY=
 		</data>
 		<key>LemniskBundle.bundle/Assets.car</key>
 		<data>
@@ -78,23 +78,23 @@
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		oxk1zLECjHk4gx94s9zP/HlEVBw=
+		MPa7y/kerRw32D/dzeTtRbdGI7s=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		tspS8NOTn0VgkNbouKQISk1koSM=
+		C6EvnAl6qRYSqS+kWsEUGXEla2g=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		5BM2FErzXok/0oU+ioOUAhAw4g0=
+		VdDS/rbHTT9BCOPGylTVI63GyVQ=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		tspS8NOTn0VgkNbouKQISk1koSM=
+		C6EvnAl6qRYSqS+kWsEUGXEla2g=
 		</data>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		M+ctfMQjja68YJQWaHjsscGyKyw=
+		bbcciZltFhI1dohPDOq8gACHLcA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -226,35 +226,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdWFCo1xBm4SZKYhCJmeZTs/Sipaq2ApgRKB2SzSZsY=
+			Hn1+T3DxBASSj79uelV6rROAMoTmRUigud8nJiGR99c=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lAG69zBfMp43puR58Ve5ruGUZDbhXyYcRqErcYQ+4R4=
+			TrdR70YUCmgUjbkLiGkzm1b4xPIvamM+EzIrNBQiQYo=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s0NkqpEa4BwipfytFQ0xl0dz8MuNGQgrd85o8zWrDdE=
+			D1cbFAexNJqZaPaAKr46c7rdmqqZb8b4M7KHEDXaRY4=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lAG69zBfMp43puR58Ve5ruGUZDbhXyYcRqErcYQ+4R4=
+			TrdR70YUCmgUjbkLiGkzm1b4xPIvamM+EzIrNBQiQYo=
 			</data>
 		</dict>
 		<key>Modules/Lemnisk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NY/oNTnhr0ghlwrTVoaDj27exFqPlV1r+Fe42ZqRbdk=
+			eGRKyYnXNhel9zaJl7OtYIZ5B5lmhlKRsMWuU2qo198=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
